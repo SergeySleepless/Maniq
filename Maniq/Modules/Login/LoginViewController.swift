@@ -24,6 +24,7 @@ final class LoginViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         hideKeyboard()
+        navigationController!.navigationBar.isHidden = true
     }
 	
     @IBAction func registrationButton(_ sender: UIButton) {

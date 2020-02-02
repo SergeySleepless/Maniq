@@ -54,7 +54,7 @@ extension RegistrationViewController: RegistrationViewInterface {
     }
     
     func loadingView(show: Bool) {
-        UIUtils.shared.showLoading(view: view)
+        UIUtils.shared.showLoading(view: view, isShow: show)
     }
     
 }

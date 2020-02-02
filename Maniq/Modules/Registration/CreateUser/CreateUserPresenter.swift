@@ -30,4 +30,7 @@ final class CreateUserPresenter {
 // MARK: - Extensions -
 
 extension CreateUserPresenter: CreateUserPresenterInterface {
+    func removePreviousControllers() {
+        wireframe.removePreviousControllers()
+    }
 }

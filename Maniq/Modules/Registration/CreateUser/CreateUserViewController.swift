@@ -21,6 +21,7 @@ final class CreateUserViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setTitle(title: "Регистрация")
+        presenter.removePreviousControllers()
     }
 	
 }
@@ -28,4 +29,5 @@ final class CreateUserViewController: UIViewController {
 // MARK: - Extensions -
 
 extension CreateUserViewController: CreateUserViewInterface {
+    
 }

@@ -23,6 +23,7 @@ extension CheckCodeInteractor: CheckCodeInteractorInterface {
         
         Auth.auth().signIn(with: credential) { (authResult, error) in
             result(error)
+            CurrentState.shared.user = authResult?.user
         }
     }
 }

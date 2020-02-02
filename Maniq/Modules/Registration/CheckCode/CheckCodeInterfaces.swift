@@ -16,6 +16,7 @@ protocol CheckCodeWireframeInterface: WireframeInterface {
 
 protocol CheckCodeViewInterface: ViewInterface {
     func setError()
+    func loadingView(show: Bool)
 }
 
 protocol CheckCodePresenterInterface: PresenterInterface {

@@ -24,6 +24,7 @@
 		5E2F3D2F23E6F17E0008CEA9 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E2F3D2923E6F17E0008CEA9 /* LoginViewController.swift */; };
 		5E2F3D3023E6F17E0008CEA9 /* LoginInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E2F3D2A23E6F17E0008CEA9 /* LoginInteractor.swift */; };
 		5E2F3D3123E6F17E0008CEA9 /* LoginWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E2F3D2B23E6F17E0008CEA9 /* LoginWireframe.swift */; };
+		5EC1610323E787BB00CEC7E7 /* CurrentState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EC1610223E787BB00CEC7E7 /* CurrentState.swift */; };
 		5EC9FB2E23E6F689006A029E /* BaseWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EC9FB2823E6F689006A029E /* BaseWireframe.swift */; };
 		5EC9FB2F23E6F689006A029E /* FormatterInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EC9FB2923E6F689006A029E /* FormatterInterface.swift */; };
 		5EC9FB3023E6F689006A029E /* UIStoryboardExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EC9FB2A23E6F689006A029E /* UIStoryboardExtension.swift */; };
@@ -45,7 +46,7 @@
 		5ED0AD6A23E71FBC00AAEA0A /* CheckCodeInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ED0AD6423E71FBC00AAEA0A /* CheckCodeInteractor.swift */; };
 		5ED0AD6B23E71FBC00AAEA0A /* CheckCodeWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ED0AD6523E71FBC00AAEA0A /* CheckCodeWireframe.swift */; };
 		5ED1375623E76B6F00861B1B /* UIUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ED1375523E76B6F00861B1B /* UIUtils.swift */; };
-		5ED1375823E76E8800861B1B /* BuildFile in Embed Frameworks */ = {isa = PBXBuildFile; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		5ED1375823E76E8800861B1B /* (null) in Embed Frameworks */ = {isa = PBXBuildFile; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -55,7 +56,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				5ED1375823E76E8800861B1B /* BuildFile in Embed Frameworks */,
+				5ED1375823E76E8800861B1B /* (null) in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -82,6 +83,7 @@
 		5E2F3D2923E6F17E0008CEA9 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		5E2F3D2A23E6F17E0008CEA9 /* LoginInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginInteractor.swift; sourceTree = "<group>"; };
 		5E2F3D2B23E6F17E0008CEA9 /* LoginWireframe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginWireframe.swift; sourceTree = "<group>"; };
+		5EC1610223E787BB00CEC7E7 /* CurrentState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentState.swift; sourceTree = "<group>"; };
 		5EC9FB2823E6F689006A029E /* BaseWireframe.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseWireframe.swift; sourceTree = "<group>"; };
 		5EC9FB2923E6F689006A029E /* FormatterInterface.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FormatterInterface.swift; sourceTree = "<group>"; };
 		5EC9FB2A23E6F689006A029E /* UIStoryboardExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIStoryboardExtension.swift; sourceTree = "<group>"; };
@@ -204,6 +206,7 @@
 				5EC9FB3523E6FE68006A029E /* Extensions */,
 				5EC9FB2723E6F689006A029E /* Base VIPER Interfaces */,
 				5ED1375523E76B6F00861B1B /* UIUtils.swift */,
+				5EC1610223E787BB00CEC7E7 /* CurrentState.swift */,
 			);
 			path = Support;
 			sourceTree = "<group>";
@@ -404,6 +407,7 @@
 				5ED0AD6923E71FBC00AAEA0A /* CheckCodeViewController.swift in Sources */,
 				5ED0AD6723E71FBC00AAEA0A /* CheckCodeInterfaces.swift in Sources */,
 				5E2F3D1223E6F12E0008CEA9 /* AppDelegate.swift in Sources */,
+				5EC1610323E787BB00CEC7E7 /* CurrentState.swift in Sources */,
 				5E1D637723E735440067E41F /* CreateUserInteractor.swift in Sources */,
 				5E2F3D3023E6F17E0008CEA9 /* LoginInteractor.swift in Sources */,
 				5EC9FB3723E6FE8A006A029E /* ViewControllerExtensions.swift in Sources */,

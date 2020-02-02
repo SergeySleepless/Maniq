@@ -11,12 +11,14 @@
 import UIKit
 
 protocol CreateUserWireframeInterface: WireframeInterface {
+    func removePreviousControllers()
 }
 
 protocol CreateUserViewInterface: ViewInterface {
 }
 
 protocol CreateUserPresenterInterface: PresenterInterface {
+    func removePreviousControllers()
 }
 
 protocol CreateUserInteractorInterface: InteractorInterface {

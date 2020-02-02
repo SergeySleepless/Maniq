@@ -32,4 +32,9 @@ final class CreateUserWireframe: BaseWireframe {
 // MARK: - Extensions -
 
 extension CreateUserWireframe: CreateUserWireframeInterface {
+    func removePreviousControllers() {
+        navigationController?.viewControllers.removeAll(where: {
+            !($0 is CreateUserViewController)
+        })
+    }
 }

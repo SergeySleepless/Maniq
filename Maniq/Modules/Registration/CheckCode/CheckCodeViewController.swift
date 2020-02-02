@@ -51,6 +51,11 @@ extension CheckCodeViewController: CheckCodeViewInterface {
     func setError() {
         pinEntryView.setError(isError: true)
     }
+    
+    func loadingView(show: Bool) {
+        UIUtils.shared.showLoading(view: view, isShow: show)
+    }
+    
 }
 
 extension CheckCodeViewController: CBPinEntryViewDelegate {

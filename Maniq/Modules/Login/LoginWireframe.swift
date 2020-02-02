@@ -34,6 +34,8 @@ final class LoginWireframe: BaseWireframe {
 extension LoginWireframe: LoginWireframeInterface {
     func routeToRegistration() {
         let registrationWireFrame = RegistrationWireframe()
-        navigationController?.showWireframeModal(registrationWireFrame)
+        let navigationController = UINavigationController()
+        navigationController.setRootWireframe(registrationWireFrame)
+        viewController.present(navigationController, animated: true, completion: nil)
     }
 }

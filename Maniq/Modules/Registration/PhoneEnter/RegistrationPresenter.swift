@@ -32,7 +32,6 @@ final class RegistrationPresenter {
 extension RegistrationPresenter: RegistrationPresenterInterface {
     
     func getFormattedPhoneNumber(number: String) -> String {
-        view.loadingView(show: true)
         let cleanPhoneNumber = number.components(separatedBy: CharacterSet.decimalDigits.inverted).joined()
         let mask = "+X (XXX) XXX-XX-XX"
         
@@ -56,6 +55,7 @@ extension RegistrationPresenter: RegistrationPresenterInterface {
     }
     
     func auth() {
+        view.loadingView(show: true)
         interactor.auth() { number, verificationID, error in
             self.view.loadingView(show: false)
             if let error = error {

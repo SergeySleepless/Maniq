@@ -31,7 +31,9 @@ final class CheckCodePresenter {
 
 extension CheckCodePresenter: CheckCodePresenterInterface {
     func signIn(code: String) {
+        view.loadingView(show: true)
         interactor.signIn(code: code) { error in
+            self.view.loadingView(show: false)
             if error != nil {
                 self.view.setError()
                 self.wireframe.showErrorAlert(with: error?.localizedDescription)

@@ -81,11 +81,5 @@ extension UINavigationController {
     func setRootWireframe(_ wireframe: BaseWireframe, animated: Bool = true) {
         setViewControllers([wireframe.viewController], animated: animated)
     }
-    
-    func showWireframeModal(_ wireframe: BaseWireframe, animated: Bool = true) {
-        let navigationController = UINavigationController()
-        navigationController.setRootWireframe(wireframe)
-        present(navigationController, animated: true, completion: nil)
-    }
 
 }
