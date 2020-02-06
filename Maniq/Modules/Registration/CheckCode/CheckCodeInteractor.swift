@@ -18,10 +18,10 @@ final class CheckCodeInteractor {
 
 extension CheckCodeInteractor: CheckCodeInteractorInterface {
     func signIn(code: String, result: @escaping (Error?) -> ()) {
-        let verificationID = UserDefaults.standard.string(forKey: "authVerificationID")!
-        let credential = PhoneAuthProvider.provider().credential( withVerificationID: verificationID, verificationCode: code)
-        
-        Auth.auth().signIn(with: credential) { (authResult, error) in
+        let verificationID = CurrentState.shared.authVerificationID!
+        let credentialPhone = PhoneAuthProvider.provider().credential( withVerificationID: verificationID, verificationCode: code)
+        CurrentState.shared.phoneAuthCredential = credentialPhone
+        Auth.auth().signIn(with: credentialPhone) { (authResult, error) in
             result(error)
             CurrentState.shared.user = authResult?.user
         }

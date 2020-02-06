@@ -9,25 +9,41 @@
 //
 
 import UIKit
+import FirebaseAuth
 
 final class CreateUserViewController: UIViewController {
 
     // MARK: - Public properties -
 
     var presenter: CreateUserPresenterInterface!
-
+    
+    @IBOutlet weak var usernameTextField: UITextField!
+    @IBOutlet weak var emailTextField: UITextField!
+    @IBOutlet weak var passwordTextField: UITextField!
+    @IBOutlet weak var repeatPasswordTextField: UITextField!
+    @IBOutlet weak var roleSegmentedControl: UISegmentedControl!
+    
     // MARK: - Lifecycle -
 
     override func viewDidLoad() {
         super.viewDidLoad()
         setTitle(title: "Регистрация")
         presenter.removePreviousControllers()
+        hideKeyboard()
     }
-	
+    
+    @IBAction func signInPressed(_ sender: UIButton) {
+        presenter.createUser(name: usernameTextField.text!, email: emailTextField.text!, password: passwordTextField.text!, isMaster: roleSegmentedControl!.selectedSegmentIndex == 0 ? false : true)
+    }
+    
 }
 
 // MARK: - Extensions -
 
 extension CreateUserViewController: CreateUserViewInterface {
+    
+    func loadingView(show: Bool) {
+        UIUtils.shared.showLoading(view: view, isShow: show)
+    }
     
 }

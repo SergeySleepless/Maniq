@@ -45,7 +45,7 @@
 		5ED0AD6A23E71FBC00AAEA0A /* CheckCodeInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ED0AD6423E71FBC00AAEA0A /* CheckCodeInteractor.swift */; };
 		5ED0AD6B23E71FBC00AAEA0A /* CheckCodeWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ED0AD6523E71FBC00AAEA0A /* CheckCodeWireframe.swift */; };
 		5ED1375623E76B6F00861B1B /* UIUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ED1375523E76B6F00861B1B /* UIUtils.swift */; };
-		5ED1375823E76E8800861B1B /* BuildFile in Embed Frameworks */ = {isa = PBXBuildFile; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		5ED1375823E76E8800861B1B /* (null) in Embed Frameworks */ = {isa = PBXBuildFile; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		8D9C4554F98C1EDDE57F7114 /* Pods_Maniq.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C5A5AA7F53799CC8F6B675FD /* Pods_Maniq.framework */; };
 /* End PBXBuildFile section */
 
@@ -56,7 +56,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				5ED1375823E76E8800861B1B /* BuildFile in Embed Frameworks */,
+				5ED1375823E76E8800861B1B /* (null) in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -83,6 +83,7 @@
 		5E2F3D2923E6F17E0008CEA9 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		5E2F3D2A23E6F17E0008CEA9 /* LoginInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginInteractor.swift; sourceTree = "<group>"; };
 		5E2F3D2B23E6F17E0008CEA9 /* LoginWireframe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginWireframe.swift; sourceTree = "<group>"; };
+		5EB7606923EC2449001DD4F8 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		5EC1610223E787BB00CEC7E7 /* CurrentState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentState.swift; sourceTree = "<group>"; };
 		5EC9FB2823E6F689006A029E /* BaseWireframe.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseWireframe.swift; sourceTree = "<group>"; };
 		5EC9FB2923E6F689006A029E /* FormatterInterface.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FormatterInterface.swift; sourceTree = "<group>"; };
@@ -236,7 +237,7 @@
 			isa = PBXGroup;
 			children = (
 				5E1D636C23E7350D0067E41F /* CreateUser */,
-				5ED0AD6D23E71FD400AAEA0A /* PhoneEnter */,
+				5ED0AD6D23E71FD400AAEA0A /* RegistrationEnter */,
 				5ED0AD6C23E71FBF00AAEA0A /* CheckCode */,
 			);
 			path = Registration;
@@ -255,7 +256,7 @@
 			path = CheckCode;
 			sourceTree = "<group>";
 		};
-		5ED0AD6D23E71FD400AAEA0A /* PhoneEnter */ = {
+		5ED0AD6D23E71FD400AAEA0A /* RegistrationEnter */ = {
 			isa = PBXGroup;
 			children = (
 				5EC9FB3A23E6FFC1006A029E /* Registration.storyboard */,
@@ -265,7 +266,7 @@
 				5EC9FB3E23E6FFC1006A029E /* RegistrationInteractor.swift */,
 				5EC9FB3F23E6FFC1006A029E /* RegistrationWireframe.swift */,
 			);
-			path = PhoneEnter;
+			path = RegistrationEnter;
 			sourceTree = "<group>";
 		};
 		9C02FDB0AC35E2A43FD7F0F6 /* Frameworks */ = {
@@ -321,6 +322,7 @@
 			knownRegions = (
 				en,
 				Base,
+				ru,
 			);
 			mainGroup = 5E2F3D0523E6F12E0008CEA9;
 			productRefGroup = 5E2F3D0F23E6F12E0008CEA9 /* Products */;
@@ -437,6 +439,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				5E2F3D1D23E6F1340008CEA9 /* Base */,
+				5EB7606923EC2449001DD4F8 /* ru */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -448,6 +451,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -508,6 +512,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";

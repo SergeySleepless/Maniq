@@ -12,9 +12,6 @@ import Foundation
 import FirebaseAuth
 
 final class RegistrationInteractor {
-    
-    var number = ""
-    
 }
 
 // MARK: - Extensions -
@@ -22,18 +19,19 @@ final class RegistrationInteractor {
 extension RegistrationInteractor: RegistrationInteractorInterface {
     
     func set(number: String) {
-        self.number = number
+        CurrentState.shared.phoneNumber = number
     }
     
     func auth(authResult: @escaping (String, String?, Error?) -> ()) {
         Auth.auth().languageCode = "ru"
+        let number = CurrentState.shared.phoneNumber!
         PhoneAuthProvider.provider().verifyPhoneNumber(number, uiDelegate: nil) { (verificationID, error) in
-            authResult(self.number, verificationID, error)
+            authResult(number, verificationID, error)
         }
     }
     
     func saveVerificationID(verificationID: String) {
-        UserDefaults.standard.set(verificationID, forKey: "authVerificationID")
+        CurrentState.shared.authVerificationID = verificationID
     }
     
 }

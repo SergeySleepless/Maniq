@@ -84,6 +84,9 @@
                                         <integer key="value" value="5"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="loginButton:" destination="zIc-eW-6fX" eventType="touchUpInside" id="cvt-IA-ufR"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="J6d-MJ-AHy">
                                 <rect key="frame" x="129.5" y="361.5" width="116" height="30"/>
@@ -158,6 +161,10 @@
                     </view>
                     <navigationItem key="navigationItem" id="rJ0-DA-FKI"/>
                     <nil key="simulatedTopBarMetrics"/>
+                    <connections>
+                        <outlet property="login" destination="s5h-cb-KP2" id="fha-y0-BNu"/>
+                        <outlet property="password" destination="XO5-IW-4lZ" id="F0S-63-csE"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rle-ol-2Ax" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

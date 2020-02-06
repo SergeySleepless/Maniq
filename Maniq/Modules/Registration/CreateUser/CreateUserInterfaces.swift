@@ -9,17 +9,22 @@
 //
 
 import UIKit
+import FirebaseAuth
 
 protocol CreateUserWireframeInterface: WireframeInterface {
     func removePreviousControllers()
 }
 
 protocol CreateUserViewInterface: ViewInterface {
+    func loadingView(show: Bool)
 }
 
 protocol CreateUserPresenterInterface: PresenterInterface {
+    func createUser(name: String, email: String, password: String, isMaster: Bool)
     func removePreviousControllers()
 }
 
 protocol CreateUserInteractorInterface: InteractorInterface {
+    func createUser(name: String, email: String, password: String, isMaster: Bool, completionHandler: @escaping (AuthDataResult?, Error?) -> ())
+    func createUserDB(uid: String, name: String, phoneNumber: String, email: String, isMaster: Bool, completionHandler: @escaping (Error?) -> ())
 }

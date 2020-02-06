@@ -15,5 +15,8 @@ final class CurrentState {
     private init() {}
     
     var user: User?
+    var phoneNumber: String?
+    var phoneAuthCredential: PhoneAuthCredential?
+    var authVerificationID: String?
     
 }

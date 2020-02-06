@@ -57,13 +57,13 @@ extension RegistrationPresenter: RegistrationPresenterInterface {
     func auth() {
         view.loadingView(show: true)
         interactor.auth() { number, verificationID, error in
-            self.view.loadingView(show: false)
             if let error = error {
                 self.wireframe.showErrorAlert(with: error.localizedDescription)
             } else {
                 self.interactor.saveVerificationID(verificationID: verificationID!)
                 self.wireframe.routeToCheckCode(number: number)
             }
+            self.view.loadingView(show: false)
         }
     }
     

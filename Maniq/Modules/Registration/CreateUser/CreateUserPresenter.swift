@@ -25,6 +25,19 @@ final class CreateUserPresenter {
         self.interactor = interactor
         self.wireframe = wireframe
     }
+    
+    private func createUserDB(uid: String, name: String, email: String, isMaster: Bool) {
+        let phoneNumber = CurrentState.shared.phoneNumber!
+        interactor.createUserDB(uid: uid, name: name, phoneNumber: phoneNumber, email: email, isMaster: isMaster) { error in
+            if let error = error {
+                self.view.loadingView(show: false)
+                self.wireframe.showErrorAlert(with: error.localizedDescription)
+                return
+            }
+            print("nice!")
+            self.wireframe.dismiss(animated: true)
+        }
+    }
 }
 
 // MARK: - Extensions -
@@ -32,5 +45,17 @@ final class CreateUserPresenter {
 extension CreateUserPresenter: CreateUserPresenterInterface {
     func removePreviousControllers() {
         wireframe.removePreviousControllers()
+    }
+    
+    func createUser(name: String, email: String, password: String, isMaster: Bool) {
+        view.loadingView(show: true)
+        interactor.createUser(name: name, email: email, password: password, isMaster: isMaster) { result, error in
+            if let error = error {
+                self.view.loadingView(show: false)
+                self.wireframe.showErrorAlert(with: error.localizedDescription)
+                return
+            }
+            self.createUserDB(uid: result!.user.uid, name: name, email: email, isMaster: isMaster)
+        }
     }
 }

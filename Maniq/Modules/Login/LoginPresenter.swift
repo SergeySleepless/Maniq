@@ -33,4 +33,11 @@ extension LoginPresenter: LoginPresenterInterface {
     func showRegistration() {
         wireframe.routeToRegistration()
     }
+    
+    func login(username: String, password: String) {
+        interactor.loginWith(username: username, password: password) { authData, error in
+            print(error)
+        }
+    }
+    
 }

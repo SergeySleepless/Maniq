@@ -9,11 +9,56 @@
 //
 
 import Foundation
+import FirebaseAuth
+import FirebaseFunctions
+import FirebaseFirestore
 
 final class LoginInteractor {
+    lazy var functions = Functions.functions()
+    
+    func login(email: String, password: String, completionHandler: @escaping (AuthDataResult?, Error?) -> ()) {
+        Auth.auth().signIn(withEmail: email, password: password) { authResult, error in
+            completionHandler(authResult, error)
+        }
+    }
+    
+    func getEmail(querySnapshot: QuerySnapshot, password: String, completionHandler: @escaping (AuthDataResult?, Error?) -> ()) {
+        if querySnapshot.documents.count == 1 {
+            let doc = querySnapshot.documents.first!
+            if let email = doc.data()["email"] as? String {
+                self.login(email: email, password: password, completionHandler: completionHandler)
+            }
+        } else {
+            //TODO multiply documents
+        }
+    }
 }
 
 // MARK: - Extensions -
 
 extension LoginInteractor: LoginInteractorInterface {
+    func loginWith(username: String, password: String, completionHandler: @escaping (AuthDataResult?, Error?) -> ()) {
+        Firestore.firestore().collection("users").whereField("username", isEqualTo: username).getDocuments() { (querySnapshot, error) in
+            if let error = error {
+                completionHandler(nil, error)
+            } else {
+                self.getEmail(querySnapshot: querySnapshot!, password: password, completionHandler: completionHandler)
+            }
+        }
+    }
+    
+    func loginWith(phoneNumber: String, password: String, completionHandler: @escaping (AuthDataResult?, Error?) -> ()) {
+        Firestore.firestore().collection("users").whereField("phoneNumber", isEqualTo: phoneNumber).getDocuments() { (querySnapshot, error) in
+            if let error = error {
+                completionHandler(nil, error)
+            } else {
+                self.getEmail(querySnapshot: querySnapshot!, password: password, completionHandler: completionHandler)
+            }
+        }
+    }
+    
+    func loginWith(email: String, password: String, completionHandler: @escaping (AuthDataResult?, Error?) -> ()) {
+        login(email: email, password: password, completionHandler: completionHandler)
+    }
+    
 }

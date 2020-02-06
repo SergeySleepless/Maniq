@@ -16,20 +16,26 @@ final class LoginViewController: UIViewController {
 
     var presenter: LoginPresenterInterface!
 
+    @IBOutlet weak var login: UITextField!
+    @IBOutlet weak var password: UITextField!
+    
     // MARK: - Private properties -
-
 
     // MARK: - Lifecycle -
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        hideKeyboard()
         navigationController!.navigationBar.isHidden = true
     }
 	
     @IBAction func registrationButton(_ sender: UIButton) {
         presenter.showRegistration()
     }
+    
+    @IBAction func loginButton(_ sender: UIButton) {
+        presenter.login(username: login.text!, password: password.text!)
+    }
+    
 }
 
 // MARK: - Extensions -

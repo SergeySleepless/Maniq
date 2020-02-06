@@ -9,6 +9,7 @@
 //
 
 import UIKit
+import FirebaseAuth
 
 protocol LoginWireframeInterface: WireframeInterface {
     func routeToRegistration()
@@ -19,7 +20,11 @@ protocol LoginViewInterface: ViewInterface {
 
 protocol LoginPresenterInterface: PresenterInterface {
     func showRegistration()
+    func login(username: String, password: String)
 }
 
 protocol LoginInteractorInterface: InteractorInterface {
+    func loginWith(username: String, password: String, completionHandler: @escaping (AuthDataResult?, Error?) -> ())
+    func loginWith(phoneNumber: String, password: String, completionHandler: @escaping (AuthDataResult?, Error?) -> ())
+    func loginWith(email: String, password: String, completionHandler: @escaping (AuthDataResult?, Error?) -> ())
 }

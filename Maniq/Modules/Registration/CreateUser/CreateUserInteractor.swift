@@ -9,11 +9,46 @@
 //
 
 import Foundation
+import FirebaseAuth
+import FirebaseFirestore
 
 final class CreateUserInteractor {
+    
 }
 
 // MARK: - Extensions -
 
 extension CreateUserInteractor: CreateUserInteractorInterface {
+    
+    func createUser(name: String, email: String, password: String, isMaster: Bool, completionHandler: @escaping (AuthDataResult?, Error?) -> ()) {
+        let credential = EmailAuthProvider.credential(withEmail: email, password: password)
+        
+        CurrentState.shared.user?.link(with: credential) { result, error in
+            print(error?.localizedDescription)
+            completionHandler(result, error)
+        }
+        
+//        Auth.auth().createUser(withEmail: email, password: password) { _, error in
+//            if error == nil {
+//                CurrentState.shared.user?.link(with: CurrentState.shared.phoneAuthCredential!) { result, error in
+//                    print(error?.localizedDescription)
+//                    completionHandler(result, error)
+//                }
+//            }
+//        }
+    }
+    
+    func createUserDB(uid: String, name: String, phoneNumber: String, email: String, isMaster: Bool, completionHandler: @escaping (Error?) -> ()) {
+        let database = Firestore.firestore()
+        database.collection("users").addDocument(data: [
+            "username": name,
+            "phoneNumber": phoneNumber,
+            "email": email,
+            "isMaster": isMaster,
+            "uid": uid
+        ]) { error in
+            completionHandler(error)
+        }
+    }
+    
 }

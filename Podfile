@@ -5,6 +5,7 @@ target 'Maniq' do
 	pod 'Firebase/Auth'
 	pod 'Firebase/Firestore'
 	pod 'Firebase/Database'
+	pod 'Firebase/Functions'
 	pod 'IQKeyboardManagerSwift'
 	pod "CBPinEntryView"
 	pod 'NVActivityIndicatorView'
