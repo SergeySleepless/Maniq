@@ -10,55 +10,88 @@
 
 import Foundation
 import FirebaseAuth
-import FirebaseFunctions
 import FirebaseFirestore
 
 final class LoginInteractor {
-    lazy var functions = Functions.functions()
     
-    func login(email: String, password: String, completionHandler: @escaping (AuthDataResult?, Error?) -> ()) {
-        Auth.auth().signIn(withEmail: email, password: password) { authResult, error in
-            completionHandler(authResult, error)
+    typealias authHandler = (AuthDataResult?, AuthResult?) -> ()
+    
+    // MARK: - Private Properties -
+    
+    private var authHandlerCallback: ((AuthDataResult?, AuthResult?) -> ())!
+    private var password: String!
+    
+    // MARK: - Private Methods -
+    
+    /// Проверка querySnapshot на nil
+    private func check(querySnapshot: QuerySnapshot?) {
+        guard !querySnapshot!.documents.isEmpty else {
+            authError(error: AuthResult.failure(Errors.authErrors.wrongEnter.loginDataIsWrong))
+            return
+        }
+        getEmail(querySnapshot: querySnapshot!)
+    }
+    
+    /// Проверка email на nil
+    private func check(email: String?) {
+        guard let email = email else {
+            self.authError(error: AuthResult.failure(Errors.authErrors.userNotFound))
+            return
+        }
+        login(email: email)
+    }
+    
+    /// Получение email по QuerySnapshot
+    private func getEmail(querySnapshot: QuerySnapshot) {
+        firebaseServices.firestore.getEmail(querySnapshot: querySnapshot) { email in
+            self.check(email: email)
         }
     }
     
-    func getEmail(querySnapshot: QuerySnapshot, password: String, completionHandler: @escaping (AuthDataResult?, Error?) -> ()) {
-        if querySnapshot.documents.count == 1 {
-            let doc = querySnapshot.documents.first!
-            if let email = doc.data()["email"] as? String {
-                self.login(email: email, password: password, completionHandler: completionHandler)
-            }
-        } else {
-            //TODO multiply documents
-        }
+    /// Выполнение логина по email и password
+    private func login(email: String) {
+        firebaseServices.auth.login(email: email, password: password, handler: self.authHandlerCallback)
     }
+    
+    /// Ошибка при логине
+    private func authError(error: AuthResult) {
+        authHandlerCallback(nil, error)
+    }
+    
+    /// Ошибка базы данныхb
+    private func firestoreError(error: Error, handler: @escaping authHandler) {
+        let fError = FirestoreErrorCode(rawValue: error._code)!
+        handler(nil, AuthResult.failure(FirestoreError(code: fError)))
+    }
+    
 }
 
 // MARK: - Extensions -
 
 extension LoginInteractor: LoginInteractorInterface {
-    func loginWith(username: String, password: String, completionHandler: @escaping (AuthDataResult?, Error?) -> ()) {
-        Firestore.firestore().collection("users").whereField("username", isEqualTo: username).getDocuments() { (querySnapshot, error) in
+    
+    func loginWith(username: String, password: String, handler: @escaping authHandler) {
+        self.authHandlerCallback = handler
+        self.password = password
+        firebaseServices.firestore.getSnapshotFrom(username: username) { snapshot, error in
             if let error = error {
-                completionHandler(nil, error)
-            } else {
-                self.getEmail(querySnapshot: querySnapshot!, password: password, completionHandler: completionHandler)
+                self.firestoreError(error: error, handler: handler)
+                return
             }
+            self.check(querySnapshot: snapshot)
         }
     }
     
-    func loginWith(phoneNumber: String, password: String, completionHandler: @escaping (AuthDataResult?, Error?) -> ()) {
-        Firestore.firestore().collection("users").whereField("phoneNumber", isEqualTo: phoneNumber).getDocuments() { (querySnapshot, error) in
+    func loginWith(phoneNumber: String, password: String, handler: @escaping authHandler) {
+        self.authHandlerCallback = handler
+        self.password = password
+        firebaseServices.firestore.getSnapshotFrom(phoneNumber: phoneNumber) { snapshot, error in
             if let error = error {
-                completionHandler(nil, error)
-            } else {
-                self.getEmail(querySnapshot: querySnapshot!, password: password, completionHandler: completionHandler)
+                self.firestoreError(error: error, handler: handler)
+                return
             }
+            self.check(querySnapshot: snapshot)
         }
-    }
-    
-    func loginWith(email: String, password: String, completionHandler: @escaping (AuthDataResult?, Error?) -> ()) {
-        login(email: email, password: password, completionHandler: completionHandler)
     }
     
 }

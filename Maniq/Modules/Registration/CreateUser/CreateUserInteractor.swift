@@ -24,7 +24,6 @@ extension CreateUserInteractor: CreateUserInteractorInterface {
         let credential = EmailAuthProvider.credential(withEmail: email, password: password)
         
         CurrentState.shared.user?.link(with: credential) { result, error in
-            print(error?.localizedDescription)
             completionHandler(result, error)
         }
         

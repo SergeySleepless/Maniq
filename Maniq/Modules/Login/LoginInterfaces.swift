@@ -16,15 +16,15 @@ protocol LoginWireframeInterface: WireframeInterface {
 }
 
 protocol LoginViewInterface: ViewInterface {
+    func loadingView(show: Bool)
 }
 
 protocol LoginPresenterInterface: PresenterInterface {
     func showRegistration()
-    func login(username: String, password: String)
+    func login(loginText: String, password: String)
 }
 
 protocol LoginInteractorInterface: InteractorInterface {
-    func loginWith(username: String, password: String, completionHandler: @escaping (AuthDataResult?, Error?) -> ())
-    func loginWith(phoneNumber: String, password: String, completionHandler: @escaping (AuthDataResult?, Error?) -> ())
-    func loginWith(email: String, password: String, completionHandler: @escaping (AuthDataResult?, Error?) -> ())
+    func loginWith(username: String, password: String, handler: @escaping (AuthDataResult?, AuthResult?) -> ())
+    func loginWith(phoneNumber: String, password: String, handler: @escaping (AuthDataResult?, AuthResult?) -> ())
 }

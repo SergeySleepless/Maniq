@@ -37,7 +37,8 @@ final class LoginViewController: UIViewController {
     }
     
     @IBAction func loginButton(_ sender: UIButton) {
-        presenter.login(username: login.text!, password: password.text!)
+        presenter.login(loginText: login.text!, password: password.text!)
+        print(AuthErrors.notFilled.allNotFilled)
     }
     
 }
@@ -45,4 +46,7 @@ final class LoginViewController: UIViewController {
 // MARK: - Extensions -
 
 extension LoginViewController: LoginViewInterface {
+    func loadingView(show: Bool) {
+        UIUtils.shared.showLoading(view: view, isShow: show)
+    }
 }

@@ -25,19 +25,73 @@ final class LoginPresenter {
         self.interactor = interactor
         self.wireframe = wireframe
     }
+    
+    private func isValid(phoneNumber: String) -> Bool {
+        let charcterSet  = NSCharacterSet(charactersIn: "+0123456789").inverted
+        let inputString = phoneNumber.components(separatedBy: charcterSet)
+        let filtered = inputString.joined(separator: "")
+        return phoneNumber == filtered
+    }
+    
+    private func loginWith(username: String, password: String) {
+        interactor.loginWith(username: username, password: password) { authData, error in
+            switch error {
+            case .accept:
+                self.wireframe.showAlert(with: "Каеф", message: "Типа залогинился")
+            case .failure(let error):
+                self.wireframe.showErrorAlert(with: error.message)
+            case .none:
+                break
+            }
+            self.view.loadingView(show: false)
+        }
+    }
+    
+    private func loginWith(phoneNumber: String, password: String) {
+        interactor.loginWith(phoneNumber: phoneNumber, password: password) { authData, error in
+//            if let error = error {
+//                self.wireframe.showErrorAlert(with: error.localizedDescription)
+//            } else {
+//                self.wireframe.showAlert(with: "Каеф", message: "Типа залогинился")
+//            }
+            self.view.loadingView(show: false)
+        }
+    }
+    
+    private func isFilledData(loginText: String, password: String) -> Bool {
+        if loginText.isEmpty && password.isEmpty {
+            wireframe.showErrorAlert(with: Errors.authErrors.notFilled.allNotFilled.localizedDescription)
+            return false
+        }
+        if loginText.isEmpty {
+            wireframe.showErrorAlert(with: Errors.authErrors.notFilled.loginNotFilled.localizedDescription)
+            return false
+        }
+        if password.isEmpty {
+            wireframe.showErrorAlert(with: Errors.authErrors.notFilled.passwordNotFilled.localizedDescription)
+            return false
+        }
+        return true
+    }
+    
 }
 
 // MARK: - Extensions -
 
 extension LoginPresenter: LoginPresenterInterface {
+    
     func showRegistration() {
         wireframe.routeToRegistration()
     }
     
-    func login(username: String, password: String) {
-        interactor.loginWith(username: username, password: password) { authData, error in
-            print(error)
+    func login(loginText: String, password: String) {
+        guard isFilledData(loginText: loginText, password: password) else {return}
+        view.loadingView(show: true)
+        if isValid(phoneNumber: loginText) {
+            loginWith(phoneNumber: loginText, password: password)
+            return
         }
+        loginWith(username: loginText, password: password)
     }
     
 }
