@@ -60,15 +60,15 @@ final class LoginPresenter {
     
     private func isFilledData(loginText: String, password: String) -> Bool {
         if loginText.isEmpty && password.isEmpty {
-            wireframe.showErrorAlert(with: Errors.authErrors.notFilled.allNotFilled.localizedDescription)
+            wireframe.showErrorAlert(with: NotFilled.allNotFilled.localizedDescription)
             return false
         }
         if loginText.isEmpty {
-            wireframe.showErrorAlert(with: Errors.authErrors.notFilled.loginNotFilled.localizedDescription)
+            wireframe.showErrorAlert(with: NotFilled.loginNotFilled.localizedDescription)
             return false
         }
         if password.isEmpty {
-            wireframe.showErrorAlert(with: Errors.authErrors.notFilled.passwordNotFilled.localizedDescription)
+            wireframe.showErrorAlert(with: NotFilled.passwordNotFilled.localizedDescription)
             return false
         }
         return true

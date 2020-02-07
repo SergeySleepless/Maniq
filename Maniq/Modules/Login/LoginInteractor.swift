@@ -26,7 +26,7 @@ final class LoginInteractor {
     /// Проверка querySnapshot на nil
     private func check(querySnapshot: QuerySnapshot?) {
         guard !querySnapshot!.documents.isEmpty else {
-            authError(error: AuthResult.failure(Errors.authErrors.wrongEnter.loginDataIsWrong))
+            authError(error: AuthResult.failure(WrongEnter.loginDataIsWrong))
             return
         }
         getEmail(querySnapshot: querySnapshot!)
@@ -35,7 +35,7 @@ final class LoginInteractor {
     /// Проверка email на nil
     private func check(email: String?) {
         guard let email = email else {
-            self.authError(error: AuthResult.failure(Errors.authErrors.userNotFound))
+            self.authError(error: AuthResult.failure(AuthError.userNotFound))
             return
         }
         login(email: email)

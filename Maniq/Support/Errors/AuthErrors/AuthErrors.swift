@@ -9,7 +9,7 @@
 import Foundation
 import Firebase
 
-enum AuthErrors {
+enum AuthError {
     static var notFilled = NotFilled.self
     static var wrongEnter = WrongEnter.self
     static var firebaseErrors = AuthErrorCode.self
@@ -42,13 +42,70 @@ enum AuthErrors {
     case internalError
     case unknow
     
+    init(code: AuthErrorCode) {
+        switch code {
+        case .userDisabled:
+            self = .userDisabled
+        case .operationNotAllowed:
+            self = .operationNotAllowed
+        case .emailAlreadyInUse:
+            self = .emailAlreadyInUse
+        case .invalidEmail:
+            self = .invalidEmail
+        case .wrongPassword:
+            self = .wrongPassword
+        case .tooManyRequests:
+            self = .tooManyRequests
+        case .userNotFound:
+            self = .userNotFound
+        case .networkError:
+            self = .networkError
+        case .weakPassword:
+            self = .weakPassword
+        case .expiredActionCode:
+            self = .expiredActionCode
+        case .invalidActionCode:
+            self = .invalidActionCode
+        case .invalidSender:
+            self = .invalidSender
+        case .invalidRecipientEmail:
+            self = .invalidRecipientEmail
+        case .missingPhoneNumber:
+            self = .missingPhoneNumber
+        case .invalidPhoneNumber:
+            self = .invalidPhoneNumber
+        case .missingVerificationCode:
+            self = .missingVerificationCode
+        case .invalidVerificationCode:
+            self = .invalidVerificationCode
+        case .sessionExpired:
+            self = .sessionExpired
+        case .quotaExceeded:
+            self = .quotaExceeded
+        case .captchaCheckFailed:
+            self = .captchaCheckFailed
+        case .webContextCancelled:
+            self = .webContextCancelled
+        case .webNetworkRequestFailed:
+            self = .webNetworkRequestFailed
+        case .webSignInUserInteractionFailure:
+            self = .webSignInUserInteractionFailure
+        case .missingOrInvalidNonce:
+            self = .missingOrInvalidNonce
+        case .missingClientIdentifier:
+            self = .missingClientIdentifier
+        case .keychainError:
+            self = .keychainError
+        case .internalError:
+            self = .internalError
+        default:
+            self = .unknow
+        }
+    }
+    
 }
 
-protocol Err {
-    var message: String {get}
-}
-
-extension AuthErrors: Err {
+extension AuthError: ErrorProtocol {
     var message: String {
         switch self {
         case .userDisabled:
@@ -107,38 +164,6 @@ extension AuthErrors: Err {
             return "Внутренняя ошибка"
         case .unknow:
             return "Неизвестная ошибка"
-        }
-    }
-}
-
-enum NotFilled {
-    case loginNotFilled
-    case passwordNotFilled
-    case allNotFilled
-}
-
-extension NotFilled: Error {
-    var localizedDescription: String {
-        switch self {
-        case .loginNotFilled:
-            return "Введите номер телефона или имя пользователя"
-        case .passwordNotFilled:
-            return "Введите пароль"
-        case .allNotFilled:
-            return "Введите номер телефона или имя пользователя, а также пароль"
-        }
-    }
-}
-
-enum WrongEnter {
-    case loginDataIsWrong
-}
-
-extension WrongEnter: Err {
-    var message: String {
-        switch self {
-        case .loginDataIsWrong:
-            return "Проверьте правильность введенных данных"
         }
     }
 }

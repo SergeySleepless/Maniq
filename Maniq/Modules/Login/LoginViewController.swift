@@ -38,7 +38,6 @@ final class LoginViewController: UIViewController {
     
     @IBAction func loginButton(_ sender: UIButton) {
         presenter.login(loginText: login.text!, password: password.text!)
-        print(AuthErrors.notFilled.allNotFilled)
     }
     
 }

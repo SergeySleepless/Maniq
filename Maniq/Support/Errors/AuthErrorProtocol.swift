@@ -1,5 +1,5 @@
 //
-//  Errors.swift
+//  AuthErrorProtocol.swift
 //  Maniq
 //
 //  Created by Сергей Гаврилов on 07.02.2020.
@@ -8,7 +8,6 @@
 
 import Foundation
 
-enum Errors {
-    static var authErrors = AuthErrors.self
-    static var firestoreErrors = FirestoreError.self
+protocol ErrorProtocol {
+    var message: String {get}
 }

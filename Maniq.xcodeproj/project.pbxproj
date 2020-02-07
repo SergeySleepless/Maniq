@@ -25,10 +25,12 @@
 		5E2F3D3123E6F17E0008CEA9 /* LoginWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E2F3D2B23E6F17E0008CEA9 /* LoginWireframe.swift */; };
 		5E521A2123ED9582008D6823 /* FirestoreErrors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E521A2023ED9582008D6823 /* FirestoreErrors.swift */; };
 		5E521A2323EDBD1B008D6823 /* AuthResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E521A2223EDBD1B008D6823 /* AuthResult.swift */; };
+		5E521A2623EDC7EB008D6823 /* AuthErrorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E521A2523EDC7EB008D6823 /* AuthErrorProtocol.swift */; };
+		5E521A2823EDC808008D6823 /* NotFilled.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E521A2723EDC808008D6823 /* NotFilled.swift */; };
+		5E521A2A23EDC81D008D6823 /* WrongEnter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E521A2923EDC81D008D6823 /* WrongEnter.swift */; };
 		5E79583F23ED516100A2A6AD /* FirebaseServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E79583E23ED516100A2A6AD /* FirebaseServices.swift */; };
 		5E79584123ED51D500A2A6AD /* FirestoreServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E79584023ED51D500A2A6AD /* FirestoreServices.swift */; };
 		5E79584323ED526B00A2A6AD /* AuthServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E79584223ED526B00A2A6AD /* AuthServices.swift */; };
-		5E79584623ED686B00A2A6AD /* Errors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E79584523ED686B00A2A6AD /* Errors.swift */; };
 		5E79584823ED688D00A2A6AD /* AuthErrors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E79584723ED688D00A2A6AD /* AuthErrors.swift */; };
 		5EC1610323E787BB00CEC7E7 /* CurrentState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EC1610223E787BB00CEC7E7 /* CurrentState.swift */; };
 		5EC9FB2E23E6F689006A029E /* BaseWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EC9FB2823E6F689006A029E /* BaseWireframe.swift */; };
@@ -92,10 +94,12 @@
 		5E2F3D2B23E6F17E0008CEA9 /* LoginWireframe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginWireframe.swift; sourceTree = "<group>"; };
 		5E521A2023ED9582008D6823 /* FirestoreErrors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirestoreErrors.swift; sourceTree = "<group>"; };
 		5E521A2223EDBD1B008D6823 /* AuthResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthResult.swift; sourceTree = "<group>"; };
+		5E521A2523EDC7EB008D6823 /* AuthErrorProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthErrorProtocol.swift; sourceTree = "<group>"; };
+		5E521A2723EDC808008D6823 /* NotFilled.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotFilled.swift; sourceTree = "<group>"; };
+		5E521A2923EDC81D008D6823 /* WrongEnter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WrongEnter.swift; sourceTree = "<group>"; };
 		5E79583E23ED516100A2A6AD /* FirebaseServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseServices.swift; sourceTree = "<group>"; };
 		5E79584023ED51D500A2A6AD /* FirestoreServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirestoreServices.swift; sourceTree = "<group>"; };
 		5E79584223ED526B00A2A6AD /* AuthServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthServices.swift; sourceTree = "<group>"; };
-		5E79584523ED686B00A2A6AD /* Errors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Errors.swift; sourceTree = "<group>"; };
 		5E79584723ED688D00A2A6AD /* AuthErrors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthErrors.swift; sourceTree = "<group>"; };
 		5EB7606923EC2449001DD4F8 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		5EC1610223E787BB00CEC7E7 /* CurrentState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentState.swift; sourceTree = "<group>"; };
@@ -202,6 +206,16 @@
 			path = Modules;
 			sourceTree = "<group>";
 		};
+		5E521A2423EDC7CD008D6823 /* AuthErrors */ = {
+			isa = PBXGroup;
+			children = (
+				5E79584723ED688D00A2A6AD /* AuthErrors.swift */,
+				5E521A2723EDC808008D6823 /* NotFilled.swift */,
+				5E521A2923EDC81D008D6823 /* WrongEnter.swift */,
+			);
+			path = AuthErrors;
+			sourceTree = "<group>";
+		};
 		5E79583D23ED512300A2A6AD /* Services */ = {
 			isa = PBXGroup;
 			children = (
@@ -215,8 +229,8 @@
 		5E79584423ED685B00A2A6AD /* Errors */ = {
 			isa = PBXGroup;
 			children = (
-				5E79584523ED686B00A2A6AD /* Errors.swift */,
-				5E79584723ED688D00A2A6AD /* AuthErrors.swift */,
+				5E521A2523EDC7EB008D6823 /* AuthErrorProtocol.swift */,
+				5E521A2423EDC7CD008D6823 /* AuthErrors */,
 				5E521A2023ED9582008D6823 /* FirestoreErrors.swift */,
 				5E521A2223EDBD1B008D6823 /* AuthResult.swift */,
 			);
@@ -442,7 +456,6 @@
 				5E1D637523E735440067E41F /* CreateUserPresenter.swift in Sources */,
 				5EC9FB4423E6FFC1006A029E /* RegistrationInteractor.swift in Sources */,
 				5EC9FB3023E6F689006A029E /* UIStoryboardExtension.swift in Sources */,
-				5E79584623ED686B00A2A6AD /* Errors.swift in Sources */,
 				5ED0AD6823E71FBC00AAEA0A /* CheckCodePresenter.swift in Sources */,
 				5E1D637423E735440067E41F /* CreateUserInterfaces.swift in Sources */,
 				5ED0AD6923E71FBC00AAEA0A /* CheckCodeViewController.swift in Sources */,
@@ -454,6 +467,7 @@
 				5E2F3D3023E6F17E0008CEA9 /* LoginInteractor.swift in Sources */,
 				5EC9FB3723E6FE8A006A029E /* ViewControllerExtensions.swift in Sources */,
 				5EC9FB2E23E6F689006A029E /* BaseWireframe.swift in Sources */,
+				5E521A2823EDC808008D6823 /* NotFilled.swift in Sources */,
 				5ED1375623E76B6F00861B1B /* UIUtils.swift in Sources */,
 				5E1D637623E735440067E41F /* CreateUserViewController.swift in Sources */,
 				5EC9FB4323E6FFC1006A029E /* RegistrationViewController.swift in Sources */,
@@ -468,11 +482,13 @@
 				5EC9FB3223E6F689006A029E /* ViewInterface.swift in Sources */,
 				5EC9FB4523E6FFC1006A029E /* RegistrationWireframe.swift in Sources */,
 				5ED0AD6A23E71FBC00AAEA0A /* CheckCodeInteractor.swift in Sources */,
+				5E521A2A23EDC81D008D6823 /* WrongEnter.swift in Sources */,
 				5EC9FB3323E6F689006A029E /* InteractorInterface.swift in Sources */,
 				5E2F3D2D23E6F17E0008CEA9 /* LoginInterfaces.swift in Sources */,
 				5ED0AD6B23E71FBC00AAEA0A /* CheckCodeWireframe.swift in Sources */,
 				5E79584823ED688D00A2A6AD /* AuthErrors.swift in Sources */,
 				5EC9FB4123E6FFC1006A029E /* RegistrationInterfaces.swift in Sources */,
+				5E521A2623EDC7EB008D6823 /* AuthErrorProtocol.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

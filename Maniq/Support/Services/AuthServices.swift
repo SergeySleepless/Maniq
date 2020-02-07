@@ -15,7 +15,12 @@ class AuthServices {
     
     func login(email: String, password: String, handler: @escaping authHandler) {
         Auth.auth().signIn(withEmail: email, password: password) { authResult, error in
-            handler(authResult, nil)
+            var fError: AuthErrorCode
+            if error != nil {
+                fError = AuthErrorCode(rawValue: error!._code)!
+                handler(authResult, AuthResult.failure(AuthError(code: fError)))
+            }
+            handler(authResult, AuthResult.accept)
         }
     }
     

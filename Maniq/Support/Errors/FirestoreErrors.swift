@@ -10,7 +10,6 @@ import Foundation
 import FirebaseFirestore
 
 enum FirestoreError {
-    
     case OK
     case cancelled
     case invalidArgument
@@ -58,7 +57,7 @@ enum FirestoreError {
     
 }
 
-extension FirestoreError: Err {
+extension FirestoreError: ErrorProtocol {
     var message: String {
         switch self {
         case .OK:
