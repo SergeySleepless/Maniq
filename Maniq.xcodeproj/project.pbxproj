@@ -232,7 +232,6 @@
 				5E521A2523EDC7EB008D6823 /* AuthErrorProtocol.swift */,
 				5E521A2423EDC7CD008D6823 /* AuthErrors */,
 				5E521A2023ED9582008D6823 /* FirestoreErrors.swift */,
-				5E521A2223EDBD1B008D6823 /* AuthResult.swift */,
 			);
 			path = Errors;
 			sourceTree = "<group>";
@@ -253,6 +252,7 @@
 		5EC9FB3423E6FE5D006A029E /* Support */ = {
 			isa = PBXGroup;
 			children = (
+				5E521A2223EDBD1B008D6823 /* AuthResult.swift */,
 				5E79584423ED685B00A2A6AD /* Errors */,
 				5E79583D23ED512300A2A6AD /* Services */,
 				5EC9FB3523E6FE68006A029E /* Extensions */,

@@ -11,15 +11,15 @@
 import Foundation
 
 final class LoginPresenter {
-
+    
     // MARK: - Private properties -
-
+    
     private unowned let view: LoginViewInterface
     private let interactor: LoginInteractorInterface
     private let wireframe: LoginWireframeInterface
-
+    
     // MARK: - Lifecycle -
-
+    
     init(view: LoginViewInterface, interactor: LoginInteractorInterface, wireframe: LoginWireframeInterface) {
         self.view = view
         self.interactor = interactor
@@ -34,27 +34,26 @@ final class LoginPresenter {
     }
     
     private func loginWith(username: String, password: String) {
-        interactor.loginWith(username: username, password: password) { authData, error in
-            switch error {
+        interactor.loginWith(username: username, password: password) { result in
+            self.view.loadingView(show: false)
+            switch result {
             case .accept:
                 self.wireframe.showAlert(with: "Каеф", message: "Типа залогинился")
             case .failure(let error):
                 self.wireframe.showErrorAlert(with: error.message)
-            case .none:
-                break
             }
-            self.view.loadingView(show: false)
         }
     }
     
     private func loginWith(phoneNumber: String, password: String) {
-        interactor.loginWith(phoneNumber: phoneNumber, password: password) { authData, error in
-//            if let error = error {
-//                self.wireframe.showErrorAlert(with: error.localizedDescription)
-//            } else {
-//                self.wireframe.showAlert(with: "Каеф", message: "Типа залогинился")
-//            }
+        interactor.loginWith(phoneNumber: phoneNumber, password: password) { result in
             self.view.loadingView(show: false)
+            switch result {
+            case .accept:
+                self.wireframe.showAlert(with: "Каеф", message: "Типа залогинился")
+            case .failure(let error):
+                self.wireframe.showErrorAlert(with: error.message)
+            }
         }
     }
     

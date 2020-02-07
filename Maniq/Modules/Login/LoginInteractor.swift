@@ -14,11 +14,11 @@ import FirebaseFirestore
 
 final class LoginInteractor {
     
-    typealias authHandler = (AuthDataResult?, AuthResult?) -> ()
+    typealias authHandler = (AuthResult) -> ()
     
     // MARK: - Private Properties -
     
-    private var authHandlerCallback: ((AuthDataResult?, AuthResult?) -> ())!
+    private var authHandlerCallback: ((AuthResult) -> ())!
     private var password: String!
     
     // MARK: - Private Methods -
@@ -26,7 +26,7 @@ final class LoginInteractor {
     /// Проверка querySnapshot на nil
     private func check(querySnapshot: QuerySnapshot?) {
         guard !querySnapshot!.documents.isEmpty else {
-            authError(error: AuthResult.failure(WrongEnter.loginDataIsWrong))
+            authError(result: AuthResult.failure(WrongEnter.loginDataIsWrong))
             return
         }
         getEmail(querySnapshot: querySnapshot!)
@@ -35,7 +35,7 @@ final class LoginInteractor {
     /// Проверка email на nil
     private func check(email: String?) {
         guard let email = email else {
-            self.authError(error: AuthResult.failure(AuthError.userNotFound))
+            self.authError(result: AuthResult.failure(AuthError.userNotFound))
             return
         }
         login(email: email)
@@ -54,14 +54,14 @@ final class LoginInteractor {
     }
     
     /// Ошибка при логине
-    private func authError(error: AuthResult) {
-        authHandlerCallback(nil, error)
+    private func authError(result: AuthResult) {
+        authHandlerCallback(result)
     }
     
     /// Ошибка базы данныхb
     private func firestoreError(error: Error, handler: @escaping authHandler) {
         let fError = FirestoreErrorCode(rawValue: error._code)!
-        handler(nil, AuthResult.failure(FirestoreError(code: fError)))
+        handler(AuthResult.failure(FirestoreError(code: fError)))
     }
     
 }

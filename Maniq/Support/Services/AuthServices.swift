@@ -11,16 +11,16 @@ import FirebaseAuth
 
 class AuthServices {
     
-    typealias authHandler = (AuthDataResult?, AuthResult?) -> ()
+    typealias authHandler = (AuthResult) -> ()
     
     func login(email: String, password: String, handler: @escaping authHandler) {
         Auth.auth().signIn(withEmail: email, password: password) { authResult, error in
             var fError: AuthErrorCode
             if error != nil {
                 fError = AuthErrorCode(rawValue: error!._code)!
-                handler(authResult, AuthResult.failure(AuthError(code: fError)))
+                handler(AuthResult.failure(AuthError(code: fError)))
             }
-            handler(authResult, AuthResult.accept)
+            handler(AuthResult.accept)
         }
     }
     

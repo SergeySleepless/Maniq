@@ -25,6 +25,6 @@ protocol LoginPresenterInterface: PresenterInterface {
 }
 
 protocol LoginInteractorInterface: InteractorInterface {
-    func loginWith(username: String, password: String, handler: @escaping (AuthDataResult?, AuthResult?) -> ())
-    func loginWith(phoneNumber: String, password: String, handler: @escaping (AuthDataResult?, AuthResult?) -> ())
+    func loginWith(username: String, password: String, handler: @escaping (AuthResult) -> ())
+    func loginWith(phoneNumber: String, password: String, handler: @escaping (AuthResult) -> ())
 }
