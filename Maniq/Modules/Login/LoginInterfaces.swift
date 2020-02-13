@@ -13,6 +13,7 @@ import FirebaseAuth
 
 protocol LoginWireframeInterface: WireframeInterface {
     func routeToRegistration()
+    func routeTo(_ viewController: UIViewController)
 }
 
 protocol LoginViewInterface: ViewInterface {
@@ -21,10 +22,13 @@ protocol LoginViewInterface: ViewInterface {
 
 protocol LoginPresenterInterface: PresenterInterface {
     func showRegistration()
+    func show(_ viewController: UIViewController)
     func login(loginText: String, password: String)
+    func vkLogin(delegate: VKAuthDelegate)
 }
 
 protocol LoginInteractorInterface: InteractorInterface {
     func loginWith(username: String, password: String, handler: @escaping (AuthResult) -> ())
     func loginWith(phoneNumber: String, password: String, handler: @escaping (AuthResult) -> ())
+    func vkLogin(delegate: VKAuthDelegate)
 }

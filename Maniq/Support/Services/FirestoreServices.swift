@@ -9,12 +9,34 @@
 import Foundation
 import FirebaseFirestore
 
-class FirestoreServices {
-    
+protocol FirestoreInterface {
     typealias getQueryHandler = (QuerySnapshot?, Error?) -> ()
     typealias getEmailHandler = (String?) -> ()
+    typealias isNumberExistHandler = (Bool?, Error?) -> ()
+    
+    /// Получить snapshot по имени пользователя
+    func getSnapshotFrom(username: String, handler: @escaping getQueryHandler)
+    /// Получить snapshot по номеру телефона пользователя
+    func getSnapshotFrom(phoneNumber: String, handler: @escaping getQueryHandler)
+    /// Получить email из snapshota
+    func getEmail(querySnapshot: QuerySnapshot, handler: @escaping getEmailHandler)
+    /// Проверка номера телефона на наличие в базе
+    func checkNumberExist(phoneNumber: String, handler: @escaping isNumberExistHandler)
+}
+
+class FirestoreServices {
     
     private let firestore = Firestore.firestore()
+    
+    init() {
+        let settings = FirestoreSettings()
+        settings.isPersistenceEnabled = false
+        firestore.settings = settings
+    }
+    
+}
+
+extension FirestoreServices: FirestoreInterface {
     
     func getSnapshotFrom(username: String, handler: @escaping getQueryHandler) {
         firestore
@@ -35,23 +57,26 @@ class FirestoreServices {
     }
     
     func getEmail(querySnapshot: QuerySnapshot, handler: @escaping getEmailHandler) {
-        let email = getEmailFrom(documents: querySnapshot.documents)
+        var email: String?
+        if querySnapshot.documents.count == 1 {
+            let doc = querySnapshot.documents.first!
+            email = doc.data()["email"] as? String
+        } else {}
         handler(email)
     }
     
-    private func getEmailFrom(documents: [QueryDocumentSnapshot]) -> String? {
-        var email: String?
-        if documents.count == 1 {
-            let doc = documents.first!
-            email = doc.data()["email"] as? String
-        } else {}
-        return email
-    }
-    
-    init() {
-        let settings = FirestoreSettings()
-        settings.isPersistenceEnabled = false
-        firestore.settings = settings
+    func checkNumberExist(phoneNumber: String, handler: @escaping isNumberExistHandler) {
+        firestore
+            .collection("users")
+            .whereField("phoneNumber", isEqualTo: phoneNumber)
+            .getDocuments(source: .server) { (querySnapshot, error) in
+                if let error = error {
+                    handler(nil, error)
+                    return
+                }
+                let numberExist = !querySnapshot!.documents.isEmpty
+                handler(numberExist, error)
+        }
     }
     
 }

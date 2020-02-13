@@ -14,6 +14,8 @@ import FirebaseFirestore
 
 final class LoginInteractor {
     
+    private var vkAuth: VKAuth?
+    
     typealias authHandler = (AuthResult) -> ()
     
     // MARK: - Private Properties -
@@ -92,6 +94,12 @@ extension LoginInteractor: LoginInteractorInterface {
             }
             self.check(querySnapshot: snapshot)
         }
+    }
+    
+    func vkLogin(delegate: VKAuthDelegate) {
+        vkAuth = VKAuth()
+        vkAuth?.delegate = delegate
+        vkAuth?.wakeUpSession()
     }
     
 }

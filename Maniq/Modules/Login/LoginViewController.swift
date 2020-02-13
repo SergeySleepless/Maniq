@@ -40,6 +40,10 @@ final class LoginViewController: UIViewController {
         presenter.login(loginText: login.text!, password: password.text!)
     }
     
+    @IBAction func vkAuthButton(_ sender: UIButton) {
+        presenter.vkLogin(delegate: self)
+    }
+    
 }
 
 // MARK: - Extensions -
@@ -47,5 +51,19 @@ final class LoginViewController: UIViewController {
 extension LoginViewController: LoginViewInterface {
     func loadingView(show: Bool) {
         UIUtils.shared.showLoading(view: view, isShow: show)
+    }
+}
+
+extension LoginViewController: VKAuthDelegate {
+    func authShouldShow(_ viewController: UIViewController) {
+        //presenter.show(viewController)
+    }
+    
+    func authSignIn() {
+        
+    }
+    
+    func authDidSignInFail() {
+        
     }
 }

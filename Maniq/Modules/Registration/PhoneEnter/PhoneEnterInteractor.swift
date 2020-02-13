@@ -12,26 +12,33 @@ import Foundation
 import FirebaseAuth
 
 final class PhoneEnterInteractor {
+    
 }
 
 // MARK: - Extensions -
 
 extension PhoneEnterInteractor: PhoneEnterInteractorInterface {
     
-    func set(number: String) {
-        CurrentState.shared.phoneNumber = number
-    }
-    
-    func auth(authResult: @escaping (String, String?, Error?) -> ()) {
-        Auth.auth().languageCode = "ru"
-        let number = CurrentState.shared.phoneNumber!
-        PhoneAuthProvider.provider().verifyPhoneNumber(number, uiDelegate: nil) { (verificationID, error) in
-            authResult(number, verificationID, error)
+    func auth(phoneNumber: String, authResult: @escaping (String, String?, Error?) -> ()) {
+        firebaseServices.firestore.checkNumberExist(phoneNumber: phoneNumber) { isExist, error in
+            if let error = error {
+                authResult(phoneNumber, nil, error)
+                return
+            }
+            if isExist! {
+                authResult(phoneNumber, nil, RegistrationErrors.numberExist)
+                return
+            }
+            firebaseServices.auth.verifyPhone(phoneNumber: phoneNumber, handler: authResult)
         }
     }
     
     func saveVerificationID(verificationID: String) {
         CurrentState.shared.authVerificationID = verificationID
+    }
+    
+    func savePhoneNumber(phoneNumber: String) {
+        CurrentState.shared.phoneNumber = phoneNumber
     }
     
 }

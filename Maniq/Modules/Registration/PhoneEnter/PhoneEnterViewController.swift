@@ -15,10 +15,6 @@ final class PhoneEnterViewController: UIViewController {
     // MARK: - Public properties -
 
     var presenter: PhoneEnterPresenterInterface!
-
-    // MARK: - Private properties -
-
-    private let phoneNumber = ""
     
     // MARK: - Outlets -
     
@@ -30,8 +26,8 @@ final class PhoneEnterViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setTitle(title: "Регистрация")
-        hideKeyboard()
         configurePhoneTextField()
+        hideKeyboardWhenTappedAround()
     }
     
     private func configurePhoneTextField() {
@@ -40,7 +36,7 @@ final class PhoneEnterViewController: UIViewController {
     }
     
     @IBAction func nextButton(_ sender: UIButton) {
-        presenter.auth()
+        presenter.auth(phoneNumber: phoneNumberTextField.text!)
     }
     
 }
@@ -56,7 +52,6 @@ extension PhoneEnterViewController: PhoneEnterViewInterface {
     func loadingView(show: Bool) {
         UIUtils.shared.showLoading(view: view, isShow: show)
     }
-    
 }
 
 extension PhoneEnterViewController: UITextFieldDelegate {

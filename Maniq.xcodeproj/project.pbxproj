@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		07590376767AC22866FCCF30 /* Pods_ManiqTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BD2C20D34D569BB8A4F81BEE /* Pods_ManiqTests.framework */; };
 		5E1D637323E735440067E41F /* CreateUser.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5E1D636D23E735440067E41F /* CreateUser.storyboard */; };
 		5E1D637423E735440067E41F /* CreateUserInterfaces.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E1D636E23E735440067E41F /* CreateUserInterfaces.swift */; };
 		5E1D637523E735440067E41F /* CreateUserPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E1D636F23E735440067E41F /* CreateUserPresenter.swift */; };
@@ -26,13 +25,15 @@
 		5E2F3D3123E6F17E0008CEA9 /* LoginWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E2F3D2B23E6F17E0008CEA9 /* LoginWireframe.swift */; };
 		5E521A2123ED9582008D6823 /* FirestoreErrors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E521A2023ED9582008D6823 /* FirestoreErrors.swift */; };
 		5E521A2323EDBD1B008D6823 /* AuthResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E521A2223EDBD1B008D6823 /* AuthResult.swift */; };
-		5E521A2623EDC7EB008D6823 /* AuthErrorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E521A2523EDC7EB008D6823 /* AuthErrorProtocol.swift */; };
 		5E521A2823EDC808008D6823 /* NotFilled.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E521A2723EDC808008D6823 /* NotFilled.swift */; };
 		5E521A2A23EDC81D008D6823 /* WrongEnter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E521A2923EDC81D008D6823 /* WrongEnter.swift */; };
+		5E65355A23F5BF1200EC37BD /* EnterTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E65355923F5BF1200EC37BD /* EnterTextField.swift */; };
 		5E79583F23ED516100A2A6AD /* FirebaseServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E79583E23ED516100A2A6AD /* FirebaseServices.swift */; };
 		5E79584123ED51D500A2A6AD /* FirestoreServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E79584023ED51D500A2A6AD /* FirestoreServices.swift */; };
 		5E79584323ED526B00A2A6AD /* AuthServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E79584223ED526B00A2A6AD /* AuthServices.swift */; };
 		5E79584823ED688D00A2A6AD /* AuthErrors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E79584723ED688D00A2A6AD /* AuthErrors.swift */; };
+		5EB7FEF223F57F66004989C9 /* RegistrationErrors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EB7FEF123F57F66004989C9 /* RegistrationErrors.swift */; };
+		5EB7FEF423F5975B004989C9 /* VKAuth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EB7FEF323F5975B004989C9 /* VKAuth.swift */; };
 		5EC1610323E787BB00CEC7E7 /* CurrentState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EC1610223E787BB00CEC7E7 /* CurrentState.swift */; };
 		5EC9FB2E23E6F689006A029E /* BaseWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EC9FB2823E6F689006A029E /* BaseWireframe.swift */; };
 		5EC9FB2F23E6F689006A029E /* FormatterInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EC9FB2923E6F689006A029E /* FormatterInterface.swift */; };
@@ -85,7 +86,6 @@
 
 /* Begin PBXFileReference section */
 		2133BAC682CC93D510E812A6 /* Pods-Maniq.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Maniq.debug.xcconfig"; path = "Target Support Files/Pods-Maniq/Pods-Maniq.debug.xcconfig"; sourceTree = "<group>"; };
-		337D73A615F73BA22DEAF141 /* Pods-ManiqTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ManiqTests.debug.xcconfig"; path = "Target Support Files/Pods-ManiqTests/Pods-ManiqTests.debug.xcconfig"; sourceTree = "<group>"; };
 		5E1D636D23E735440067E41F /* CreateUser.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CreateUser.storyboard; sourceTree = "<group>"; };
 		5E1D636E23E735440067E41F /* CreateUserInterfaces.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateUserInterfaces.swift; sourceTree = "<group>"; };
 		5E1D636F23E735440067E41F /* CreateUserPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateUserPresenter.swift; sourceTree = "<group>"; };
@@ -106,14 +106,16 @@
 		5E2F3D2B23E6F17E0008CEA9 /* LoginWireframe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginWireframe.swift; sourceTree = "<group>"; };
 		5E521A2023ED9582008D6823 /* FirestoreErrors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirestoreErrors.swift; sourceTree = "<group>"; };
 		5E521A2223EDBD1B008D6823 /* AuthResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthResult.swift; sourceTree = "<group>"; };
-		5E521A2523EDC7EB008D6823 /* AuthErrorProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthErrorProtocol.swift; sourceTree = "<group>"; };
 		5E521A2723EDC808008D6823 /* NotFilled.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotFilled.swift; sourceTree = "<group>"; };
 		5E521A2923EDC81D008D6823 /* WrongEnter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WrongEnter.swift; sourceTree = "<group>"; };
+		5E65355923F5BF1200EC37BD /* EnterTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnterTextField.swift; sourceTree = "<group>"; };
 		5E79583E23ED516100A2A6AD /* FirebaseServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseServices.swift; sourceTree = "<group>"; };
 		5E79584023ED51D500A2A6AD /* FirestoreServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirestoreServices.swift; sourceTree = "<group>"; };
 		5E79584223ED526B00A2A6AD /* AuthServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthServices.swift; sourceTree = "<group>"; };
 		5E79584723ED688D00A2A6AD /* AuthErrors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthErrors.swift; sourceTree = "<group>"; };
 		5EB7606923EC2449001DD4F8 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		5EB7FEF123F57F66004989C9 /* RegistrationErrors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationErrors.swift; sourceTree = "<group>"; };
+		5EB7FEF323F5975B004989C9 /* VKAuth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VKAuth.swift; sourceTree = "<group>"; };
 		5EC1610223E787BB00CEC7E7 /* CurrentState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentState.swift; sourceTree = "<group>"; };
 		5EC9FB2823E6F689006A029E /* BaseWireframe.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseWireframe.swift; sourceTree = "<group>"; };
 		5EC9FB2923E6F689006A029E /* FormatterInterface.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FormatterInterface.swift; sourceTree = "<group>"; };
@@ -140,9 +142,7 @@
 		5EFB9A4623F4BBC400D121F0 /* ManiqTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ManiqTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5EFB9A4A23F4BBC400D121F0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7E36AFE35BC7807988EEF7C0 /* Pods-Maniq.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Maniq.release.xcconfig"; path = "Target Support Files/Pods-Maniq/Pods-Maniq.release.xcconfig"; sourceTree = "<group>"; };
-		BD2C20D34D569BB8A4F81BEE /* Pods_ManiqTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ManiqTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C5A5AA7F53799CC8F6B675FD /* Pods_Maniq.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Maniq.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		EC1D20A75C8E4EE08FCDABD8 /* Pods-ManiqTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ManiqTests.release.xcconfig"; path = "Target Support Files/Pods-ManiqTests/Pods-ManiqTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -158,7 +158,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				07590376767AC22866FCCF30 /* Pods_ManiqTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -170,8 +169,6 @@
 			children = (
 				2133BAC682CC93D510E812A6 /* Pods-Maniq.debug.xcconfig */,
 				7E36AFE35BC7807988EEF7C0 /* Pods-Maniq.release.xcconfig */,
-				337D73A615F73BA22DEAF141 /* Pods-ManiqTests.debug.xcconfig */,
-				EC1D20A75C8E4EE08FCDABD8 /* Pods-ManiqTests.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -250,6 +247,7 @@
 				5E79583E23ED516100A2A6AD /* FirebaseServices.swift */,
 				5E79584023ED51D500A2A6AD /* FirestoreServices.swift */,
 				5E79584223ED526B00A2A6AD /* AuthServices.swift */,
+				5EB7FEF323F5975B004989C9 /* VKAuth.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -257,11 +255,19 @@
 		5E79584423ED685B00A2A6AD /* Errors */ = {
 			isa = PBXGroup;
 			children = (
-				5E521A2523EDC7EB008D6823 /* AuthErrorProtocol.swift */,
+				5EB7FEF023F57F30004989C9 /* RegistrationErrors */,
 				5E521A2423EDC7CD008D6823 /* AuthErrors */,
 				5E521A2023ED9582008D6823 /* FirestoreErrors.swift */,
+				5EB7FEF123F57F66004989C9 /* RegistrationErrors.swift */,
 			);
 			path = Errors;
+			sourceTree = "<group>";
+		};
+		5EB7FEF023F57F30004989C9 /* RegistrationErrors */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = RegistrationErrors;
 			sourceTree = "<group>";
 		};
 		5EC9FB2723E6F689006A029E /* Base VIPER Interfaces */ = {
@@ -287,6 +293,7 @@
 				5EC9FB2723E6F689006A029E /* Base VIPER Interfaces */,
 				5ED1375523E76B6F00861B1B /* UIUtils.swift */,
 				5EC1610223E787BB00CEC7E7 /* CurrentState.swift */,
+				5E65355923F5BF1200EC37BD /* EnterTextField.swift */,
 			);
 			path = Support;
 			sourceTree = "<group>";
@@ -315,9 +322,9 @@
 		5EC9FB3923E6FFA5006A029E /* Registration */ = {
 			isa = PBXGroup;
 			children = (
-				5E1D636C23E7350D0067E41F /* CreateUser */,
 				5ED0AD6D23E71FD400AAEA0A /* PhoneEnter */,
 				5ED0AD6C23E71FBF00AAEA0A /* CheckCode */,
+				5E1D636C23E7350D0067E41F /* CreateUser */,
 			);
 			path = Registration;
 			sourceTree = "<group>";
@@ -360,7 +367,6 @@
 			isa = PBXGroup;
 			children = (
 				C5A5AA7F53799CC8F6B675FD /* Pods_Maniq.framework */,
-				BD2C20D34D569BB8A4F81BEE /* Pods_ManiqTests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -392,11 +398,9 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 5EFB9A4F23F4BBC400D121F0 /* Build configuration list for PBXNativeTarget "ManiqTests" */;
 			buildPhases = (
-				C6E67635C0D09F0D0F93C77E /* [CP] Check Pods Manifest.lock */,
 				5EFB9A4223F4BBC400D121F0 /* Sources */,
 				5EFB9A4323F4BBC400D121F0 /* Frameworks */,
 				5EFB9A4423F4BBC400D121F0 /* Resources */,
-				D995E530046707C710C6312B /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -494,45 +498,6 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		C6E67635C0D09F0D0F93C77E /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-ManiqTests-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		D995E530046707C710C6312B /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-ManiqTests/Pods-ManiqTests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-ManiqTests/Pods-ManiqTests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ManiqTests/Pods-ManiqTests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		DF0F937A3C53AD7FD513AAF0 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -569,6 +534,7 @@
 				5ED0AD6923E71FBC00AAEA0A /* CheckCodeViewController.swift in Sources */,
 				5ED0AD6723E71FBC00AAEA0A /* CheckCodeInterfaces.swift in Sources */,
 				5E521A2323EDBD1B008D6823 /* AuthResult.swift in Sources */,
+				5EB7FEF423F5975B004989C9 /* VKAuth.swift in Sources */,
 				5E2F3D1223E6F12E0008CEA9 /* AppDelegate.swift in Sources */,
 				5EC1610323E787BB00CEC7E7 /* CurrentState.swift in Sources */,
 				5E1D637723E735440067E41F /* CreateUserInteractor.swift in Sources */,
@@ -594,9 +560,10 @@
 				5EC9FB3323E6F689006A029E /* InteractorInterface.swift in Sources */,
 				5E2F3D2D23E6F17E0008CEA9 /* LoginInterfaces.swift in Sources */,
 				5ED0AD6B23E71FBC00AAEA0A /* CheckCodeWireframe.swift in Sources */,
+				5E65355A23F5BF1200EC37BD /* EnterTextField.swift in Sources */,
 				5E79584823ED688D00A2A6AD /* AuthErrors.swift in Sources */,
 				5EC9FB4123E6FFC1006A029E /* PhoneEnterInterfaces.swift in Sources */,
-				5E521A2623EDC7EB008D6823 /* AuthErrorProtocol.swift in Sources */,
+				5EB7FEF223F57F66004989C9 /* RegistrationErrors.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -790,7 +757,6 @@
 		};
 		5EFB9A4D23F4BBC400D121F0 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 337D73A615F73BA22DEAF141 /* Pods-ManiqTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
@@ -811,7 +777,6 @@
 		};
 		5EFB9A4E23F4BBC400D121F0 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = EC1D20A75C8E4EE08FCDABD8 /* Pods-ManiqTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;

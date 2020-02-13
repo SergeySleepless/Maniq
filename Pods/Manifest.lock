@@ -304,6 +304,8 @@ PODS:
   - PhoneNumberKit/UIKit (3.2.0):
     - PhoneNumberKit/PhoneNumberKitCore
   - PromisesObjC (1.2.8)
+  - Validator (3.2.1)
+  - VK-ios-sdk (1.5.1)
 
 DEPENDENCIES:
   - CBPinEntryView
@@ -315,6 +317,8 @@ DEPENDENCIES:
   - IQKeyboardManagerSwift
   - NVActivityIndicatorView
   - PhoneNumberKit
+  - Validator
+  - VK-ios-sdk
 
 SPEC REPOS:
   trunk:
@@ -346,6 +350,8 @@ SPEC REPOS:
     - NVActivityIndicatorView
     - PhoneNumberKit
     - PromisesObjC
+    - Validator
+    - VK-ios-sdk
 
 SPEC CHECKSUMS:
   abseil: 18063d773f5366ff8736a050fe035a28f635fd27
@@ -376,7 +382,9 @@ SPEC CHECKSUMS:
   NVActivityIndicatorView: d24b7ebcf80af5dcd994adb650e2b6c93379270f
   PhoneNumberKit: df411d46177d1492da84e10b6c093846dd861452
   PromisesObjC: c119f3cd559f50b7ae681fa59dc1acd19173b7e6
+  Validator: 80a6f567220c962dfd2d9928ae98a8c1d164f6f4
+  VK-ios-sdk: 62a10b6571fbcda0657f455fedce7fedf55b4cd0
 
-PODFILE CHECKSUM: 48c8130fa4cbe83e6258e8073059f8b7d1bdb65e
+PODFILE CHECKSUM: 8ae95a7e6d9b77e52563df8ec32132e06c4b4969
 
 COCOAPODS: 1.9.0.beta.2

@@ -10,5 +10,5 @@ import Foundation
 
 enum AuthResult {
     case accept
-    case failure(ErrorProtocol)
+    case failure(Error)
 }

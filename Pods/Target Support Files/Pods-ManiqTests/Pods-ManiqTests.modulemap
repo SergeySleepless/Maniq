@@ -1,6 +1,0 @@
-framework module Pods_ManiqTests {
-  umbrella header "Pods-ManiqTests-umbrella.h"
-
-  export *
-  module * { export * }
-}

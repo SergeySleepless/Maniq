@@ -105,6 +105,9 @@
                                             <constraint firstAttribute="width" constant="50" id="zsO-DT-wzR"/>
                                         </constraints>
                                         <state key="normal" image="icon_vk"/>
+                                        <connections>
+                                            <action selector="vkAuthButton:" destination="zIc-eW-6fX" eventType="touchUpInside" id="Mho-VS-tOT"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nio-zf-E5k">
                                         <rect key="frame" x="60" y="0.0" width="50" height="50"/>

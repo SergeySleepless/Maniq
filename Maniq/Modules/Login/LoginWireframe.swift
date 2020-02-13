@@ -38,4 +38,8 @@ extension LoginWireframe: LoginWireframeInterface {
         navigationController.setRootWireframe(registrationWireFrame)
         viewController.present(navigationController, animated: true, completion: nil)
     }
+    
+    func routeTo(_ viewController: UIViewController) {
+        navigationController?.pushViewController(viewController, animated: true)
+    }
 }

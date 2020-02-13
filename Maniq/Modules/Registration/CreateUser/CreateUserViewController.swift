@@ -12,27 +12,33 @@ import UIKit
 import FirebaseAuth
 
 final class CreateUserViewController: UIViewController {
-
+    
     // MARK: - Public properties -
-
+    
     var presenter: CreateUserPresenterInterface!
     
-    @IBOutlet weak var usernameTextField: UITextField!
-    @IBOutlet weak var emailTextField: UITextField!
-    @IBOutlet weak var passwordTextField: UITextField!
-    @IBOutlet weak var repeatPasswordTextField: UITextField!
+    @IBOutlet weak var usernameTextField: EnterTextField!
+    @IBOutlet weak var emailTextField: EnterTextField!
+    @IBOutlet weak var passwordTextField: EnterTextField!
+    @IBOutlet weak var repeatPasswordTextField: EnterTextField!
     @IBOutlet weak var roleSegmentedControl: UISegmentedControl!
     
     // MARK: - Lifecycle -
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setTitle(title: "Регистрация")
+        hideKeyboardWhenTappedAround()
         presenter.removePreviousControllers()
-        hideKeyboard()
     }
     
     @IBAction func signInPressed(_ sender: UIButton) {
+        guard presenter.isValid(userName: usernameTextField.text!),
+            presenter.isValid(email: emailTextField.text!),
+            presenter.isValid(password: passwordTextField.text!),
+            presenter.isEqual(password: passwordTextField.text!, repeatPassword: repeatPasswordTextField.text!)
+            else {return}
+        
         presenter.createUser(name: usernameTextField.text!, email: emailTextField.text!, password: passwordTextField.text!, isMaster: roleSegmentedControl!.selectedSegmentIndex == 0 ? false : true)
     }
     
@@ -41,6 +47,21 @@ final class CreateUserViewController: UIViewController {
 // MARK: - Extensions -
 
 extension CreateUserViewController: CreateUserViewInterface {
+    func userNameIsNotValid() {
+        usernameTextField.setError()
+    }
+    
+    func emainIsNotValid() {
+        emailTextField.setError()
+    }
+    
+    func passwordIsNotValid() {
+        passwordTextField.setError()
+    }
+    
+    func passwordIsNotEqual() {
+        repeatPasswordTextField.setError()
+    }
     
     func loadingView(show: Bool) {
         UIUtils.shared.showLoading(view: view, isShow: show)

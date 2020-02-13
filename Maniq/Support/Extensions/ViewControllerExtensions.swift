@@ -8,6 +8,7 @@
 
 import UIKit
 import NVActivityIndicatorView
+import IQKeyboardManagerSwift
 
 extension UIViewController {
     func hideKeyboardWhenTappedAround() {
@@ -16,8 +17,8 @@ extension UIViewController {
         view.addGestureRecognizer(tapGesture)
     }
 
-    @objc func hideKeyboard() {
-        view.endEditing(true)
+    @objc private func hideKeyboard() {
+        IQKeyboardManager.shared.resignFirstResponder()
     }
     
     func setTitle(title: String) {

@@ -57,8 +57,8 @@ enum FirestoreError {
     
 }
 
-extension FirestoreError: ErrorProtocol {
-    var message: String {
+extension FirestoreError: LocalizedError {
+    var errorDescription: String? {
         switch self {
         case .OK:
             return "Запись уже существует"

@@ -105,8 +105,8 @@ enum AuthError {
     
 }
 
-extension AuthError: ErrorProtocol {
-    var message: String {
+extension AuthError: LocalizedError {
+    var errorDescription: String? {
         switch self {
         case .userDisabled:
             return "Пользователь отключен"

@@ -34,7 +34,6 @@ extension PhoneEnterPresenter: PhoneEnterPresenterInterface {
     func getFormattedPhoneNumber(number: String) -> String {
         let cleanPhoneNumber = number.components(separatedBy: CharacterSet.decimalDigits.inverted).joined()
         let mask = "+X (XXX) XXX-XX-XX"
-        
         var result = ""
         var index = cleanPhoneNumber.startIndex
         for ch in mask where index < cleanPhoneNumber.endIndex {
@@ -45,22 +44,18 @@ extension PhoneEnterPresenter: PhoneEnterPresenterInterface {
                 result.append(ch)
             }
         }
-        interactor.set(number: result)
         view.nextButtonIs(enabled: result.count == mask.count)
         return result
     }
     
-    func set(number: String) {
-        interactor.set(number: number)
-    }
-    
-    func auth() {
+    func auth(phoneNumber: String) {
         view.loadingView(show: true)
-        interactor.auth() { number, verificationID, error in
+        interactor.auth(phoneNumber: phoneNumber) { number, verificationID, error in
             if let error = error {
                 self.wireframe.showErrorAlert(with: error.localizedDescription)
             } else {
                 self.interactor.saveVerificationID(verificationID: verificationID!)
+                self.interactor.savePhoneNumber(phoneNumber: phoneNumber)
                 self.wireframe.routeToCheckCode(number: number)
             }
             self.view.loadingView(show: false)

@@ -9,22 +9,29 @@
 import UIKit
 
 protocol PhoneEnterWireframeInterface: WireframeInterface {
+    /// Навигация до экрана проверки кода
     func routeToCheckCode(number: String)
 }
 
 protocol PhoneEnterViewInterface: ViewInterface {
+    /// Включение/Отключение кнопки "Далее"
     func nextButtonIs(enabled: Bool)
+    /// Показать/Скрыть загрузку
     func loadingView(show: Bool)
 }
 
 protocol PhoneEnterPresenterInterface: PresenterInterface {
+    /// Форматирование номера телефона в реальном времени
     func getFormattedPhoneNumber(number: String) -> String
-    func set(number: String)
-    func auth()
+    /// Авторизация по номеру телефона
+    func auth(phoneNumber: String)
 }
 
 protocol PhoneEnterInteractorInterface: InteractorInterface {
-    func set(number: String)
-    func auth(authResult: @escaping (String, String?, Error?) -> ())
+    /// Попытка авторизации по номеру телефона
+    func auth(phoneNumber: String, authResult: @escaping (String, String?, Error?) -> ())
+    /// Сохранить ID
     func saveVerificationID(verificationID: String)
+    /// Сохранить номер телефона
+    func savePhoneNumber(phoneNumber: String)
 }

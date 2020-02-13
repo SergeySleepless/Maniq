@@ -11,14 +11,36 @@
 import Foundation
 import FirebaseAuth
 import FirebaseFirestore
+import Validator
 
 final class CreateUserInteractor {
-    
 }
 
 // MARK: - Extensions -
 
 extension CreateUserInteractor: CreateUserInteractorInterface {
+    
+    func isValid(userName: String) -> Bool {
+        let RegEx = "[A-Z0-9a-z._]{5,18}"
+        let predicate = NSPredicate(format:"SELF MATCHES %@", RegEx)
+        return predicate.evaluate(with: userName)
+    }
+    
+    func isValid(email: String) -> Bool {
+        let RegEx = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}"
+        let predicate = NSPredicate(format:"SELF MATCHES %@", RegEx)
+        return predicate.evaluate(with: email)
+    }
+    
+    func isValid(password: String) -> Bool {
+        let RegEx = "[A-Z0-9a-z._]{6,18}"
+        let predicate = NSPredicate(format:"SELF MATCHES %@", RegEx)
+        return predicate.evaluate(with: password)
+    }
+    
+    func isEqual(password: String, repeatPassword: String) -> Bool {
+        return password == repeatPassword
+    }
     
     func createUser(name: String, email: String, password: String, isMaster: Bool, completionHandler: @escaping (AuthDataResult?, Error?) -> ()) {
         let credential = EmailAuthProvider.credential(withEmail: email, password: password)
@@ -26,15 +48,6 @@ extension CreateUserInteractor: CreateUserInteractorInterface {
         CurrentState.shared.user?.link(with: credential) { result, error in
             completionHandler(result, error)
         }
-        
-//        Auth.auth().createUser(withEmail: email, password: password) { _, error in
-//            if error == nil {
-//                CurrentState.shared.user?.link(with: CurrentState.shared.phoneAuthCredential!) { result, error in
-//                    print(error?.localizedDescription)
-//                    completionHandler(result, error)
-//                }
-//            }
-//        }
     }
     
     func createUserDB(uid: String, name: String, phoneNumber: String, email: String, isMaster: Bool, completionHandler: @escaping (Error?) -> ()) {

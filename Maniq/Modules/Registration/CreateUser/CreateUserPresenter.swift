@@ -34,7 +34,6 @@ final class CreateUserPresenter {
                 self.wireframe.showErrorAlert(with: error.localizedDescription)
                 return
             }
-            print("nice!")
             self.wireframe.dismiss(animated: true)
         }
     }
@@ -43,6 +42,42 @@ final class CreateUserPresenter {
 // MARK: - Extensions -
 
 extension CreateUserPresenter: CreateUserPresenterInterface {
+    func isValid(userName: String) -> Bool {
+        if !interactor.isValid(userName: userName) {
+            view.userNameIsNotValid()
+            wireframe.showAlert(with: "Недопустимое имя пользователя", message: "Имя пользователя должно состоять минимум из 5 символов, включая \".\" и \"_\"")
+            return false
+        }
+        return true
+    }
+    
+    func isValid(email: String) -> Bool {
+        if !interactor.isValid(email: email) {
+            view.emainIsNotValid()
+            wireframe.showAlert(with: "Недопустимый адрес электронной почты", message: "Адрес почты должен быть в формате \"example@mail.com\"")
+            return false
+        }
+        return true
+    }
+    
+    func isValid(password: String) -> Bool {
+        if !interactor.isValid(password: password) {
+            view.passwordIsNotValid()
+            wireframe.showAlert(with: "Недопустимый пароль", message: "Пароль должен состоять минимум из 6 символов, включая \".\" и \"_\"")
+            return false
+        }
+        return true
+    }
+    
+    func isEqual(password: String, repeatPassword: String) -> Bool {
+        if !interactor.isEqual(password: password, repeatPassword: repeatPassword) {
+            view.passwordIsNotEqual()
+            wireframe.showAlert(with: "Пароли не совпадают", message: "Проверьте правильность ввода паролей")
+            return false
+        }
+        return true
+    }
+    
     func removePreviousControllers() {
         wireframe.removePreviousControllers()
     }

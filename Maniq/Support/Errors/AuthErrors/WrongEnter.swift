@@ -12,8 +12,8 @@ enum WrongEnter {
     case loginDataIsWrong
 }
 
-extension WrongEnter: ErrorProtocol {
-    var message: String {
+extension WrongEnter: LocalizedError {
+    var errorDescription: String? {
         switch self {
         case .loginDataIsWrong:
             return "Проверьте правильность введенных данных"
