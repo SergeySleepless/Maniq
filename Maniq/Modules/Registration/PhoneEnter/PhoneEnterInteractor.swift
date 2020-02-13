@@ -1,5 +1,5 @@
 //
-//  RegistrationInteractor.swift
+//  PhoneEnterInteractor.swift
 //  Maniq
 //
 //  Created by Сергей Гаврилов on 02.02.2020.
@@ -11,12 +11,12 @@
 import Foundation
 import FirebaseAuth
 
-final class RegistrationInteractor {
+final class PhoneEnterInteractor {
 }
 
 // MARK: - Extensions -
 
-extension RegistrationInteractor: RegistrationInteractorInterface {
+extension PhoneEnterInteractor: PhoneEnterInteractorInterface {
     
     func set(number: String) {
         CurrentState.shared.phoneNumber = number

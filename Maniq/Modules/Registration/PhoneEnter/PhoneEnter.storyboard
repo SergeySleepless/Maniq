@@ -7,10 +7,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Registration View Controller-->
+        <!--Phone Enter View Controller-->
         <scene sceneID="XJ1-QA-Nrj">
             <objects>
-                <viewController storyboardIdentifier="RegistrationViewController" id="zIc-eW-6fX" customClass="RegistrationViewController" customModule="Maniq" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="PhoneEnterViewController" id="zIc-eW-6fX" customClass="PhoneEnterViewController" customModule="Maniq" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Z2g-4m-atm">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

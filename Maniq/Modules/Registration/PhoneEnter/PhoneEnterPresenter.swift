@@ -1,5 +1,5 @@
 //
-//  RegistrationPresenter.swift
+//  PhoneEnterPresenter.swift
 //  Maniq
 //
 //  Created by Сергей Гаврилов on 02.02.2020.
@@ -10,17 +10,17 @@
 
 import Foundation
 
-final class RegistrationPresenter {
+final class PhoneEnterPresenter {
     
     // MARK: - Private properties -
     
-    private unowned let view: RegistrationViewInterface
-    private let interactor: RegistrationInteractorInterface
-    private let wireframe: RegistrationWireframeInterface
+    private unowned let view: PhoneEnterViewInterface
+    private let interactor: PhoneEnterInteractorInterface
+    private let wireframe: PhoneEnterWireframeInterface
     
     // MARK: - Lifecycle -
     
-    init(view: RegistrationViewInterface, interactor: RegistrationInteractorInterface, wireframe: RegistrationWireframeInterface) {
+    init(view: PhoneEnterViewInterface, interactor: PhoneEnterInteractorInterface, wireframe: PhoneEnterWireframeInterface) {
         self.view = view
         self.interactor = interactor
         self.wireframe = wireframe
@@ -29,7 +29,7 @@ final class RegistrationPresenter {
 
 // MARK: - Extensions -
 
-extension RegistrationPresenter: RegistrationPresenterInterface {
+extension PhoneEnterPresenter: PhoneEnterPresenterInterface {
     
     func getFormattedPhoneNumber(number: String) -> String {
         let cleanPhoneNumber = number.components(separatedBy: CharacterSet.decimalDigits.inverted).joined()

@@ -41,12 +41,12 @@
 		5EC9FB3223E6F689006A029E /* ViewInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EC9FB2C23E6F689006A029E /* ViewInterface.swift */; };
 		5EC9FB3323E6F689006A029E /* InteractorInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EC9FB2D23E6F689006A029E /* InteractorInterface.swift */; };
 		5EC9FB3723E6FE8A006A029E /* ViewControllerExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EC9FB3623E6FE8A006A029E /* ViewControllerExtensions.swift */; };
-		5EC9FB4023E6FFC1006A029E /* Registration.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5EC9FB3A23E6FFC1006A029E /* Registration.storyboard */; };
-		5EC9FB4123E6FFC1006A029E /* RegistrationInterfaces.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EC9FB3B23E6FFC1006A029E /* RegistrationInterfaces.swift */; };
-		5EC9FB4223E6FFC1006A029E /* RegistrationPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EC9FB3C23E6FFC1006A029E /* RegistrationPresenter.swift */; };
-		5EC9FB4323E6FFC1006A029E /* RegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EC9FB3D23E6FFC1006A029E /* RegistrationViewController.swift */; };
-		5EC9FB4423E6FFC1006A029E /* RegistrationInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EC9FB3E23E6FFC1006A029E /* RegistrationInteractor.swift */; };
-		5EC9FB4523E6FFC1006A029E /* RegistrationWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EC9FB3F23E6FFC1006A029E /* RegistrationWireframe.swift */; };
+		5EC9FB4023E6FFC1006A029E /* PhoneEnter.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5EC9FB3A23E6FFC1006A029E /* PhoneEnter.storyboard */; };
+		5EC9FB4123E6FFC1006A029E /* PhoneEnterInterfaces.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EC9FB3B23E6FFC1006A029E /* PhoneEnterInterfaces.swift */; };
+		5EC9FB4223E6FFC1006A029E /* PhoneEnterPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EC9FB3C23E6FFC1006A029E /* PhoneEnterPresenter.swift */; };
+		5EC9FB4323E6FFC1006A029E /* PhoneEnterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EC9FB3D23E6FFC1006A029E /* PhoneEnterViewController.swift */; };
+		5EC9FB4423E6FFC1006A029E /* PhoneEnterInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EC9FB3E23E6FFC1006A029E /* PhoneEnterInteractor.swift */; };
+		5EC9FB4523E6FFC1006A029E /* PhoneEnterWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EC9FB3F23E6FFC1006A029E /* PhoneEnterWireframe.swift */; };
 		5ED0AD5F23E71B0900AAEA0A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5ED0AD5E23E71B0900AAEA0A /* GoogleService-Info.plist */; };
 		5ED0AD6623E71FBC00AAEA0A /* CheckCode.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5ED0AD6023E71FBC00AAEA0A /* CheckCode.storyboard */; };
 		5ED0AD6723E71FBC00AAEA0A /* CheckCodeInterfaces.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ED0AD6123E71FBC00AAEA0A /* CheckCodeInterfaces.swift */; };
@@ -55,9 +55,7 @@
 		5ED0AD6A23E71FBC00AAEA0A /* CheckCodeInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ED0AD6423E71FBC00AAEA0A /* CheckCodeInteractor.swift */; };
 		5ED0AD6B23E71FBC00AAEA0A /* CheckCodeWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ED0AD6523E71FBC00AAEA0A /* CheckCodeWireframe.swift */; };
 		5ED1375623E76B6F00861B1B /* UIUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ED1375523E76B6F00861B1B /* UIUtils.swift */; };
-		5ED1375823E76E8800861B1B /* BuildFile in Embed Frameworks */ = {isa = PBXBuildFile; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		5EFB9A4923F4BBC400D121F0 /* ManiqTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EFB9A4823F4BBC400D121F0 /* ManiqTests.swift */; };
-		5EFB9A5123F4BC0F00D121F0 /* AuthServicesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EFB9A5023F4BC0F00D121F0 /* AuthServicesTests.swift */; };
+		5ED1375823E76E8800861B1B /* (null) in Embed Frameworks */ = {isa = PBXBuildFile; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		8D9C4554F98C1EDDE57F7114 /* Pods_Maniq.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C5A5AA7F53799CC8F6B675FD /* Pods_Maniq.framework */; };
 /* End PBXBuildFile section */
 
@@ -78,7 +76,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				5ED1375823E76E8800861B1B /* BuildFile in Embed Frameworks */,
+				5ED1375823E76E8800861B1B /* (null) in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -124,12 +122,12 @@
 		5EC9FB2C23E6F689006A029E /* ViewInterface.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewInterface.swift; sourceTree = "<group>"; };
 		5EC9FB2D23E6F689006A029E /* InteractorInterface.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InteractorInterface.swift; sourceTree = "<group>"; };
 		5EC9FB3623E6FE8A006A029E /* ViewControllerExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerExtensions.swift; sourceTree = "<group>"; };
-		5EC9FB3A23E6FFC1006A029E /* Registration.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Registration.storyboard; sourceTree = "<group>"; };
-		5EC9FB3B23E6FFC1006A029E /* RegistrationInterfaces.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationInterfaces.swift; sourceTree = "<group>"; };
-		5EC9FB3C23E6FFC1006A029E /* RegistrationPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationPresenter.swift; sourceTree = "<group>"; };
-		5EC9FB3D23E6FFC1006A029E /* RegistrationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewController.swift; sourceTree = "<group>"; };
-		5EC9FB3E23E6FFC1006A029E /* RegistrationInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationInteractor.swift; sourceTree = "<group>"; };
-		5EC9FB3F23E6FFC1006A029E /* RegistrationWireframe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationWireframe.swift; sourceTree = "<group>"; };
+		5EC9FB3A23E6FFC1006A029E /* PhoneEnter.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PhoneEnter.storyboard; sourceTree = "<group>"; };
+		5EC9FB3B23E6FFC1006A029E /* PhoneEnterInterfaces.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneEnterInterfaces.swift; sourceTree = "<group>"; };
+		5EC9FB3C23E6FFC1006A029E /* PhoneEnterPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneEnterPresenter.swift; sourceTree = "<group>"; };
+		5EC9FB3D23E6FFC1006A029E /* PhoneEnterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneEnterViewController.swift; sourceTree = "<group>"; };
+		5EC9FB3E23E6FFC1006A029E /* PhoneEnterInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneEnterInteractor.swift; sourceTree = "<group>"; };
+		5EC9FB3F23E6FFC1006A029E /* PhoneEnterWireframe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneEnterWireframe.swift; sourceTree = "<group>"; };
 		5ED0AD5D23E7197300AAEA0A /* Maniq.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Maniq.entitlements; sourceTree = "<group>"; };
 		5ED0AD5E23E71B0900AAEA0A /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		5ED0AD6023E71FBC00AAEA0A /* CheckCode.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CheckCode.storyboard; sourceTree = "<group>"; };
@@ -140,9 +138,7 @@
 		5ED0AD6523E71FBC00AAEA0A /* CheckCodeWireframe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckCodeWireframe.swift; sourceTree = "<group>"; };
 		5ED1375523E76B6F00861B1B /* UIUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIUtils.swift; sourceTree = "<group>"; };
 		5EFB9A4623F4BBC400D121F0 /* ManiqTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ManiqTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		5EFB9A4823F4BBC400D121F0 /* ManiqTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManiqTests.swift; sourceTree = "<group>"; };
 		5EFB9A4A23F4BBC400D121F0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		5EFB9A5023F4BC0F00D121F0 /* AuthServicesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthServicesTests.swift; sourceTree = "<group>"; };
 		7E36AFE35BC7807988EEF7C0 /* Pods-Maniq.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Maniq.release.xcconfig"; path = "Target Support Files/Pods-Maniq/Pods-Maniq.release.xcconfig"; sourceTree = "<group>"; };
 		BD2C20D34D569BB8A4F81BEE /* Pods_ManiqTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ManiqTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C5A5AA7F53799CC8F6B675FD /* Pods_Maniq.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Maniq.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -320,7 +316,7 @@
 			isa = PBXGroup;
 			children = (
 				5E1D636C23E7350D0067E41F /* CreateUser */,
-				5ED0AD6D23E71FD400AAEA0A /* RegistrationEnter */,
+				5ED0AD6D23E71FD400AAEA0A /* PhoneEnter */,
 				5ED0AD6C23E71FBF00AAEA0A /* CheckCode */,
 			);
 			path = Registration;
@@ -339,25 +335,23 @@
 			path = CheckCode;
 			sourceTree = "<group>";
 		};
-		5ED0AD6D23E71FD400AAEA0A /* RegistrationEnter */ = {
+		5ED0AD6D23E71FD400AAEA0A /* PhoneEnter */ = {
 			isa = PBXGroup;
 			children = (
-				5EC9FB3A23E6FFC1006A029E /* Registration.storyboard */,
-				5EC9FB3B23E6FFC1006A029E /* RegistrationInterfaces.swift */,
-				5EC9FB3C23E6FFC1006A029E /* RegistrationPresenter.swift */,
-				5EC9FB3D23E6FFC1006A029E /* RegistrationViewController.swift */,
-				5EC9FB3E23E6FFC1006A029E /* RegistrationInteractor.swift */,
-				5EC9FB3F23E6FFC1006A029E /* RegistrationWireframe.swift */,
+				5EC9FB3A23E6FFC1006A029E /* PhoneEnter.storyboard */,
+				5EC9FB3B23E6FFC1006A029E /* PhoneEnterInterfaces.swift */,
+				5EC9FB3C23E6FFC1006A029E /* PhoneEnterPresenter.swift */,
+				5EC9FB3D23E6FFC1006A029E /* PhoneEnterViewController.swift */,
+				5EC9FB3E23E6FFC1006A029E /* PhoneEnterInteractor.swift */,
+				5EC9FB3F23E6FFC1006A029E /* PhoneEnterWireframe.swift */,
 			);
-			path = RegistrationEnter;
+			path = PhoneEnter;
 			sourceTree = "<group>";
 		};
 		5EFB9A4723F4BBC400D121F0 /* ManiqTests */ = {
 			isa = PBXGroup;
 			children = (
-				5EFB9A4823F4BBC400D121F0 /* ManiqTests.swift */,
 				5EFB9A4A23F4BBC400D121F0 /* Info.plist */,
-				5EFB9A5023F4BC0F00D121F0 /* AuthServicesTests.swift */,
 			);
 			path = ManiqTests;
 			sourceTree = "<group>";
@@ -460,7 +454,7 @@
 			files = (
 				5ED0AD5F23E71B0900AAEA0A /* GoogleService-Info.plist in Resources */,
 				5E2F3D2C23E6F17E0008CEA9 /* Login.storyboard in Resources */,
-				5EC9FB4023E6FFC1006A029E /* Registration.storyboard in Resources */,
+				5EC9FB4023E6FFC1006A029E /* PhoneEnter.storyboard in Resources */,
 				5E1D637323E735440067E41F /* CreateUser.storyboard in Resources */,
 				5E2F3D1E23E6F1340008CEA9 /* LaunchScreen.storyboard in Resources */,
 				5ED0AD6623E71FBC00AAEA0A /* CheckCode.storyboard in Resources */,
@@ -568,7 +562,7 @@
 				5E521A2123ED9582008D6823 /* FirestoreErrors.swift in Sources */,
 				5EC9FB3123E6F689006A029E /* PresenterInterface.swift in Sources */,
 				5E1D637523E735440067E41F /* CreateUserPresenter.swift in Sources */,
-				5EC9FB4423E6FFC1006A029E /* RegistrationInteractor.swift in Sources */,
+				5EC9FB4423E6FFC1006A029E /* PhoneEnterInteractor.swift in Sources */,
 				5EC9FB3023E6F689006A029E /* UIStoryboardExtension.swift in Sources */,
 				5ED0AD6823E71FBC00AAEA0A /* CheckCodePresenter.swift in Sources */,
 				5E1D637423E735440067E41F /* CreateUserInterfaces.swift in Sources */,
@@ -584,9 +578,9 @@
 				5E521A2823EDC808008D6823 /* NotFilled.swift in Sources */,
 				5ED1375623E76B6F00861B1B /* UIUtils.swift in Sources */,
 				5E1D637623E735440067E41F /* CreateUserViewController.swift in Sources */,
-				5EC9FB4323E6FFC1006A029E /* RegistrationViewController.swift in Sources */,
+				5EC9FB4323E6FFC1006A029E /* PhoneEnterViewController.swift in Sources */,
 				5E2F3D1423E6F12E0008CEA9 /* SceneDelegate.swift in Sources */,
-				5EC9FB4223E6FFC1006A029E /* RegistrationPresenter.swift in Sources */,
+				5EC9FB4223E6FFC1006A029E /* PhoneEnterPresenter.swift in Sources */,
 				5E1D637823E735440067E41F /* CreateUserWireframe.swift in Sources */,
 				5E79583F23ED516100A2A6AD /* FirebaseServices.swift in Sources */,
 				5E79584323ED526B00A2A6AD /* AuthServices.swift in Sources */,
@@ -594,14 +588,14 @@
 				5E2F3D3123E6F17E0008CEA9 /* LoginWireframe.swift in Sources */,
 				5E2F3D2F23E6F17E0008CEA9 /* LoginViewController.swift in Sources */,
 				5EC9FB3223E6F689006A029E /* ViewInterface.swift in Sources */,
-				5EC9FB4523E6FFC1006A029E /* RegistrationWireframe.swift in Sources */,
+				5EC9FB4523E6FFC1006A029E /* PhoneEnterWireframe.swift in Sources */,
 				5ED0AD6A23E71FBC00AAEA0A /* CheckCodeInteractor.swift in Sources */,
 				5E521A2A23EDC81D008D6823 /* WrongEnter.swift in Sources */,
 				5EC9FB3323E6F689006A029E /* InteractorInterface.swift in Sources */,
 				5E2F3D2D23E6F17E0008CEA9 /* LoginInterfaces.swift in Sources */,
 				5ED0AD6B23E71FBC00AAEA0A /* CheckCodeWireframe.swift in Sources */,
 				5E79584823ED688D00A2A6AD /* AuthErrors.swift in Sources */,
-				5EC9FB4123E6FFC1006A029E /* RegistrationInterfaces.swift in Sources */,
+				5EC9FB4123E6FFC1006A029E /* PhoneEnterInterfaces.swift in Sources */,
 				5E521A2623EDC7EB008D6823 /* AuthErrorProtocol.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -610,8 +604,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5EFB9A4923F4BBC400D121F0 /* ManiqTests.swift in Sources */,
-				5EFB9A5123F4BC0F00D121F0 /* AuthServicesTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -1,5 +1,5 @@
 //
-//  RegistrationViewController.swift
+//  PhoneEnterViewController.swift
 //  Maniq
 //
 //  Created by Сергей Гаврилов on 02.02.2020.
@@ -10,11 +10,11 @@
 
 import UIKit
 
-final class RegistrationViewController: UIViewController {
+final class PhoneEnterViewController: UIViewController {
 
     // MARK: - Public properties -
 
-    var presenter: RegistrationPresenterInterface!
+    var presenter: PhoneEnterPresenterInterface!
 
     // MARK: - Private properties -
 
@@ -47,7 +47,7 @@ final class RegistrationViewController: UIViewController {
 
 // MARK: - Extensions -
 
-extension RegistrationViewController: RegistrationViewInterface {
+extension PhoneEnterViewController: PhoneEnterViewInterface {
     func nextButtonIs(enabled: Bool) {
         nextButton.isEnabled = enabled
         nextButton.backgroundColor = enabled ? UIColor.blue : UIColor.lightGray
@@ -59,7 +59,7 @@ extension RegistrationViewController: RegistrationViewInterface {
     
 }
 
-extension RegistrationViewController: UITextFieldDelegate {
+extension PhoneEnterViewController: UITextFieldDelegate {
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         guard let text = textField.text else { return false }
         let newString = (text as NSString).replacingCharacters(in: range, with: string)

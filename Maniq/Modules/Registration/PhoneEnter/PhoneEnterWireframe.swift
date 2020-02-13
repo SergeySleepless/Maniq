@@ -1,5 +1,5 @@
 //
-//  RegistrationWireframe.swift
+//  PhoneEnterWireframe.swift
 //  Maniq
 //
 //  Created by Сергей Гаврилов on 02.02.2020.
@@ -10,20 +10,20 @@
 
 import UIKit
 
-final class RegistrationWireframe: BaseWireframe {
+final class PhoneEnterWireframe: BaseWireframe {
 
     // MARK: - Private properties -
 
-    private let storyboard = UIStoryboard(name: "Registration", bundle: nil)
+    private let storyboard = UIStoryboard(name: "PhoneEnter", bundle: nil)
 
     // MARK: - Module setup -
 
     init() {
-        let moduleViewController = storyboard.instantiateViewController(ofType: RegistrationViewController.self)
+        let moduleViewController = storyboard.instantiateViewController(ofType: PhoneEnterViewController.self)
         super.init(viewController: moduleViewController)
         
-        let interactor = RegistrationInteractor()
-        let presenter = RegistrationPresenter(view: moduleViewController, interactor: interactor, wireframe: self)
+        let interactor = PhoneEnterInteractor()
+        let presenter = PhoneEnterPresenter(view: moduleViewController, interactor: interactor, wireframe: self)
         moduleViewController.presenter = presenter
     }
 
@@ -31,7 +31,7 @@ final class RegistrationWireframe: BaseWireframe {
 
 // MARK: - Extensions -
 
-extension RegistrationWireframe: RegistrationWireframeInterface {
+extension PhoneEnterWireframe: PhoneEnterWireframeInterface {
     func routeToCheckCode(number: String) {
         let checkCodeWireframe = CheckCodeWireframe()
         (checkCodeWireframe.viewController as! CheckCodeViewController).number = number
