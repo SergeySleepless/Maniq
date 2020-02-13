@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		07590376767AC22866FCCF30 /* Pods_ManiqTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BD2C20D34D569BB8A4F81BEE /* Pods_ManiqTests.framework */; };
 		5E1D637323E735440067E41F /* CreateUser.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5E1D636D23E735440067E41F /* CreateUser.storyboard */; };
 		5E1D637423E735440067E41F /* CreateUserInterfaces.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E1D636E23E735440067E41F /* CreateUserInterfaces.swift */; };
 		5E1D637523E735440067E41F /* CreateUserPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E1D636F23E735440067E41F /* CreateUserPresenter.swift */; };
@@ -54,9 +55,21 @@
 		5ED0AD6A23E71FBC00AAEA0A /* CheckCodeInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ED0AD6423E71FBC00AAEA0A /* CheckCodeInteractor.swift */; };
 		5ED0AD6B23E71FBC00AAEA0A /* CheckCodeWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ED0AD6523E71FBC00AAEA0A /* CheckCodeWireframe.swift */; };
 		5ED1375623E76B6F00861B1B /* UIUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ED1375523E76B6F00861B1B /* UIUtils.swift */; };
-		5ED1375823E76E8800861B1B /* (null) in Embed Frameworks */ = {isa = PBXBuildFile; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		5ED1375823E76E8800861B1B /* BuildFile in Embed Frameworks */ = {isa = PBXBuildFile; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		5EFB9A4923F4BBC400D121F0 /* ManiqTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EFB9A4823F4BBC400D121F0 /* ManiqTests.swift */; };
+		5EFB9A5123F4BC0F00D121F0 /* AuthServicesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EFB9A5023F4BC0F00D121F0 /* AuthServicesTests.swift */; };
 		8D9C4554F98C1EDDE57F7114 /* Pods_Maniq.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C5A5AA7F53799CC8F6B675FD /* Pods_Maniq.framework */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		5EFB9A4B23F4BBC400D121F0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5E2F3D0623E6F12E0008CEA9 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5E2F3D0D23E6F12E0008CEA9;
+			remoteInfo = Maniq;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
 		5ED1375923E76E8800861B1B /* Embed Frameworks */ = {
@@ -65,7 +78,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				5ED1375823E76E8800861B1B /* (null) in Embed Frameworks */,
+				5ED1375823E76E8800861B1B /* BuildFile in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -74,6 +87,7 @@
 
 /* Begin PBXFileReference section */
 		2133BAC682CC93D510E812A6 /* Pods-Maniq.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Maniq.debug.xcconfig"; path = "Target Support Files/Pods-Maniq/Pods-Maniq.debug.xcconfig"; sourceTree = "<group>"; };
+		337D73A615F73BA22DEAF141 /* Pods-ManiqTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ManiqTests.debug.xcconfig"; path = "Target Support Files/Pods-ManiqTests/Pods-ManiqTests.debug.xcconfig"; sourceTree = "<group>"; };
 		5E1D636D23E735440067E41F /* CreateUser.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CreateUser.storyboard; sourceTree = "<group>"; };
 		5E1D636E23E735440067E41F /* CreateUserInterfaces.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateUserInterfaces.swift; sourceTree = "<group>"; };
 		5E1D636F23E735440067E41F /* CreateUserPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateUserPresenter.swift; sourceTree = "<group>"; };
@@ -125,8 +139,14 @@
 		5ED0AD6423E71FBC00AAEA0A /* CheckCodeInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckCodeInteractor.swift; sourceTree = "<group>"; };
 		5ED0AD6523E71FBC00AAEA0A /* CheckCodeWireframe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckCodeWireframe.swift; sourceTree = "<group>"; };
 		5ED1375523E76B6F00861B1B /* UIUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIUtils.swift; sourceTree = "<group>"; };
+		5EFB9A4623F4BBC400D121F0 /* ManiqTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ManiqTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		5EFB9A4823F4BBC400D121F0 /* ManiqTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManiqTests.swift; sourceTree = "<group>"; };
+		5EFB9A4A23F4BBC400D121F0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5EFB9A5023F4BC0F00D121F0 /* AuthServicesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthServicesTests.swift; sourceTree = "<group>"; };
 		7E36AFE35BC7807988EEF7C0 /* Pods-Maniq.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Maniq.release.xcconfig"; path = "Target Support Files/Pods-Maniq/Pods-Maniq.release.xcconfig"; sourceTree = "<group>"; };
+		BD2C20D34D569BB8A4F81BEE /* Pods_ManiqTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ManiqTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C5A5AA7F53799CC8F6B675FD /* Pods_Maniq.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Maniq.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		EC1D20A75C8E4EE08FCDABD8 /* Pods-ManiqTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ManiqTests.release.xcconfig"; path = "Target Support Files/Pods-ManiqTests/Pods-ManiqTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -138,6 +158,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		5EFB9A4323F4BBC400D121F0 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				07590376767AC22866FCCF30 /* Pods_ManiqTests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -146,6 +174,8 @@
 			children = (
 				2133BAC682CC93D510E812A6 /* Pods-Maniq.debug.xcconfig */,
 				7E36AFE35BC7807988EEF7C0 /* Pods-Maniq.release.xcconfig */,
+				337D73A615F73BA22DEAF141 /* Pods-ManiqTests.debug.xcconfig */,
+				EC1D20A75C8E4EE08FCDABD8 /* Pods-ManiqTests.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -167,6 +197,7 @@
 			isa = PBXGroup;
 			children = (
 				5E2F3D1023E6F12E0008CEA9 /* Maniq */,
+				5EFB9A4723F4BBC400D121F0 /* ManiqTests */,
 				5E2F3D0F23E6F12E0008CEA9 /* Products */,
 				3495A89DBDA0869BF948F8C4 /* Pods */,
 				9C02FDB0AC35E2A43FD7F0F6 /* Frameworks */,
@@ -177,6 +208,7 @@
 			isa = PBXGroup;
 			children = (
 				5E2F3D0E23E6F12E0008CEA9 /* Maniq.app */,
+				5EFB9A4623F4BBC400D121F0 /* ManiqTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -320,10 +352,21 @@
 			path = RegistrationEnter;
 			sourceTree = "<group>";
 		};
+		5EFB9A4723F4BBC400D121F0 /* ManiqTests */ = {
+			isa = PBXGroup;
+			children = (
+				5EFB9A4823F4BBC400D121F0 /* ManiqTests.swift */,
+				5EFB9A4A23F4BBC400D121F0 /* Info.plist */,
+				5EFB9A5023F4BC0F00D121F0 /* AuthServicesTests.swift */,
+			);
+			path = ManiqTests;
+			sourceTree = "<group>";
+		};
 		9C02FDB0AC35E2A43FD7F0F6 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
 				C5A5AA7F53799CC8F6B675FD /* Pods_Maniq.framework */,
+				BD2C20D34D569BB8A4F81BEE /* Pods_ManiqTests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -351,6 +394,26 @@
 			productReference = 5E2F3D0E23E6F12E0008CEA9 /* Maniq.app */;
 			productType = "com.apple.product-type.application";
 		};
+		5EFB9A4523F4BBC400D121F0 /* ManiqTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5EFB9A4F23F4BBC400D121F0 /* Build configuration list for PBXNativeTarget "ManiqTests" */;
+			buildPhases = (
+				C6E67635C0D09F0D0F93C77E /* [CP] Check Pods Manifest.lock */,
+				5EFB9A4223F4BBC400D121F0 /* Sources */,
+				5EFB9A4323F4BBC400D121F0 /* Frameworks */,
+				5EFB9A4423F4BBC400D121F0 /* Resources */,
+				D995E530046707C710C6312B /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				5EFB9A4C23F4BBC400D121F0 /* PBXTargetDependency */,
+			);
+			name = ManiqTests;
+			productName = ManiqTests;
+			productReference = 5EFB9A4623F4BBC400D121F0 /* ManiqTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -363,6 +426,10 @@
 				TargetAttributes = {
 					5E2F3D0D23E6F12E0008CEA9 = {
 						CreatedOnToolsVersion = 11.3.1;
+					};
+					5EFB9A4523F4BBC400D121F0 = {
+						CreatedOnToolsVersion = 11.3.1;
+						TestTargetID = 5E2F3D0D23E6F12E0008CEA9;
 					};
 				};
 			};
@@ -381,6 +448,7 @@
 			projectRoot = "";
 			targets = (
 				5E2F3D0D23E6F12E0008CEA9 /* Maniq */,
+				5EFB9A4523F4BBC400D121F0 /* ManiqTests */,
 			);
 		};
 /* End PBXProject section */
@@ -397,6 +465,13 @@
 				5E2F3D1E23E6F1340008CEA9 /* LaunchScreen.storyboard in Resources */,
 				5ED0AD6623E71FBC00AAEA0A /* CheckCode.storyboard in Resources */,
 				5E2F3D1B23E6F1340008CEA9 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5EFB9A4423F4BBC400D121F0 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -423,6 +498,45 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C6E67635C0D09F0D0F93C77E /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ManiqTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D995E530046707C710C6312B /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ManiqTests/Pods-ManiqTests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ManiqTests/Pods-ManiqTests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ManiqTests/Pods-ManiqTests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		DF0F937A3C53AD7FD513AAF0 /* [CP] Embed Pods Frameworks */ = {
@@ -492,7 +606,24 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		5EFB9A4223F4BBC400D121F0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5EFB9A4923F4BBC400D121F0 /* ManiqTests.swift in Sources */,
+				5EFB9A5123F4BC0F00D121F0 /* AuthServicesTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		5EFB9A4C23F4BBC400D121F0 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 5E2F3D0D23E6F12E0008CEA9 /* Maniq */;
+			targetProxy = 5EFB9A4B23F4BBC400D121F0 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		5E2F3D1C23E6F1340008CEA9 /* LaunchScreen.storyboard */ = {
@@ -665,6 +796,48 @@
 			};
 			name = Release;
 		};
+		5EFB9A4D23F4BBC400D121F0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 337D73A615F73BA22DEAF141 /* Pods-ManiqTests.debug.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 2C3QXWJ8H7;
+				INFOPLIST_FILE = ManiqTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = sg.ManiqTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Maniq.app/Maniq";
+			};
+			name = Debug;
+		};
+		5EFB9A4E23F4BBC400D121F0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = EC1D20A75C8E4EE08FCDABD8 /* Pods-ManiqTests.release.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 2C3QXWJ8H7;
+				INFOPLIST_FILE = ManiqTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = sg.ManiqTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Maniq.app/Maniq";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -682,6 +855,15 @@
 			buildConfigurations = (
 				5E2F3D2323E6F1340008CEA9 /* Debug */,
 				5E2F3D2423E6F1340008CEA9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5EFB9A4F23F4BBC400D121F0 /* Build configuration list for PBXNativeTarget "ManiqTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5EFB9A4D23F4BBC400D121F0 /* Debug */,
+				5EFB9A4E23F4BBC400D121F0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
