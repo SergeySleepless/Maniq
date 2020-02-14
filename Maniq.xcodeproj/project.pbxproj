@@ -27,7 +27,28 @@
 		5E521A2323EDBD1B008D6823 /* AuthResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E521A2223EDBD1B008D6823 /* AuthResult.swift */; };
 		5E521A2823EDC808008D6823 /* NotFilled.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E521A2723EDC808008D6823 /* NotFilled.swift */; };
 		5E521A2A23EDC81D008D6823 /* WrongEnter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E521A2923EDC81D008D6823 /* WrongEnter.swift */; };
+		5E5C934023F601FC001FE1D6 /* SuccessResetPassword.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5E5C933A23F601FC001FE1D6 /* SuccessResetPassword.storyboard */; };
+		5E5C934123F601FC001FE1D6 /* SuccessResetPasswordInterfaces.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E5C933B23F601FC001FE1D6 /* SuccessResetPasswordInterfaces.swift */; };
+		5E5C934223F601FC001FE1D6 /* SuccessResetPasswordPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E5C933C23F601FC001FE1D6 /* SuccessResetPasswordPresenter.swift */; };
+		5E5C934323F601FC001FE1D6 /* SuccessResetPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E5C933D23F601FC001FE1D6 /* SuccessResetPasswordViewController.swift */; };
+		5E5C934423F601FC001FE1D6 /* SuccessResetPasswordInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E5C933E23F601FC001FE1D6 /* SuccessResetPasswordInteractor.swift */; };
+		5E5C934523F601FC001FE1D6 /* SuccessResetPasswordWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E5C933F23F601FC001FE1D6 /* SuccessResetPasswordWireframe.swift */; };
 		5E65355A23F5BF1200EC37BD /* EnterTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E65355923F5BF1200EC37BD /* EnterTextField.swift */; };
+		5E65356323F5E5C100EC37BD /* ResetPassword.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5E65355D23F5E5C100EC37BD /* ResetPassword.storyboard */; };
+		5E65356423F5E5C100EC37BD /* ResetPasswordInterfaces.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E65355E23F5E5C100EC37BD /* ResetPasswordInterfaces.swift */; };
+		5E65356523F5E5C100EC37BD /* ResetPasswordPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E65355F23F5E5C100EC37BD /* ResetPasswordPresenter.swift */; };
+		5E65356623F5E5C100EC37BD /* ResetPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E65356023F5E5C100EC37BD /* ResetPasswordViewController.swift */; };
+		5E65356723F5E5C100EC37BD /* ResetPasswordInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E65356123F5E5C100EC37BD /* ResetPasswordInteractor.swift */; };
+		5E65356823F5E5C100EC37BD /* ResetPasswordWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E65356223F5E5C100EC37BD /* ResetPasswordWireframe.swift */; };
+		5E659C3923F74D980026D8DF /* ClientProfileDataCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E659C3823F74D980026D8DF /* ClientProfileDataCell.swift */; };
+		5E659C3B23F74E780026D8DF /* ClientProfileFeaturesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E659C3A23F74E780026D8DF /* ClientProfileFeaturesCell.swift */; };
+		5E659C3D23F74EEF0026D8DF /* ClientProfilePreferencesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E659C3C23F74EEF0026D8DF /* ClientProfilePreferencesCell.swift */; };
+		5E659C3F23F74F450026D8DF /* ClientProfileHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E659C3E23F74F450026D8DF /* ClientProfileHeaderCell.swift */; };
+		5E659C4223F74FCC0026D8DF /* ClientProfileDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E659C4123F74FCC0026D8DF /* ClientProfileDataSource.swift */; };
+		5E659C4423F751300026D8DF /* ClientData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E659C4323F751300026D8DF /* ClientData.swift */; };
+		5E659C4723F751500026D8DF /* UserProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E659C4623F751500026D8DF /* UserProtocol.swift */; };
+		5E659C4923F751F30026D8DF /* UserFeatures.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E659C4823F751F30026D8DF /* UserFeatures.swift */; };
+		5E659C4B23F7577B0026D8DF /* ClientProfileDataFeaturesEmpty.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E659C4A23F7577B0026D8DF /* ClientProfileDataFeaturesEmpty.swift */; };
 		5E79583F23ED516100A2A6AD /* FirebaseServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E79583E23ED516100A2A6AD /* FirebaseServices.swift */; };
 		5E79584123ED51D500A2A6AD /* FirestoreServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E79584023ED51D500A2A6AD /* FirestoreServices.swift */; };
 		5E79584323ED526B00A2A6AD /* AuthServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E79584223ED526B00A2A6AD /* AuthServices.swift */; };
@@ -57,6 +78,12 @@
 		5ED0AD6B23E71FBC00AAEA0A /* CheckCodeWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ED0AD6523E71FBC00AAEA0A /* CheckCodeWireframe.swift */; };
 		5ED1375623E76B6F00861B1B /* UIUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ED1375523E76B6F00861B1B /* UIUtils.swift */; };
 		5ED1375823E76E8800861B1B /* (null) in Embed Frameworks */ = {isa = PBXBuildFile; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		5EFDAD0A23F732DF004AFABD /* ClientProfile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5EFDAD0423F732DF004AFABD /* ClientProfile.storyboard */; };
+		5EFDAD0B23F732DF004AFABD /* ClientProfileInterfaces.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EFDAD0523F732DF004AFABD /* ClientProfileInterfaces.swift */; };
+		5EFDAD0C23F732DF004AFABD /* ClientProfilePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EFDAD0623F732DF004AFABD /* ClientProfilePresenter.swift */; };
+		5EFDAD0D23F732DF004AFABD /* ClientProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EFDAD0723F732DF004AFABD /* ClientProfileViewController.swift */; };
+		5EFDAD0E23F732DF004AFABD /* ClientProfileInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EFDAD0823F732DF004AFABD /* ClientProfileInteractor.swift */; };
+		5EFDAD0F23F732DF004AFABD /* ClientProfileWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EFDAD0923F732DF004AFABD /* ClientProfileWireframe.swift */; };
 		8D9C4554F98C1EDDE57F7114 /* Pods_Maniq.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C5A5AA7F53799CC8F6B675FD /* Pods_Maniq.framework */; };
 /* End PBXBuildFile section */
 
@@ -108,7 +135,28 @@
 		5E521A2223EDBD1B008D6823 /* AuthResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthResult.swift; sourceTree = "<group>"; };
 		5E521A2723EDC808008D6823 /* NotFilled.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotFilled.swift; sourceTree = "<group>"; };
 		5E521A2923EDC81D008D6823 /* WrongEnter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WrongEnter.swift; sourceTree = "<group>"; };
+		5E5C933A23F601FC001FE1D6 /* SuccessResetPassword.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SuccessResetPassword.storyboard; sourceTree = "<group>"; };
+		5E5C933B23F601FC001FE1D6 /* SuccessResetPasswordInterfaces.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuccessResetPasswordInterfaces.swift; sourceTree = "<group>"; };
+		5E5C933C23F601FC001FE1D6 /* SuccessResetPasswordPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuccessResetPasswordPresenter.swift; sourceTree = "<group>"; };
+		5E5C933D23F601FC001FE1D6 /* SuccessResetPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuccessResetPasswordViewController.swift; sourceTree = "<group>"; };
+		5E5C933E23F601FC001FE1D6 /* SuccessResetPasswordInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuccessResetPasswordInteractor.swift; sourceTree = "<group>"; };
+		5E5C933F23F601FC001FE1D6 /* SuccessResetPasswordWireframe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuccessResetPasswordWireframe.swift; sourceTree = "<group>"; };
 		5E65355923F5BF1200EC37BD /* EnterTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnterTextField.swift; sourceTree = "<group>"; };
+		5E65355D23F5E5C100EC37BD /* ResetPassword.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ResetPassword.storyboard; sourceTree = "<group>"; };
+		5E65355E23F5E5C100EC37BD /* ResetPasswordInterfaces.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPasswordInterfaces.swift; sourceTree = "<group>"; };
+		5E65355F23F5E5C100EC37BD /* ResetPasswordPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPasswordPresenter.swift; sourceTree = "<group>"; };
+		5E65356023F5E5C100EC37BD /* ResetPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPasswordViewController.swift; sourceTree = "<group>"; };
+		5E65356123F5E5C100EC37BD /* ResetPasswordInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPasswordInteractor.swift; sourceTree = "<group>"; };
+		5E65356223F5E5C100EC37BD /* ResetPasswordWireframe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPasswordWireframe.swift; sourceTree = "<group>"; };
+		5E659C3823F74D980026D8DF /* ClientProfileDataCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClientProfileDataCell.swift; sourceTree = "<group>"; };
+		5E659C3A23F74E780026D8DF /* ClientProfileFeaturesCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClientProfileFeaturesCell.swift; sourceTree = "<group>"; };
+		5E659C3C23F74EEF0026D8DF /* ClientProfilePreferencesCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClientProfilePreferencesCell.swift; sourceTree = "<group>"; };
+		5E659C3E23F74F450026D8DF /* ClientProfileHeaderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClientProfileHeaderCell.swift; sourceTree = "<group>"; };
+		5E659C4123F74FCC0026D8DF /* ClientProfileDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClientProfileDataSource.swift; sourceTree = "<group>"; };
+		5E659C4323F751300026D8DF /* ClientData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClientData.swift; sourceTree = "<group>"; };
+		5E659C4623F751500026D8DF /* UserProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProtocol.swift; sourceTree = "<group>"; };
+		5E659C4823F751F30026D8DF /* UserFeatures.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserFeatures.swift; sourceTree = "<group>"; };
+		5E659C4A23F7577B0026D8DF /* ClientProfileDataFeaturesEmpty.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClientProfileDataFeaturesEmpty.swift; sourceTree = "<group>"; };
 		5E79583E23ED516100A2A6AD /* FirebaseServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseServices.swift; sourceTree = "<group>"; };
 		5E79584023ED51D500A2A6AD /* FirestoreServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirestoreServices.swift; sourceTree = "<group>"; };
 		5E79584223ED526B00A2A6AD /* AuthServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthServices.swift; sourceTree = "<group>"; };
@@ -141,6 +189,12 @@
 		5ED1375523E76B6F00861B1B /* UIUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIUtils.swift; sourceTree = "<group>"; };
 		5EFB9A4623F4BBC400D121F0 /* ManiqTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ManiqTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5EFB9A4A23F4BBC400D121F0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5EFDAD0423F732DF004AFABD /* ClientProfile.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ClientProfile.storyboard; sourceTree = "<group>"; };
+		5EFDAD0523F732DF004AFABD /* ClientProfileInterfaces.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClientProfileInterfaces.swift; sourceTree = "<group>"; };
+		5EFDAD0623F732DF004AFABD /* ClientProfilePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClientProfilePresenter.swift; sourceTree = "<group>"; };
+		5EFDAD0723F732DF004AFABD /* ClientProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClientProfileViewController.swift; sourceTree = "<group>"; };
+		5EFDAD0823F732DF004AFABD /* ClientProfileInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClientProfileInteractor.swift; sourceTree = "<group>"; };
+		5EFDAD0923F732DF004AFABD /* ClientProfileWireframe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClientProfileWireframe.swift; sourceTree = "<group>"; };
 		7E36AFE35BC7807988EEF7C0 /* Pods-Maniq.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Maniq.release.xcconfig"; path = "Target Support Files/Pods-Maniq/Pods-Maniq.release.xcconfig"; sourceTree = "<group>"; };
 		C5A5AA7F53799CC8F6B675FD /* Pods_Maniq.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Maniq.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -225,8 +279,8 @@
 		5E2F3D2523E6F1470008CEA9 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
-				5EC9FB3923E6FFA5006A029E /* Registration */,
-				5EC9FB3823E6FEAA006A029E /* Login */,
+				5EFDAD0223F732A9004AFABD /* Main */,
+				5EFDAD0123F7329E004AFABD /* Enter */,
 			);
 			path = Modules;
 			sourceTree = "<group>";
@@ -239,6 +293,77 @@
 				5E521A2923EDC81D008D6823 /* WrongEnter.swift */,
 			);
 			path = AuthErrors;
+			sourceTree = "<group>";
+		};
+		5E5C933923F601C9001FE1D6 /* SuccessResetPassword */ = {
+			isa = PBXGroup;
+			children = (
+				5E5C933A23F601FC001FE1D6 /* SuccessResetPassword.storyboard */,
+				5E5C933B23F601FC001FE1D6 /* SuccessResetPasswordInterfaces.swift */,
+				5E5C933C23F601FC001FE1D6 /* SuccessResetPasswordPresenter.swift */,
+				5E5C933D23F601FC001FE1D6 /* SuccessResetPasswordViewController.swift */,
+				5E5C933E23F601FC001FE1D6 /* SuccessResetPasswordInteractor.swift */,
+				5E5C933F23F601FC001FE1D6 /* SuccessResetPasswordWireframe.swift */,
+			);
+			path = SuccessResetPassword;
+			sourceTree = "<group>";
+		};
+		5E65355B23F5E44700EC37BD /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				5E2F3D2623E6F17E0008CEA9 /* Login.storyboard */,
+				5E2F3D2723E6F17E0008CEA9 /* LoginInterfaces.swift */,
+				5E2F3D2823E6F17E0008CEA9 /* LoginPresenter.swift */,
+				5E2F3D2923E6F17E0008CEA9 /* LoginViewController.swift */,
+				5E2F3D2A23E6F17E0008CEA9 /* LoginInteractor.swift */,
+				5E2F3D2B23E6F17E0008CEA9 /* LoginWireframe.swift */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		5E65355C23F5E45300EC37BD /* ResetPassword */ = {
+			isa = PBXGroup;
+			children = (
+				5E65355D23F5E5C100EC37BD /* ResetPassword.storyboard */,
+				5E65355E23F5E5C100EC37BD /* ResetPasswordInterfaces.swift */,
+				5E65355F23F5E5C100EC37BD /* ResetPasswordPresenter.swift */,
+				5E65356023F5E5C100EC37BD /* ResetPasswordViewController.swift */,
+				5E65356123F5E5C100EC37BD /* ResetPasswordInteractor.swift */,
+				5E65356223F5E5C100EC37BD /* ResetPasswordWireframe.swift */,
+			);
+			path = ResetPassword;
+			sourceTree = "<group>";
+		};
+		5E659C3723F74D4D0026D8DF /* View */ = {
+			isa = PBXGroup;
+			children = (
+				5E659C4023F74FAD0026D8DF /* Cells */,
+				5EFDAD0723F732DF004AFABD /* ClientProfileViewController.swift */,
+				5E659C4123F74FCC0026D8DF /* ClientProfileDataSource.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		5E659C4023F74FAD0026D8DF /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				5E659C3823F74D980026D8DF /* ClientProfileDataCell.swift */,
+				5E659C3A23F74E780026D8DF /* ClientProfileFeaturesCell.swift */,
+				5E659C3C23F74EEF0026D8DF /* ClientProfilePreferencesCell.swift */,
+				5E659C3E23F74F450026D8DF /* ClientProfileHeaderCell.swift */,
+				5E659C4A23F7577B0026D8DF /* ClientProfileDataFeaturesEmpty.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		5E659C4523F7513F0026D8DF /* Users */ = {
+			isa = PBXGroup;
+			children = (
+				5E659C4323F751300026D8DF /* ClientData.swift */,
+				5E659C4623F751500026D8DF /* UserProtocol.swift */,
+				5E659C4823F751F30026D8DF /* UserFeatures.swift */,
+			);
+			path = Users;
 			sourceTree = "<group>";
 		};
 		5E79583D23ED512300A2A6AD /* Services */ = {
@@ -286,6 +411,7 @@
 		5EC9FB3423E6FE5D006A029E /* Support */ = {
 			isa = PBXGroup;
 			children = (
+				5E659C4523F7513F0026D8DF /* Users */,
 				5E521A2223EDBD1B008D6823 /* AuthResult.swift */,
 				5E79584423ED685B00A2A6AD /* Errors */,
 				5E79583D23ED512300A2A6AD /* Services */,
@@ -309,12 +435,9 @@
 		5EC9FB3823E6FEAA006A029E /* Login */ = {
 			isa = PBXGroup;
 			children = (
-				5E2F3D2623E6F17E0008CEA9 /* Login.storyboard */,
-				5E2F3D2723E6F17E0008CEA9 /* LoginInterfaces.swift */,
-				5E2F3D2823E6F17E0008CEA9 /* LoginPresenter.swift */,
-				5E2F3D2923E6F17E0008CEA9 /* LoginViewController.swift */,
-				5E2F3D2A23E6F17E0008CEA9 /* LoginInteractor.swift */,
-				5E2F3D2B23E6F17E0008CEA9 /* LoginWireframe.swift */,
+				5E5C933923F601C9001FE1D6 /* SuccessResetPassword */,
+				5E65355C23F5E45300EC37BD /* ResetPassword */,
+				5E65355B23F5E44700EC37BD /* Login */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -361,6 +484,36 @@
 				5EFB9A4A23F4BBC400D121F0 /* Info.plist */,
 			);
 			path = ManiqTests;
+			sourceTree = "<group>";
+		};
+		5EFDAD0123F7329E004AFABD /* Enter */ = {
+			isa = PBXGroup;
+			children = (
+				5EC9FB3923E6FFA5006A029E /* Registration */,
+				5EC9FB3823E6FEAA006A029E /* Login */,
+			);
+			path = Enter;
+			sourceTree = "<group>";
+		};
+		5EFDAD0223F732A9004AFABD /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				5EFDAD0323F732C6004AFABD /* ClientProfile */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		5EFDAD0323F732C6004AFABD /* ClientProfile */ = {
+			isa = PBXGroup;
+			children = (
+				5E659C3723F74D4D0026D8DF /* View */,
+				5EFDAD0423F732DF004AFABD /* ClientProfile.storyboard */,
+				5EFDAD0523F732DF004AFABD /* ClientProfileInterfaces.swift */,
+				5EFDAD0623F732DF004AFABD /* ClientProfilePresenter.swift */,
+				5EFDAD0823F732DF004AFABD /* ClientProfileInteractor.swift */,
+				5EFDAD0923F732DF004AFABD /* ClientProfileWireframe.swift */,
+			);
+			path = ClientProfile;
 			sourceTree = "<group>";
 		};
 		9C02FDB0AC35E2A43FD7F0F6 /* Frameworks */ = {
@@ -459,6 +612,9 @@
 				5ED0AD5F23E71B0900AAEA0A /* GoogleService-Info.plist in Resources */,
 				5E2F3D2C23E6F17E0008CEA9 /* Login.storyboard in Resources */,
 				5EC9FB4023E6FFC1006A029E /* PhoneEnter.storyboard in Resources */,
+				5EFDAD0A23F732DF004AFABD /* ClientProfile.storyboard in Resources */,
+				5E65356323F5E5C100EC37BD /* ResetPassword.storyboard in Resources */,
+				5E5C934023F601FC001FE1D6 /* SuccessResetPassword.storyboard in Resources */,
 				5E1D637323E735440067E41F /* CreateUser.storyboard in Resources */,
 				5E2F3D1E23E6F1340008CEA9 /* LaunchScreen.storyboard in Resources */,
 				5ED0AD6623E71FBC00AAEA0A /* CheckCode.storyboard in Resources */,
@@ -522,48 +678,72 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5E659C3F23F74F450026D8DF /* ClientProfileHeaderCell.swift in Sources */,
 				5EC9FB2F23E6F689006A029E /* FormatterInterface.swift in Sources */,
+				5E5C934323F601FC001FE1D6 /* SuccessResetPasswordViewController.swift in Sources */,
+				5E65356423F5E5C100EC37BD /* ResetPasswordInterfaces.swift in Sources */,
 				5E2F3D2E23E6F17E0008CEA9 /* LoginPresenter.swift in Sources */,
 				5E521A2123ED9582008D6823 /* FirestoreErrors.swift in Sources */,
 				5EC9FB3123E6F689006A029E /* PresenterInterface.swift in Sources */,
+				5E659C4B23F7577B0026D8DF /* ClientProfileDataFeaturesEmpty.swift in Sources */,
 				5E1D637523E735440067E41F /* CreateUserPresenter.swift in Sources */,
 				5EC9FB4423E6FFC1006A029E /* PhoneEnterInteractor.swift in Sources */,
 				5EC9FB3023E6F689006A029E /* UIStoryboardExtension.swift in Sources */,
 				5ED0AD6823E71FBC00AAEA0A /* CheckCodePresenter.swift in Sources */,
+				5E659C4923F751F30026D8DF /* UserFeatures.swift in Sources */,
 				5E1D637423E735440067E41F /* CreateUserInterfaces.swift in Sources */,
+				5E659C3D23F74EEF0026D8DF /* ClientProfilePreferencesCell.swift in Sources */,
+				5EFDAD0C23F732DF004AFABD /* ClientProfilePresenter.swift in Sources */,
 				5ED0AD6923E71FBC00AAEA0A /* CheckCodeViewController.swift in Sources */,
 				5ED0AD6723E71FBC00AAEA0A /* CheckCodeInterfaces.swift in Sources */,
 				5E521A2323EDBD1B008D6823 /* AuthResult.swift in Sources */,
 				5EB7FEF423F5975B004989C9 /* VKAuth.swift in Sources */,
+				5EFDAD0D23F732DF004AFABD /* ClientProfileViewController.swift in Sources */,
+				5E5C934523F601FC001FE1D6 /* SuccessResetPasswordWireframe.swift in Sources */,
 				5E2F3D1223E6F12E0008CEA9 /* AppDelegate.swift in Sources */,
+				5E65356523F5E5C100EC37BD /* ResetPasswordPresenter.swift in Sources */,
+				5EFDAD0F23F732DF004AFABD /* ClientProfileWireframe.swift in Sources */,
 				5EC1610323E787BB00CEC7E7 /* CurrentState.swift in Sources */,
 				5E1D637723E735440067E41F /* CreateUserInteractor.swift in Sources */,
 				5E2F3D3023E6F17E0008CEA9 /* LoginInteractor.swift in Sources */,
 				5EC9FB3723E6FE8A006A029E /* ViewControllerExtensions.swift in Sources */,
 				5EC9FB2E23E6F689006A029E /* BaseWireframe.swift in Sources */,
 				5E521A2823EDC808008D6823 /* NotFilled.swift in Sources */,
+				5E65356623F5E5C100EC37BD /* ResetPasswordViewController.swift in Sources */,
+				5E659C4723F751500026D8DF /* UserProtocol.swift in Sources */,
+				5E659C3923F74D980026D8DF /* ClientProfileDataCell.swift in Sources */,
 				5ED1375623E76B6F00861B1B /* UIUtils.swift in Sources */,
 				5E1D637623E735440067E41F /* CreateUserViewController.swift in Sources */,
 				5EC9FB4323E6FFC1006A029E /* PhoneEnterViewController.swift in Sources */,
 				5E2F3D1423E6F12E0008CEA9 /* SceneDelegate.swift in Sources */,
 				5EC9FB4223E6FFC1006A029E /* PhoneEnterPresenter.swift in Sources */,
+				5E65356823F5E5C100EC37BD /* ResetPasswordWireframe.swift in Sources */,
 				5E1D637823E735440067E41F /* CreateUserWireframe.swift in Sources */,
+				5E65356723F5E5C100EC37BD /* ResetPasswordInteractor.swift in Sources */,
 				5E79583F23ED516100A2A6AD /* FirebaseServices.swift in Sources */,
 				5E79584323ED526B00A2A6AD /* AuthServices.swift in Sources */,
+				5E659C4423F751300026D8DF /* ClientData.swift in Sources */,
 				5E79584123ED51D500A2A6AD /* FirestoreServices.swift in Sources */,
+				5E5C934123F601FC001FE1D6 /* SuccessResetPasswordInterfaces.swift in Sources */,
+				5E659C4223F74FCC0026D8DF /* ClientProfileDataSource.swift in Sources */,
+				5E5C934423F601FC001FE1D6 /* SuccessResetPasswordInteractor.swift in Sources */,
 				5E2F3D3123E6F17E0008CEA9 /* LoginWireframe.swift in Sources */,
 				5E2F3D2F23E6F17E0008CEA9 /* LoginViewController.swift in Sources */,
 				5EC9FB3223E6F689006A029E /* ViewInterface.swift in Sources */,
+				5EFDAD0E23F732DF004AFABD /* ClientProfileInteractor.swift in Sources */,
 				5EC9FB4523E6FFC1006A029E /* PhoneEnterWireframe.swift in Sources */,
 				5ED0AD6A23E71FBC00AAEA0A /* CheckCodeInteractor.swift in Sources */,
 				5E521A2A23EDC81D008D6823 /* WrongEnter.swift in Sources */,
+				5EFDAD0B23F732DF004AFABD /* ClientProfileInterfaces.swift in Sources */,
 				5EC9FB3323E6F689006A029E /* InteractorInterface.swift in Sources */,
 				5E2F3D2D23E6F17E0008CEA9 /* LoginInterfaces.swift in Sources */,
 				5ED0AD6B23E71FBC00AAEA0A /* CheckCodeWireframe.swift in Sources */,
 				5E65355A23F5BF1200EC37BD /* EnterTextField.swift in Sources */,
 				5E79584823ED688D00A2A6AD /* AuthErrors.swift in Sources */,
+				5E659C3B23F74E780026D8DF /* ClientProfileFeaturesCell.swift in Sources */,
 				5EC9FB4123E6FFC1006A029E /* PhoneEnterInterfaces.swift in Sources */,
 				5EB7FEF223F57F66004989C9 /* RegistrationErrors.swift in Sources */,
+				5E5C934223F601FC001FE1D6 /* SuccessResetPasswordPresenter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

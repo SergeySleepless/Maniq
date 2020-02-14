@@ -8,6 +8,7 @@
 
 import Foundation
 import Firebase
+import FirebaseAuth
 
 enum AuthError {
     static var notFilled = NotFilled.self

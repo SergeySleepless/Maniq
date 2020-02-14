@@ -11,15 +11,6 @@ import NVActivityIndicatorView
 import IQKeyboardManagerSwift
 
 extension UIViewController {
-    func hideKeyboardWhenTappedAround() {
-        let tapGesture = UITapGestureRecognizer(target: self,
-                         action: #selector(hideKeyboard))
-        view.addGestureRecognizer(tapGesture)
-    }
-
-    @objc private func hideKeyboard() {
-        IQKeyboardManager.shared.resignFirstResponder()
-    }
     
     func setTitle(title: String) {
         navigationItem.title = title
@@ -32,8 +23,8 @@ extension UIViewController {
         get {
             return UIViewController._loadingView
         }
-        set(newValue) {
-            UIViewController._loadingView = newValue
+        set(loadingView) {
+            UIViewController._loadingView = loadingView
         }
     }
     

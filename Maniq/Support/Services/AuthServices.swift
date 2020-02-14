@@ -10,13 +10,13 @@ import Foundation
 import FirebaseAuth
 
 protocol AuthServicesInterface {
-    typealias authHandler = (AuthResult) -> ()
-    typealias varifyNumberHandler = (String, String?, Error?) -> ()
     
     /// Авторизация по email и паролю
-    func login(email: String, password: String, handler: @escaping authHandler)
+    func login(email: String, password: String, handler: @escaping (AuthResult, String) -> ())
     /// Верификация номера телефона
-    func verifyPhone(phoneNumber: String, handler: @escaping varifyNumberHandler)
+    func verifyPhone(phoneNumber: String, handler: @escaping (String, String?, Error?) -> ())
+    /// Восстановление пароля
+    func resetPassword(email: String, handler: @escaping (AuthResult) -> ())
 }
 
 class AuthServices {
@@ -29,21 +29,31 @@ class AuthServices {
 
 extension AuthServices: AuthServicesInterface {
 
-    func login(email: String, password: String, handler: @escaping authHandler) {
+    func login(email: String, password: String, handler: @escaping (AuthResult, String) -> ()) {
         Auth.auth().signIn(withEmail: email, password: password) { authResult, error in
-            var fError: AuthErrorCode
-            if error != nil {
-                fError = AuthErrorCode(rawValue: error!._code)!
-                handler(AuthResult.failure(AuthError(code: fError)))
-                return
+            if let error = error {
+                let fError = AuthErrorCode(rawValue: error._code)!
+                handler(AuthResult.failure(AuthError(code: fError)), email)
+            } else {
+                handler(AuthResult.accept, email)
             }
-            handler(AuthResult.accept)
         }
     }
     
-    func verifyPhone(phoneNumber: String, handler: @escaping varifyNumberHandler) {
+    func verifyPhone(phoneNumber: String, handler: @escaping (String, String?, Error?) -> ()) {
         PhoneAuthProvider.provider().verifyPhoneNumber(phoneNumber, uiDelegate: nil) { (verificationID, error) in
             handler(phoneNumber, verificationID, error)
+        }
+    }
+    
+    func resetPassword(email: String, handler: @escaping (AuthResult) -> ()) {
+        Auth.auth().sendPasswordReset(withEmail: email) { (error) in
+            if let error = error {
+                let fError = AuthErrorCode(rawValue: error._code)!
+                handler(AuthResult.failure(AuthError(code: fError)))
+            } else {
+                handler(AuthResult.accept)
+            }
         }
     }
     

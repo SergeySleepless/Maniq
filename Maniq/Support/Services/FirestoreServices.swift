@@ -12,7 +12,7 @@ import FirebaseFirestore
 protocol FirestoreInterface {
     typealias getQueryHandler = (QuerySnapshot?, Error?) -> ()
     typealias getEmailHandler = (String?) -> ()
-    typealias isNumberExistHandler = (Bool?, Error?) -> ()
+    typealias getDataHandler = (Bool?, Error?) -> ()
     
     /// Получить snapshot по имени пользователя
     func getSnapshotFrom(username: String, handler: @escaping getQueryHandler)
@@ -21,7 +21,9 @@ protocol FirestoreInterface {
     /// Получить email из snapshota
     func getEmail(querySnapshot: QuerySnapshot, handler: @escaping getEmailHandler)
     /// Проверка номера телефона на наличие в базе
-    func checkNumberExist(phoneNumber: String, handler: @escaping isNumberExistHandler)
+    func checkNumberExist(phoneNumber: String, handler: @escaping getDataHandler)
+    /// Загрузить пользователя по почте
+    func loadClient(email: String, handler: @escaping (QueryDocumentSnapshot?, Error?) -> ())
 }
 
 class FirestoreServices {
@@ -65,7 +67,7 @@ extension FirestoreServices: FirestoreInterface {
         handler(email)
     }
     
-    func checkNumberExist(phoneNumber: String, handler: @escaping isNumberExistHandler) {
+    func checkNumberExist(phoneNumber: String, handler: @escaping getDataHandler) {
         firestore
             .collection("users")
             .whereField("phoneNumber", isEqualTo: phoneNumber)
@@ -76,6 +78,20 @@ extension FirestoreServices: FirestoreInterface {
                 }
                 let numberExist = !querySnapshot!.documents.isEmpty
                 handler(numberExist, error)
+        }
+    }
+    
+    func loadClient(email: String, handler: @escaping (QueryDocumentSnapshot?, Error?) -> ()) {
+        firestore
+        .collection("users")
+        .whereField("email", isEqualTo: email)
+            .getDocuments(source: .server) { (querySnapshot, error) in
+                if let error = error {
+                    handler(nil, error)
+                    return
+                }
+                let clientDocument = querySnapshot!.documents.first
+                handler(clientDocument, error)
         }
     }
     
