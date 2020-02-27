@@ -10,15 +10,14 @@ import UIKit
 
 protocol UserProtocol {
     var avatar: UIImage? { get }
-    var firstName: String? { get }
-    var lastName: String? { get }
-    var birthDate: Date? { get }
+    var name: String! { get }
+    var birthDate: Date! { get }
     var registrationDate: Date! { get }
     var phoneNumber: String! { get }
     var email: String! { get }
     var features: [UserFeatures] { get }
+    var isMaster: Bool! { get }
     
-    func getFullName() -> String?
     func getAge() -> String?
     func getRegistrationDate() -> String
 }

@@ -24,15 +24,24 @@ final class LoginPresenter {
         self.view = view
         self.interactor = interactor
         self.wireframe = wireframe
+        setObserverForLogin()
+    }
+    
+    private func setObserverForLogin() {
+        NotificationCenter.default.addObserver(forName: Notification.Name("RegisterCompleted"), object: nil, queue: nil) { (notification) in
+            self.loadUser(email: CurrentState.shared.email!)
+        }
     }
     
     private func loadUser(email: String) {
+        view.loadingView(show: true)
         self.interactor.loadUser(email: email) { (error) in
             if let error = error {
                 self.wireframe.showErrorAlert(with: error.localizedDescription)
             } else {
-                self.wireframe.showAlert(with: "Каеф", message: "Типа залогинился")
+                self.wireframe.routeToMain()
             }
+            self.view.loadingView(show: false)
         }
     }
     
@@ -102,6 +111,10 @@ extension LoginPresenter: LoginPresenterInterface {
     
     func showRegistration() {
         wireframe.routeToRegistration()
+    }
+    
+    func showMain() {
+        wireframe.routeToMain()
     }
     
     func login(loginText: String, password: String) {

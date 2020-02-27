@@ -10,6 +10,8 @@ import Foundation
 
 enum RegistrationErrors {
     case numberExist
+    case usernameExist
+    case emailExist
 }
 
 extension RegistrationErrors: LocalizedError {
@@ -17,6 +19,10 @@ extension RegistrationErrors: LocalizedError {
         switch self {
         case .numberExist:
             return "Указанный номер телефона уже зарегистрирован"
+        case .usernameExist:
+            return "Указанное имя пользователя уже зарегистрировано"
+        case .emailExist:
+            return "Указанный адрес электронной почты уже зарегистрирован"
         }
     }
 }

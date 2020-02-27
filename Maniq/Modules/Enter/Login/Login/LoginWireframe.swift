@@ -49,4 +49,14 @@ extension LoginWireframe: LoginWireframeInterface {
     func routeTo(_ viewController: UIViewController) {
         navigationController?.pushViewController(viewController, animated: true)
     }
+    
+    func routeToMain() {
+        let mainWireframe = ClientProfileWireframe()
+        (mainWireframe.viewController as! ClientProfileViewController).set(user: CurrentState.shared.clientData!)
+        let navController = UINavigationController()
+        navController.modalPresentationStyle = .fullScreen
+        navController.setRootWireframe(mainWireframe)
+        viewController.show(navController, sender: nil)
+    }
+    
 }

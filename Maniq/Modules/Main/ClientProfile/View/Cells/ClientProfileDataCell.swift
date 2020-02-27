@@ -19,13 +19,19 @@ class ClientProfileDataCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        configureView()
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
+    }
+    
+    private func configureView() {
+        avatarImageView.layer.cornerRadius = avatarImageView.frame.height / 2
+        avatarImageView.layer.borderWidth = 1
+        avatarImageView.layer.borderColor = UIColor.black.cgColor
     }
     
     @IBAction func phoneButton(_ sender: UIButton) {

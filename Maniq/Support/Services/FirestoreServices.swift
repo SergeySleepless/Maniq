@@ -22,6 +22,10 @@ protocol FirestoreInterface {
     func getEmail(querySnapshot: QuerySnapshot, handler: @escaping getEmailHandler)
     /// Проверка номера телефона на наличие в базе
     func checkNumberExist(phoneNumber: String, handler: @escaping getDataHandler)
+    /// Проверка email на наличие в базе
+    func checkEmailExist(email: String, handler: @escaping (Bool?, Error?) -> ())
+    /// Проверка username на наличие в базе
+    func checkUsernameExist(username: String, handler: @escaping (Bool?, Error?) -> ())
     /// Загрузить пользователя по почте
     func loadClient(email: String, handler: @escaping (QueryDocumentSnapshot?, Error?) -> ())
 }
@@ -41,20 +45,14 @@ class FirestoreServices {
 extension FirestoreServices: FirestoreInterface {
     
     func getSnapshotFrom(username: String, handler: @escaping getQueryHandler) {
-        firestore
-            .collection("users")
-            .whereField("username", isEqualTo: username)
-            .getDocuments(source: .server) { (querySnapshot, error) in
-                handler(querySnapshot, error)
+        firestore.collection("users").whereField("username", isEqualTo: username).getDocuments(source: .server) { (querySnapshot, error) in
+            handler(querySnapshot, error)
         }
     }
     
     func getSnapshotFrom(phoneNumber: String, handler: @escaping getQueryHandler) {
-        firestore
-            .collection("users")
-            .whereField("phoneNumber", isEqualTo: phoneNumber)
-            .getDocuments(source: .server) { (querySnapshot, error) in
-                handler(querySnapshot, error)
+        firestore.collection("users").whereField("phoneNumber", isEqualTo: phoneNumber).getDocuments(source: .server) { (querySnapshot, error) in
+            handler(querySnapshot, error)
         }
     }
     
@@ -68,30 +66,31 @@ extension FirestoreServices: FirestoreInterface {
     }
     
     func checkNumberExist(phoneNumber: String, handler: @escaping getDataHandler) {
-        firestore
-            .collection("users")
-            .whereField("phoneNumber", isEqualTo: phoneNumber)
-            .getDocuments(source: .server) { (querySnapshot, error) in
-                if let error = error {
-                    handler(nil, error)
-                    return
-                }
-                let numberExist = !querySnapshot!.documents.isEmpty
-                handler(numberExist, error)
+        firestore.collection("users").whereField("phoneNumber", isEqualTo: phoneNumber).getDocuments(source: .server) { (querySnapshot, error) in
+            let numberExist = querySnapshot?.documents.isEmpty
+            handler(numberExist == nil ? nil : !numberExist!, error)
+        }
+    }
+    
+    func checkEmailExist(email: String, handler: @escaping (Bool?, Error?) -> ()) {
+        firestore.collection("users").whereField("email", isEqualTo: email).getDocuments(source: .server) { (querySnapshot, error) in
+            let emailExist = querySnapshot?.documents.isEmpty
+            handler(emailExist == nil ? nil : !emailExist!, error)
+        }
+    }
+    
+    
+    func checkUsernameExist(username: String, handler: @escaping (Bool?, Error?) -> ()) {
+        firestore.collection("users").whereField("username", isEqualTo: username).getDocuments(source: .server) { (querySnapshot, error) in
+            let usernameExist = querySnapshot?.documents.isEmpty
+            handler(usernameExist == nil ? nil : !usernameExist!, error)
         }
     }
     
     func loadClient(email: String, handler: @escaping (QueryDocumentSnapshot?, Error?) -> ()) {
-        firestore
-        .collection("users")
-        .whereField("email", isEqualTo: email)
-            .getDocuments(source: .server) { (querySnapshot, error) in
-                if let error = error {
-                    handler(nil, error)
-                    return
-                }
-                let clientDocument = querySnapshot!.documents.first
-                handler(clientDocument, error)
+        firestore.collection("users").whereField("email", isEqualTo: email).getDocuments(source: .server) { (querySnapshot, error) in
+            let clientDocument = querySnapshot?.documents.first
+            handler(clientDocument, error)
         }
     }
     

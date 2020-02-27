@@ -15,6 +15,7 @@ protocol LoginWireframeInterface: WireframeInterface {
     func routeToRegistration()
     func routeTo(_ viewController: UIViewController)
     func routeToResetPassword()
+    func routeToMain()
 }
 
 protocol LoginViewInterface: ViewInterface {
@@ -24,6 +25,7 @@ protocol LoginViewInterface: ViewInterface {
 protocol LoginPresenterInterface: PresenterInterface {
     func showRegistration()
     func showResetPassword()
+    func showMain()
     func show(_ viewController: UIViewController)
     func login(loginText: String, password: String)
     func vkLogin(delegate: VKAuthDelegate)

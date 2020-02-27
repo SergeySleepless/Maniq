@@ -18,25 +18,32 @@ protocol CreateUserWireframeInterface: WireframeInterface {
 protocol CreateUserViewInterface: ViewInterface {
     func loadingView(show: Bool)
     func userNameIsNotValid()
-    func emainIsNotValid()
+    func emailIsNotValid()
+    func firstNameNotValid()
+    func birthDateIsNotValid()
     func passwordIsNotValid()
     func passwordIsNotEqual()
 }
 
 protocol CreateUserPresenterInterface: PresenterInterface {
-    func createUser(name: String, email: String, password: String, isMaster: Bool)
+    func createUser(username: String, email: String, name: String, birthDate: String, isMaster: Bool, password: String)
     func removePreviousControllers()
-    func isValid(userName: String) -> Bool
+    func isValid(username: String) -> Bool
     func isValid(email: String) -> Bool
+    func isValid(firstName: String) -> Bool
+    func isValid(birthDate: String) -> Bool
     func isValid(password: String) -> Bool
     func isEqual(password: String, repeatPassword: String) -> Bool
 }
 
 protocol CreateUserInteractorInterface: InteractorInterface {
-    func createUser(name: String, email: String, password: String, isMaster: Bool, completionHandler: @escaping (AuthDataResult?, Error?) -> ())
-    func createUserDB(uid: String, name: String, phoneNumber: String, email: String, isMaster: Bool, completionHandler: @escaping (Error?) -> ())
-    func isValid(userName: String) -> Bool
+    func createUser(email: String, password: String, isMaster: Bool, completionHandler: @escaping (AuthDataResult?, Error?) -> ())
+    func createUserDB(uid: String, username: String, phoneNumber: String, email: String, name: String, birthDate: Date, isMaster: Bool, completionHandler: @escaping (Error?) -> ())
+    func isValid(username: String) -> Bool
     func isValid(email: String) -> Bool
+    func isValid(firstName: String) -> Bool
+    func isValid(birthDate: String) -> Bool
     func isValid(password: String) -> Bool
     func isEqual(password: String, repeatPassword: String) -> Bool
+    func checkDataExist(email: String, username: String, handler: @escaping (Error?) ->())
 }

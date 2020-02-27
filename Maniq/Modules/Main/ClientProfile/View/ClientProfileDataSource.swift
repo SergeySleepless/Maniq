@@ -44,10 +44,10 @@ extension ClientProfileDataSource: ClientProfileDataSourceProtocol {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ClientProfileDataCell") as! ClientProfileDataCell
         cell.avatarImageView.image = user.avatar
         cell.ageLabel.text = user.getAge()
-        cell.fullNameLabel.text = user.getFullName()
+        cell.fullNameLabel.text = user.name
         cell.emailButton.setTitle(user.email, for: .normal)
         cell.phoneButton.setTitle(user.phoneNumber, for: .normal)
-        cell.registrationDateLabel.text = user.getRegistrationDate()
+        cell.registrationDateLabel.text = "Регистрация: \(user.getRegistrationDate())"
         return cell
     }
     

@@ -11,30 +11,36 @@
 import UIKit
 
 final class CreateUserPresenter {
-
+    
     // MARK: - Private properties -
-
+    
     private unowned let view: CreateUserViewInterface
     private let interactor: CreateUserInteractorInterface
     private let wireframe: CreateUserWireframeInterface
-
+    
     // MARK: - Lifecycle -
-
+    
     init(view: CreateUserViewInterface, interactor: CreateUserInteractorInterface, wireframe: CreateUserWireframeInterface) {
         self.view = view
         self.interactor = interactor
         self.wireframe = wireframe
     }
     
-    private func createUserDB(uid: String, name: String, email: String, isMaster: Bool) {
+    private func sendNotification() {
+        NotificationCenter.default.post(Notification(name: Notification.Name("RegisterCompleted")))
+    }
+    
+    private func createUserDB(uid: String, username: String, email: String, name: String, birthDate: Date, isMaster: Bool) {
         let phoneNumber = CurrentState.shared.phoneNumber!
-        interactor.createUserDB(uid: uid, name: name, phoneNumber: phoneNumber, email: email, isMaster: isMaster) { error in
+        interactor.createUserDB(uid: uid, username: username, phoneNumber: phoneNumber, email: email, name: name, birthDate: birthDate, isMaster: isMaster) { error in
             if let error = error {
                 self.view.loadingView(show: false)
                 self.wireframe.showErrorAlert(with: error.localizedDescription)
                 return
             }
             self.wireframe.dismiss(animated: true)
+            CurrentState.shared.email = email
+            self.sendNotification()
         }
     }
 }
@@ -42,8 +48,8 @@ final class CreateUserPresenter {
 // MARK: - Extensions -
 
 extension CreateUserPresenter: CreateUserPresenterInterface {
-    func isValid(userName: String) -> Bool {
-        if !interactor.isValid(userName: userName) {
+    func isValid(username: String) -> Bool {
+        if !interactor.isValid(username: username) {
             view.userNameIsNotValid()
             wireframe.showAlert(with: "Недопустимое имя пользователя", message: "Имя пользователя должно состоять минимум из 5 символов, включая \".\" и \"_\"")
             return false
@@ -53,8 +59,25 @@ extension CreateUserPresenter: CreateUserPresenterInterface {
     
     func isValid(email: String) -> Bool {
         if !interactor.isValid(email: email) {
-            view.emainIsNotValid()
+            view.emailIsNotValid()
             wireframe.showAlert(with: "Недопустимый адрес электронной почты", message: "Адрес почты должен быть в формате \"example@mail.com\"")
+            return false
+        }
+        return true
+    }
+    
+    func isValid(firstName: String) -> Bool {
+        if !interactor.isValid(firstName: firstName) {
+            wireframe.showAlert(with: "Недопустимое имя или фамилия", message: "Имя и фамилия должны содержать в себе только буквы")
+            return false
+        }
+        return true
+    }
+    
+    func isValid(birthDate: String) -> Bool {
+        if !interactor.isValid(birthDate: birthDate) {
+            view.birthDateIsNotValid()
+            wireframe.showAlert(with: "Недопустимая дата рождения", message: "Выберите дату рождения")
             return false
         }
         return true
@@ -82,15 +105,25 @@ extension CreateUserPresenter: CreateUserPresenterInterface {
         wireframe.removePreviousControllers()
     }
     
-    func createUser(name: String, email: String, password: String, isMaster: Bool) {
+    func createUser(username: String, email: String, name: String, birthDate: String, isMaster: Bool, password: String) {
         view.loadingView(show: true)
-        interactor.createUser(name: name, email: email, password: password, isMaster: isMaster) { result, error in
+        interactor.checkDataExist(email: email, username: username) { (error) in
             if let error = error {
                 self.view.loadingView(show: false)
                 self.wireframe.showErrorAlert(with: error.localizedDescription)
                 return
             }
-            self.createUserDB(uid: result!.user.uid, name: name, email: email, isMaster: isMaster)
+            self.interactor.createUser(email: email, password: password, isMaster: isMaster) { result, error in
+                if let error = error {
+                    self.view.loadingView(show: false)
+                    self.wireframe.showErrorAlert(with: error.localizedDescription)
+                    return
+                }
+                let dateFormatter = DateFormatter()
+                dateFormatter.dateFormat = "dd.MM.yyyy"
+                let date = dateFormatter.date(from: birthDate)
+                self.createUserDB(uid: result!.user.uid, username: username, email: email, name: name, birthDate: date!, isMaster: isMaster)
+            }
         }
     }
 }

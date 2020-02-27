@@ -18,6 +18,7 @@ final class CurrentState {
     var clientData: ClientData?
     var firebaseUser: User?
     var phoneNumber: String?
+    var email: String?
     var phoneAuthCredential: PhoneAuthCredential?
     var authVerificationID: String?
     

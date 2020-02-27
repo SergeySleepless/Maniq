@@ -21,9 +21,15 @@ final class ClientProfileViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+    }
+    
+    func set(user: ClientData) {
+        self.user = user
         data = ClientProfileDataSource(user: user)
         tableView.dataSource = data
         tableView.delegate = data
+        setTitle(title: user.username)
     }
 	
 }

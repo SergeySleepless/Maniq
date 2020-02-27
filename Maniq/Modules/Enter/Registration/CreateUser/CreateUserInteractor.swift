@@ -20,16 +20,30 @@ final class CreateUserInteractor {
 
 extension CreateUserInteractor: CreateUserInteractorInterface {
     
-    func isValid(userName: String) -> Bool {
-        let RegEx = "[A-Z0-9a-z._]{5,18}"
-        let predicate = NSPredicate(format:"SELF MATCHES %@", RegEx)
-        return predicate.evaluate(with: userName)
+    func isValid(username: String) -> Bool {
+        let regEx = "[A-Z0-9a-z._]{5,18}"
+        let predicate = NSPredicate(format:"SELF MATCHES %@", regEx)
+        return predicate.evaluate(with: username)
     }
     
     func isValid(email: String) -> Bool {
-        let RegEx = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}"
-        let predicate = NSPredicate(format:"SELF MATCHES %@", RegEx)
+        let regEx = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}"
+        let predicate = NSPredicate(format:"SELF MATCHES %@", regEx)
         return predicate.evaluate(with: email)
+    }
+    
+    func isValid(firstName: String) -> Bool {
+//        let regEx = "[A-Яa-я]"
+//        let predicate = NSPredicate(format:"SELF MATCHES %@", regEx)
+        return true
+    }
+    
+    func isValid(birthDate: String) -> Bool {
+        let dateFormatter = DateFormatter()
+        if dateFormatter.date(from: birthDate) == nil {
+            return true
+        }
+        return false
     }
     
     func isValid(password: String) -> Bool {
@@ -42,25 +56,64 @@ extension CreateUserInteractor: CreateUserInteractorInterface {
         return password == repeatPassword
     }
     
-    func createUser(name: String, email: String, password: String, isMaster: Bool, completionHandler: @escaping (AuthDataResult?, Error?) -> ()) {
+    func createUser(email: String, password: String, isMaster: Bool, completionHandler: @escaping (AuthDataResult?, Error?) -> ()) {
         let credential = EmailAuthProvider.credential(withEmail: email, password: password)
-        
         CurrentState.shared.firebaseUser?.link(with: credential) { result, error in
             completionHandler(result, error)
         }
     }
     
-    func createUserDB(uid: String, name: String, phoneNumber: String, email: String, isMaster: Bool, completionHandler: @escaping (Error?) -> ()) {
+    func createUserDB(uid: String, username: String, phoneNumber: String, email: String, name: String, birthDate: Date, isMaster: Bool, completionHandler: @escaping (Error?) -> ()) {
         let database = Firestore.firestore()
         database.collection("users").addDocument(data: [
-            "username": name,
+            "username": username,
             "phoneNumber": phoneNumber,
             "email": email,
+            "name": name,
+            "birthDate": Timestamp(date: birthDate),
             "isMaster": isMaster,
+            "registrationDate": Date(),
             "uid": uid
         ]) { error in
             completionHandler(error)
         }
+    }
+    
+    func checkDataExist(email: String, username: String, handler: @escaping (Error?) ->()) {
+        var isError = false
+        
+        let group = DispatchGroup()
+        
+        group.enter()
+        firebaseServices.firestore.checkEmailExist(email: email) { (isExist, error) in
+            if let error = error {
+                isError = true
+                handler(error)
+            } else if isExist != nil, isExist == true {
+                isError = true
+                handler(RegistrationErrors.emailExist)
+            }
+            group.leave()
+        }
+        
+        group.enter()
+        firebaseServices.firestore.checkUsernameExist(username: username) { (isExist, error) in
+            if let error = error {
+                isError = true
+                handler(error)
+            } else if isExist != nil, isExist == true {
+                isError = true
+                handler(RegistrationErrors.usernameExist)
+            }
+            group.leave()
+        }
+        
+        group.notify(queue: .main) {
+            if !isError {
+                handler(nil)
+            }
+        }
+        
     }
     
 }
