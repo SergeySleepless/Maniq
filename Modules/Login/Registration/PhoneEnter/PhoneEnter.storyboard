@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="zIc-eW-6fX">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Phone Enter View Controller-->
+        <scene sceneID="XJ1-QA-Nrj">
+            <objects>
+                <viewController storyboardIdentifier="PhoneEnterViewController" id="zIc-eW-6fX" customClass="PhoneEnterViewController" customModule="Login" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Z2g-4m-atm">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Введите номер телефона" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d6M-no-Ahl">
+                                <rect key="frame" x="51" y="20" width="273" height="29"/>
+                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="24"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="+X (XXX) XXX-XX-XX" textAlignment="natural" minimumFontSize="16" translatesAutoresizingMaskIntoConstraints="NO" id="xJj-3e-sT3">
+                                <rect key="frame" x="40" y="135.5" width="295" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="WuJ-P5-IFW"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numberPad" textContentType="tel"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KDa-dT-gpf">
+                                <rect key="frame" x="40" y="195.5" width="295" height="40"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="zMN-FM-tkP"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <state key="normal" title="Далее">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="nextButton:" destination="zIc-eW-6fX" eventType="touchUpInside" id="gdT-PB-SjS"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Maniq может отправлять Вам сообщения" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4KY-Sa-SZm">
+                                <rect key="frame" x="40" y="57" width="295" height="38.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <color key="textColor" systemColor="systemGrayColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="3pi-N7-nbV"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="xJj-3e-sT3" firstAttribute="leading" secondItem="3pi-N7-nbV" secondAttribute="leading" constant="40" id="DGI-VX-RJE"/>
+                            <constraint firstItem="d6M-no-Ahl" firstAttribute="centerX" secondItem="3pi-N7-nbV" secondAttribute="centerX" id="J0c-iL-Q2X"/>
+                            <constraint firstItem="3pi-N7-nbV" firstAttribute="trailing" secondItem="KDa-dT-gpf" secondAttribute="trailing" constant="40" id="Xkk-mP-hEV"/>
+                            <constraint firstItem="d6M-no-Ahl" firstAttribute="top" secondItem="3pi-N7-nbV" secondAttribute="top" constant="20" id="Xnt-vD-RBX"/>
+                            <constraint firstItem="4KY-Sa-SZm" firstAttribute="leading" secondItem="3pi-N7-nbV" secondAttribute="leading" constant="40" id="Ykn-8o-45q"/>
+                            <constraint firstItem="xJj-3e-sT3" firstAttribute="top" secondItem="4KY-Sa-SZm" secondAttribute="bottom" constant="40" id="Zfo-Z1-6rW"/>
+                            <constraint firstItem="3pi-N7-nbV" firstAttribute="trailing" secondItem="xJj-3e-sT3" secondAttribute="trailing" constant="40" id="hFl-PM-QOf"/>
+                            <constraint firstItem="3pi-N7-nbV" firstAttribute="trailing" secondItem="4KY-Sa-SZm" secondAttribute="trailing" constant="40" id="jMu-c8-p2n"/>
+                            <constraint firstItem="4KY-Sa-SZm" firstAttribute="top" secondItem="d6M-no-Ahl" secondAttribute="bottom" constant="8" id="l6n-2v-5Sx"/>
+                            <constraint firstItem="KDa-dT-gpf" firstAttribute="leading" secondItem="3pi-N7-nbV" secondAttribute="leading" constant="40" id="onu-TI-66I"/>
+                            <constraint firstItem="xJj-3e-sT3" firstAttribute="centerX" secondItem="3pi-N7-nbV" secondAttribute="centerX" id="qGZ-fF-k9k"/>
+                            <constraint firstItem="KDa-dT-gpf" firstAttribute="top" secondItem="xJj-3e-sT3" secondAttribute="bottom" constant="20" id="xYd-a5-xx5"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="nextButton" destination="KDa-dT-gpf" id="x3Z-9t-AEl"/>
+                        <outlet property="phoneTextField" destination="xJj-3e-sT3" id="5dq-hH-QV7"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rle-ol-2Ax" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-81" y="293"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemGrayColor">
+            <color red="0.55686274509803924" green="0.55686274509803924" blue="0.57647058823529407" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>

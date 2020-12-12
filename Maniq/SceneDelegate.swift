@@ -7,10 +7,13 @@
 //
 
 import UIKit
+import Login
+import ManiqUI
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
+    let mNavigationController = ManiqUIFactory.shared.makeNavigationController()
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         // Use this method to optionally configure and attach the UIWindow `window` to the provided UIWindowScene `scene`.
@@ -19,10 +22,11 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let windowScene = (scene as? UIWindowScene) else { return }
         window = UIWindow(frame: windowScene.coordinateSpace.bounds)
         window?.windowScene = windowScene
-        let loginWireframe = LoginWireframe()
-        let navigationController = UINavigationController()
-        navigationController.setRootWireframe(loginWireframe)
-        window?.rootViewController = navigationController
+        let viewController: UIViewController = {
+            return LoginFactory.shared.makeLoginViewController()
+        }()
+        mNavigationController.viewControllers = [viewController]
+        window?.rootViewController = mNavigationController
         window?.makeKeyAndVisible()
     }
 

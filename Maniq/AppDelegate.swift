@@ -11,8 +11,6 @@ import IQKeyboardManagerSwift
 import Firebase
 import VK_ios_sdk
 
-let firebaseServices = FirebaseServices()
-
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
