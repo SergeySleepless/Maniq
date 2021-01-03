@@ -15,9 +15,11 @@ enum CreateUsername {
             let username: String
         }
         struct Response {
+            let isExist: Bool?
             let error: Error?
         }
         struct ViewModel {
+            let isExist: Bool?
             let error: Error?
         }
     }

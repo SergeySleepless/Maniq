@@ -8,6 +8,7 @@
 
 import UIKit
 import ManiqUI
+import ManiqCore
 
 protocol PhoneEnterDisplayLogic: class {
     func displayFormatePhone(viewModel: PhoneEnter.FormatPhone.ViewModel)
@@ -53,6 +54,7 @@ class PhoneEnterViewController: LoadingViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         navigationBar(isHidden: false)
         phoneTextField.delegate = self
     }
@@ -89,6 +91,7 @@ extension PhoneEnterViewController: PhoneEnterDisplayLogic {
         hideLoading(from: view)
         if let error = viewModel.error {
             showErrorAlert(title: "Ошибка", body: error.localizedDescription)
+            phoneTextField.becomeFirstResponder()
         } else {
             router?.routeToCheckCode()
         }

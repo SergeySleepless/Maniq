@@ -10,12 +10,4 @@ import Foundation
 
 public protocol ManiqCoreFactoryProtocol {
     func makeUserDefaultsStorage() -> KeyValueStorage
-    
-    func makeModuleState(module: Module) -> ModuleStateProtocol
-    
-    func makeStateManager() -> StateManagerProtocol
-    
-    func makeState(module: Module,
-                   moduleState: ModuleStateProtocol,
-                   viewControllerIdentifier: String) -> StateProtocol
 }

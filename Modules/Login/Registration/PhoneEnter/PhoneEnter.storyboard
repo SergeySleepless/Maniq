@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="zIc-eW-6fX">
-    <device id="retina4_7" orientation="portrait" appearance="light"/>
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
@@ -14,17 +14,17 @@
             <objects>
                 <viewController storyboardIdentifier="PhoneEnterViewController" id="zIc-eW-6fX" customClass="PhoneEnterViewController" customModule="Login" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Z2g-4m-atm">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Введите номер телефона" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d6M-no-Ahl">
-                                <rect key="frame" x="51" y="20" width="273" height="29"/>
+                                <rect key="frame" x="40" y="64" width="334" height="29"/>
                                 <fontDescription key="fontDescription" type="system" weight="light" pointSize="24"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="+X (XXX) XXX-XX-XX" textAlignment="natural" minimumFontSize="16" translatesAutoresizingMaskIntoConstraints="NO" id="xJj-3e-sT3">
-                                <rect key="frame" x="40" y="135.5" width="295" height="40"/>
+                                <rect key="frame" x="40" y="160.5" width="334" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="WuJ-P5-IFW"/>
                                 </constraints>
@@ -32,7 +32,7 @@
                                 <textInputTraits key="textInputTraits" keyboardType="numberPad" textContentType="tel"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KDa-dT-gpf">
-                                <rect key="frame" x="40" y="195.5" width="295" height="40"/>
+                                <rect key="frame" x="40" y="220.5" width="334" height="40"/>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="zMN-FM-tkP"/>
@@ -51,7 +51,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Maniq может отправлять Вам сообщения" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4KY-Sa-SZm">
-                                <rect key="frame" x="40" y="57" width="295" height="38.5"/>
+                                <rect key="frame" x="40" y="101" width="334" height="19.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <color key="textColor" systemColor="systemGrayColor"/>
                                 <nil key="highlightedColor"/>
@@ -69,8 +69,10 @@
                             <constraint firstItem="3pi-N7-nbV" firstAttribute="trailing" secondItem="xJj-3e-sT3" secondAttribute="trailing" constant="40" id="hFl-PM-QOf"/>
                             <constraint firstItem="3pi-N7-nbV" firstAttribute="trailing" secondItem="4KY-Sa-SZm" secondAttribute="trailing" constant="40" id="jMu-c8-p2n"/>
                             <constraint firstItem="4KY-Sa-SZm" firstAttribute="top" secondItem="d6M-no-Ahl" secondAttribute="bottom" constant="8" id="l6n-2v-5Sx"/>
+                            <constraint firstItem="3pi-N7-nbV" firstAttribute="trailing" secondItem="d6M-no-Ahl" secondAttribute="trailing" constant="40" id="nNa-Cb-tky"/>
                             <constraint firstItem="KDa-dT-gpf" firstAttribute="leading" secondItem="3pi-N7-nbV" secondAttribute="leading" constant="40" id="onu-TI-66I"/>
                             <constraint firstItem="xJj-3e-sT3" firstAttribute="centerX" secondItem="3pi-N7-nbV" secondAttribute="centerX" id="qGZ-fF-k9k"/>
+                            <constraint firstItem="d6M-no-Ahl" firstAttribute="leading" secondItem="3pi-N7-nbV" secondAttribute="leading" constant="40" id="sYm-NF-Ydc"/>
                             <constraint firstItem="KDa-dT-gpf" firstAttribute="top" secondItem="xJj-3e-sT3" secondAttribute="bottom" constant="20" id="xYd-a5-xx5"/>
                         </constraints>
                     </view>

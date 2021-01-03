@@ -48,9 +48,9 @@ class ClientData: UserProtocol {
     }
     
     private func setFeatures(value: Any?) {
-        if let values = value as? [Int] {
-            //features = values.map { UserFeatures(rawValue: $0)! }
-        }
+//        if let values = value as? [Int] {
+//            //features = values.map { UserFeatures(rawValue: $0)! }
+//        }
     }
     
     func getAge() -> String? {

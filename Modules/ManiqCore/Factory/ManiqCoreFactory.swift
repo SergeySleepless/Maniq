@@ -21,22 +21,4 @@ extension ManiqCoreFactory: ManiqCoreFactoryProtocol {
         return UserDefaultsStorage()
     }
     
-    public func makeModuleState(module: Module) -> ModuleStateProtocol {
-        let storage = makeUserDefaultsStorage()
-        return ModuleState(storage: storage, module: module)
-    }
-    
-    public func makeStateManager() -> StateManagerProtocol {
-        let storage = makeUserDefaultsStorage()
-        return StateManager(storage: storage)
-    }
-    
-    public func makeState(module: Module,
-                          moduleState: ModuleStateProtocol,
-                          viewControllerIdentifier: String) -> StateProtocol {
-        return State(module: module,
-                     moduleState: moduleState,
-                     viewControllerIdentifier: viewControllerIdentifier)
-    }
-    
 }

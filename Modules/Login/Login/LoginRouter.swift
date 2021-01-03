@@ -11,7 +11,6 @@ import UIKit
 @objc protocol LoginRoutingLogic {
     func routeToRegistration()
     func routeToForgotPassword()
-    //func routeToSomewhere(segue: UIStoryboardSegue?)
 }
 
 protocol LoginDataPassing {
@@ -22,12 +21,6 @@ class LoginRouter: NSObject {
     
     weak var viewController: LoginViewController?
     var dataStore: LoginDataStore?
-    
-    // MARK: Navigation
-    
-//    func navigateToSomewhere(source: LoginViewController, destination: SomewhereViewController) {
-//        source.show(destination, sender: nil)
-//    }
     
 }
 
@@ -43,25 +36,18 @@ extension LoginRouter: LoginRoutingLogic {
     }
     
     func routeToForgotPassword() {
-        //let storyboard = UIStoryboard(name: "PhoneEnter", bundle: bundle)
+        let storyboard = UIStoryboard(name: "ResetPassword", bundle: bundle)
+        guard
+            let viewController = storyboard.instantiateInitialViewController()
+        else {
+            return
+        }
+        self.viewController?.show(viewController, sender: nil)
     }
-//    func routeToSomewhere(segue: UIStoryboardSegue?) {
-//        if let segue = segue {
-//            let destinationVC = segue.destination as! SomewhereViewController
-//            var destinationDS = destinationVC.router!.dataStore!
-//            passDataToSomewhere(source: dataStore!, destination: &destinationDS)
-//        } else {
-//            let storyboard = UIStoryboard(name: "Main", bundle: nil)
-//            let destinationVC = storyboard.instantiateViewController(withIdentifier: "SomewhereViewController") as! SomewhereViewController
-//            var destinationDS = destinationVC.router!.dataStore!
-//            passDataToSomewhere(source: dataStore!, destination: &destinationDS)
-//            navigateToSomewhere(source: viewController!, destination: destinationVC)
-//        }
-//    }
 }
 
 extension LoginRouter: LoginDataPassing {
-//    func passDataToSomewhere(source: LoginDataStore, destination: inout SomewhereDataStore) {
-//        destination.name = source.name
-//    }
+    func passDataToRegistration(source: LoginDataStore, destination: inout PhoneEnterDataStore) {
+        destination.userRegModel = source.userRegModel
+    }
 }

@@ -16,4 +16,8 @@ open class MessageViewController: BaseViewController {
         alertManager.showErrorAlert(title: title, body: body)
     }
     
+    public func showWarningAlert(title: String, body: String) {
+        alertManager.showWarningAlert(title: title, body: body)
+    }
+    
 }

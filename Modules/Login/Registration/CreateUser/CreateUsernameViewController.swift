@@ -10,7 +10,7 @@ import UIKit
 import ManiqUI
 
 protocol CreateUsernameDisplayLogic: class {
-    func displaySomething(viewModel: CreateUsername.SendUsername.ViewModel)
+    func displaySendUsername(viewModel: CreateUsername.SendUsername.ViewModel)
 }
 
 class CreateUsernameViewController: LoadingViewController {
@@ -65,13 +65,31 @@ class CreateUsernameViewController: LoadingViewController {
     }
     
     @IBAction func nextButton(_ sender: UIButton) {
+        guard
+            let username = usernameTextField.text
+        else {
+            return
+        }
+        usernameTextField.resignFirstResponder()
+        showLoading(from: view)
+        let request = CreateUsername.SendUsername.Request(username: username)
+        interactor?.sendUsername(request: request)
     }
     
 }
 
 extension CreateUsernameViewController: CreateUsernameDisplayLogic {
-    func displaySomething(viewModel: CreateUsername.SendUsername.ViewModel) {
-        
+    func displaySendUsername(viewModel: CreateUsername.SendUsername.ViewModel) {
+        hideLoading(from: view)
+        if let isExist = viewModel.isExist {
+            if isExist {
+                showErrorAlert(title: "Ошибка", body: "Указанное имя пользователя уже занято")
+            } else {
+                // TODO: Next
+            }
+        } else if let error = viewModel.error {
+            showErrorAlert(title: "Ошибка", body: error.localizedDescription)
+        }
     }
 }
 

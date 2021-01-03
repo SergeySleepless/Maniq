@@ -1,0 +1,8 @@
+project:
+  file: ../../../../Maniq.xcodeproj
+  target:
+    name: Maniq
+templates:
+  - ../../Templates/AutoMockable/Maniq.stencil
+output:
+  path: ../../../../ManiqTests/Mocks/

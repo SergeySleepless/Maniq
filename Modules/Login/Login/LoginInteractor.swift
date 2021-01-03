@@ -13,7 +13,7 @@ protocol LoginBusinessLogic {
 }
 
 protocol LoginDataStore {
-    //var name: String { get set }
+    var userRegModel: UserRegModelProtocol { get }
 }
 
 class LoginInteractor: LoginDataStore {
@@ -21,8 +21,8 @@ class LoginInteractor: LoginDataStore {
     var presenter: LoginPresentationLogic?
     var worker: LoginWorker?
     
-    //var name: String = ""
-
+    var userRegModel: UserRegModelProtocol = UserRegModel()
+    
 }
 
 extension LoginInteractor: LoginBusinessLogic {
@@ -33,15 +33,8 @@ extension LoginInteractor: LoginBusinessLogic {
         
         worker = LoginWorker()
         
-        worker?.login(login: login, password: password) { [weak self] (result) in
-            var response: Login.Login.Response
-            switch result {
-                case .accept:
-                    response = Login.Login.Response(error: nil)
-                case .failure(let error):
-                    response = Login.Login.Response(error: error)
-            }
-            self?.presenter?.presentLogin(response: response)
+        worker?.login(login: login, password: password) { [weak self] (error) in
+            self?.presenter?.presentLogin(response: .init(error: error))
         }
     }
     

@@ -353,6 +353,7 @@ PODS:
   - PhoneNumberKit/UIKit (3.3.1):
     - PhoneNumberKit/PhoneNumberKitCore
   - PromisesObjC (1.2.11)
+  - Sourcery (1.0.2)
   - SwiftMessages (8.0.3):
     - SwiftMessages/App (= 8.0.3)
   - SwiftMessages/App (8.0.3)
@@ -369,6 +370,7 @@ DEPENDENCIES:
   - IQKeyboardManagerSwift
   - NVActivityIndicatorView
   - PhoneNumberKit
+  - Sourcery
   - SwiftMessages
   - Validator
   - VK-ios-sdk
@@ -399,6 +401,7 @@ SPEC REPOS:
     - NVActivityIndicatorView
     - PhoneNumberKit
     - PromisesObjC
+    - Sourcery
     - SwiftMessages
     - Validator
     - VK-ios-sdk
@@ -428,10 +431,11 @@ SPEC CHECKSUMS:
   NVActivityIndicatorView: 1f6c5687f1171810aa27a3296814dc2d7dec3667
   PhoneNumberKit: ff153d5e299f6da566cb73c6aa71e354933b2932
   PromisesObjC: 8c196f5a328c2cba3e74624585467a557dcb482f
+  Sourcery: e8951e8759ef6a3a0cce412db64832dd23343041
   SwiftMessages: 063ec9ffea3ffa7d17ba595157a9ec78e4fe045f
   Validator: 80a6f567220c962dfd2d9928ae98a8c1d164f6f4
   VK-ios-sdk: 104a8bc259199fb1fc621c1c93d7a9a6befb4ca0
 
-PODFILE CHECKSUM: 99bbe9c26ed45916e99d1dc31417a2cfdb3ff0c2
+PODFILE CHECKSUM: dea418815034506e1c562b0379390c57ed07caca
 
 COCOAPODS: 1.10.0

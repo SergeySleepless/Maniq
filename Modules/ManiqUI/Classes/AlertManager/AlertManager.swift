@@ -27,4 +27,19 @@ extension AlertManager: AlertManagerProtocol {
         config.interactiveHide = true
         SwiftMessages.show(config: config, view: error)
     }
+    
+    func showWarningAlert(title: String, body: String) {
+        let warning = MessageView.viewFromNib(layout: .cardView)
+        warning.configureTheme(.warning)
+        warning.configureContent(title: title, body: body)
+        warning.button?.isHidden = true
+        
+        var config = SwiftMessages.Config()
+        config.presentationStyle = .top
+        config.presentationContext = .window(windowLevel: .statusBar)
+        config.duration = .forever
+        config.dimMode = .none
+        config.interactiveHide = true
+        SwiftMessages.show(config: config, view: warning)
+    }
 }

@@ -12,11 +12,9 @@ import ServicesCommon
 
 class LoginWorker {
     
-    typealias loginResponse = (BaseResult) -> ()
-    
     private let authService = FirebaseServiceFactory.shared.makeAuthService()
     
-    func login(login: String, password: String, completion: @escaping loginResponse) {
+    func login(login: String, password: String, completion: @escaping (Error?) -> ()) {
         if login.isEmail {
             self.login(email: login, password: password, completion: completion)
         } else if login.isPhoneNumber {
@@ -42,15 +40,15 @@ class LoginWorker {
         return result
     }
     
-    private func login(username: String, password: String, completion: @escaping loginResponse) {
+    private func login(username: String, password: String, completion: @escaping (Error?) -> ()) {
         authService.login(username: username, password: password, completion: completion)
     }
     
-    private func login(phone: String, password: String, completion: @escaping loginResponse) {
+    private func login(phone: String, password: String, completion: @escaping (Error?) -> ()) {
         authService.login(phone: phone, password: password, completion: completion)
     }
     
-    private func login(email: String, password: String, completion: @escaping loginResponse) {
+    private func login(email: String, password: String, completion: @escaping (Error?) -> ()) {
         authService.login(email: email, password: password, completion: completion)
     }
     

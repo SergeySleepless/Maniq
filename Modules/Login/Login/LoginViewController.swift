@@ -88,7 +88,7 @@ class LoginViewController: LoadingViewController {
     }
     
     @IBAction func forgotPasswordButton(_ sender: UIButton) {
-        
+        router?.routeToForgotPassword()
     }
     
     @IBAction func registerButton(_ sender: UIButton) {

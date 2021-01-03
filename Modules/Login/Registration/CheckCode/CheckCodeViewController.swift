@@ -52,6 +52,7 @@ class CheckCodeViewController: LoadingViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         configurePinEntryView()
         removePrevViewController()
     }

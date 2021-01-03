@@ -9,7 +9,7 @@
 import UIKit
 
 protocol CreateUsernamePresentationLogic {
-    func presentSomething(response: CreateUsername.SendUsername.Response)
+    func presentSendUsername(response: CreateUsername.SendUsername.Response)
 }
 
 class CreateUsernamePresenter {
@@ -19,8 +19,10 @@ class CreateUsernamePresenter {
 }
 
 extension CreateUsernamePresenter: CreateUsernamePresentationLogic {
-    func presentSomething(response: CreateUsername.SendUsername.Response) {
-//        let viewModel = CreateUsername.SendUsername.ViewModel()
-//        viewController?.displaySomething(viewModel: viewModel)
+    func presentSendUsername(response: CreateUsername.SendUsername.Response) {
+        let error = response.error
+        let isExist = response.isExist
+        let viewModel = CreateUsername.SendUsername.ViewModel(isExist: isExist, error: error)
+        viewController?.displaySendUsername(viewModel: viewModel)
     }
 }

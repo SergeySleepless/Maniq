@@ -41,5 +41,6 @@ extension PhoneEnterRouter: PhoneEnterRoutingLogic {
 extension PhoneEnterRouter: PhoneEnterDataPassing {
     func passDataToCheckCode(source: PhoneEnterDataStore, destination: inout CheckCodeDataStore) {
         destination.verificationId = source.verificationId
+        destination.userRegModel = source.userRegModel
     }
 }

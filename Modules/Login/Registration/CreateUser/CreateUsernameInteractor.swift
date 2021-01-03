@@ -13,23 +13,26 @@ protocol CreateUsernameBusinessLogic {
 }
 
 protocol CreateUsernameDataStore {
-    //var name: String { get set }
 }
 
 class CreateUsernameInteractor: CreateUsernameDataStore {
     
     var presenter: CreateUsernamePresentationLogic?
     var worker: CreateUsernameWorker?
-    
-    //var name: String = ""
 
 }
 
 extension CreateUsernameInteractor: CreateUsernameBusinessLogic {
     func sendUsername(request: CreateUsername.SendUsername.Request) {
+        let username = request.username
         worker = CreateUsernameWorker()
-        
-//        let response = CreateUsername.SendUsername.Response()
-//        presenter?.presentSomething(response: response)
+        worker?.sendUsername(username: username) { result in
+            switch result {
+                case .success(let isExist):
+                    self.presenter?.presentSendUsername(response: .init(isExist: isExist, error: nil))
+                case .failure(let error):
+                    self.presenter?.presentSendUsername(response: .init(isExist: nil, error: error))
+            }
+        }
     }
 }

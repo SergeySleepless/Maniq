@@ -13,7 +13,15 @@ class CreateUsernameWorker {
     
     private let firestore = FirebaseServiceFactory.shared.makeFirestoreService()
     
-    func sendUsername(username: String, completion: @escaping (Bool?, Error?) -> ()) {
+    func sendUsername(username: String, completion: @escaping (Result<Bool, Error>) -> ()) {
+        firestore.checkUsernameExist(username: username) { (result) in
+            switch result {
+                case .success(let isExist):
+                    completion(.failure(<#T##Error#>))
+                case .failure(let error):
+                    <#code#>
+            }
+        }
         firestore.checkUsernameExist(username: username, completion: completion)
     }
     

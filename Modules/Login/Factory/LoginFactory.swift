@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import ManiqCore
 
 let bundle = LoginFactory.shared.bundle
 

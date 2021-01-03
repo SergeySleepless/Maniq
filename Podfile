@@ -1,5 +1,5 @@
 # Uncomment the next line to define a global platform for your project
-# platform :ios, '9.0'
+platform :ios, '13.0'
 
 use_frameworks!
 
@@ -9,6 +9,7 @@ target 'FirebaseService' do
 	pod 'Firebase/Firestore'
 	pod 'Firebase/Database'
 	pod 'Firebase/Functions'
+	pod 'Sourcery'
 end
 
 target 'Maniq' do
@@ -17,21 +18,28 @@ target 'Maniq' do
 	pod 'IQKeyboardManagerSwift'
 	pod 'Validator'
 	pod "VK-ios-sdk"
+	pod 'Sourcery'
 end
 
 target 'ServicesCommon' do
-
+	pod 'Sourcery'
 end
 
 target 'Login' do 
 	pod "CBPinEntryView"
+	pod 'Sourcery'
 end
 
 target 'LoginTests' do
   inherit! :search_paths
 end
 
+target 'FirebaseServiceTests' do
+  inherit! :search_paths
+end
+
 target 'ManiqUI' do
 	pod 'SwiftMessages'
 	pod 'NVActivityIndicatorView'
+	pod 'Sourcery'
 end

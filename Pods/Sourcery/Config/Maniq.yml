@@ -1,0 +1,8 @@
+project:
+  file: ../../../Maniq.xcworkspace
+  target:
+    name: Maniq
+templates: 
+  - ../Templates/AutoCases.stencil
+output:
+  path: ../../../Maniq/Generated/

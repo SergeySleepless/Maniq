@@ -1,0 +1,8 @@
+project:
+  file: ../../../../Maniq.xcodeproj
+  target:
+    name: FirebaseService
+templates:
+  - ../../Templates/AutoMockable/FirebaseService.stencil
+output:
+  path: ../../../../Modules/FirebaseService/FirebaseServiceTests/Mocks/

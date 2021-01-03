@@ -11,15 +11,13 @@ import ManiqCore
 
 open class BaseViewController: UIViewController {
     
-    private var stateManager: StateManagerProtocol?
     private var navController: MNavigationController?
     
-    var isNeedSetState: Bool = true
+    public var isNeedSetState: Bool = true
     
     open override func viewDidLoad() {
         super.viewDidLoad()
         navigationItem.backButtonTitle = ""
-        stateManager = ManiqCoreFactory.shared.makeStateManager()
     }
     
     private func setNavController() {
@@ -34,14 +32,6 @@ open class BaseViewController: UIViewController {
     public func removePrevViewController() {
         navController = navigationController as? MNavigationController
         navController?.removePrevViewController()
-    }
-    
-    func setState(module: Module, viewControllerIdentifier: String) {
-        let moduleState = ManiqCoreFactory.shared.makeModuleState(module: module)
-        let state = ManiqCoreFactory.shared.makeState(module: module,
-                                                      moduleState: moduleState,
-                                                      viewControllerIdentifier: viewControllerIdentifier)
-        stateManager?.setState(state)
     }
     
 }

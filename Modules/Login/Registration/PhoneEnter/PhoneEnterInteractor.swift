@@ -15,6 +15,7 @@ protocol PhoneEnterBusinessLogic {
 
 protocol PhoneEnterDataStore {
     var verificationId: String? { get }
+    var userRegModel: UserRegModelProtocol? { get set }
 }
 
 class PhoneEnterInteractor: PhoneEnterDataStore {
@@ -23,6 +24,7 @@ class PhoneEnterInteractor: PhoneEnterDataStore {
     var worker: PhoneEnterWorker?
     
     var verificationId: String?
+    var userRegModel: UserRegModelProtocol?
 
 }
 
@@ -42,6 +44,7 @@ extension PhoneEnterInteractor: PhoneEnterBusinessLogic {
             switch result {
                 case .success(let verificationId):
                     self?.verificationId = verificationId
+                    self?.userRegModel?.phoneNumber = phone
                     response = .init(error: nil)
                 case .failure(let error):
                     response = .init(error: error)
