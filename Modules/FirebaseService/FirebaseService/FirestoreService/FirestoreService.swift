@@ -7,6 +7,7 @@
 //
 
 import FirebaseFirestore
+import FirebaseAuth
 
 enum CollectionType: String {
     case user = "users"
@@ -20,9 +21,14 @@ enum CollectionFields: String {
 
 class FirestoreServices {
     
-    private let firestore = Firestore.firestore()
+    private let firestore: Firestore
     
-    init() {
+    init(firestore: Firestore) {
+        self.firestore = firestore
+        configureFirestore()
+    }
+    
+    private func configureFirestore() {
         let settings = FirestoreSettings()
         settings.isPersistenceEnabled = false
         firestore.settings = settings
@@ -115,6 +121,20 @@ extension FirestoreServices: FirestoreServiceProtocol {
                     completion(.failure(error))
                 }
             }
+    }
+    
+    func setUsername(phone: String, username: String, completion: @escaping (Result<Bool, Error>) -> ()) {
+//        guard
+//            let user = auth.currentUser
+//        else {
+//            completion()
+//            return
+//        }
+//        getCollection(type: .user)
+//            .whereField(CollectionFields.phoneNumber.rawValue, isEqualTo: phone)
+//            .getDocuments(source: .server) { (querySnapshot, error) in
+//                querySnapshot?.documents.first.
+//            }
     }
     
 }

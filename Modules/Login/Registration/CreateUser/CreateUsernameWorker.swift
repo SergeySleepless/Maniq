@@ -11,18 +11,22 @@ import FirebaseService
 
 class CreateUsernameWorker {
     
+    private let auth = FirebaseServiceFactory.shared.makeAuthService()
     private let firestore = FirebaseServiceFactory.shared.makeFirestoreService()
     
-    func sendUsername(username: String, completion: @escaping (Result<Bool, Error>) -> ()) {
+    func checkUsernameExist(username: String, completion: @escaping (Result<Bool, Error>) -> ()) {
         firestore.checkUsernameExist(username: username) { (result) in
             switch result {
-                case .success(let isExist):
-                    completion(.failure(<#T##Error#>))
-                case .failure(let error):
-                    <#code#>
+            case .success(let isExist):
+                completion(.success(isExist))
+            case .failure(let error):
+                completion(.failure(error))
             }
         }
-        firestore.checkUsernameExist(username: username, completion: completion)
+    }
+    
+    func setUsername(_ username: String, completion: @escaping (Result<Bool, Error>) -> ()) {
+//        auth.currentUser.
     }
     
 }

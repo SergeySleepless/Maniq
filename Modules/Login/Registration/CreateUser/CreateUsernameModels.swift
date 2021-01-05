@@ -15,12 +15,10 @@ enum CreateUsername {
             let username: String
         }
         struct Response {
-            let isExist: Bool?
-            let error: Error?
+            let error: String?
         }
         struct ViewModel {
-            let isExist: Bool?
-            let error: Error?
+            let error: String?
         }
     }
     

@@ -21,8 +21,7 @@ class CreateUsernamePresenter {
 extension CreateUsernamePresenter: CreateUsernamePresentationLogic {
     func presentSendUsername(response: CreateUsername.SendUsername.Response) {
         let error = response.error
-        let isExist = response.isExist
-        let viewModel = CreateUsername.SendUsername.ViewModel(isExist: isExist, error: error)
+        let viewModel = CreateUsername.SendUsername.ViewModel(error: error)
         viewController?.displaySendUsername(viewModel: viewModel)
     }
 }

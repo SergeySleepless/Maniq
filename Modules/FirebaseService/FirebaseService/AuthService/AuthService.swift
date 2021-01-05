@@ -16,6 +16,10 @@ class AuthService {
     private let firestore: FirestoreServiceProtocol
     private let phoneAuthProvider = PhoneAuthProvider.provider()
     
+    var currentUser: User? {
+        return auth.currentUser
+    }
+    
     init(auth: Auth, firestore: FirestoreServiceProtocol) {
         self.auth = auth
         self.firestore = firestore

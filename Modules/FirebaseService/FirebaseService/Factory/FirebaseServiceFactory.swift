@@ -7,6 +7,7 @@
 //
 
 import FirebaseAuth
+import FirebaseFirestore
 
 public class FirebaseServiceFactory {
     private init() {}
@@ -20,6 +21,7 @@ extension FirebaseServiceFactory: FirebaseServiceFactoryProtocol {
     }
     
     public func makeFirestoreService() -> FirestoreServiceProtocol {
-        return FirestoreServices()
+        let firestore = Firestore.firestore()
+        return FirestoreServices(firestore: firestore)
     }
 }

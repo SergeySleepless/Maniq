@@ -13,25 +13,34 @@ protocol CreateUsernameBusinessLogic {
 }
 
 protocol CreateUsernameDataStore {
+    var userRegModel: UserRegModelProtocol? { get set }
 }
 
 class CreateUsernameInteractor: CreateUsernameDataStore {
     
     var presenter: CreateUsernamePresentationLogic?
     var worker: CreateUsernameWorker?
+    
+    var userRegModel: UserRegModelProtocol?
 
 }
 
 extension CreateUsernameInteractor: CreateUsernameBusinessLogic {
     func sendUsername(request: CreateUsername.SendUsername.Request) {
         let username = request.username
+        
         worker = CreateUsernameWorker()
-        worker?.sendUsername(username: username) { result in
+        worker?.checkUsernameExist(username: username) { [weak self] result in
             switch result {
                 case .success(let isExist):
-                    self.presenter?.presentSendUsername(response: .init(isExist: isExist, error: nil))
+                    if isExist {
+                        self?.presenter?.presentSendUsername(response: .init(error: "Указанное имя пользователя уже занято"))
+                    } else {
+                        self?.userRegModel?.username = username
+                        self?.presenter?.presentSendUsername(response: .init(error: nil))
+                    }
                 case .failure(let error):
-                    self.presenter?.presentSendUsername(response: .init(isExist: nil, error: error))
+                    self?.presenter?.presentSendUsername(response: .init(error: error.localizedDescription))
             }
         }
     }

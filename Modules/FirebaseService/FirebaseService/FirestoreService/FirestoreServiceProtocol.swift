@@ -30,4 +30,7 @@ public protocol FirestoreServiceProtocol: AutoMockable {
     
     /// Загрузить пользователя по почте
     func loadClient(email: String, completion: @escaping (Result<QueryDocumentSnapshot, Error>) -> ())
+    
+    /// Установить имя пользователю
+    func setUsername(phone: String, username: String, completion: @escaping (Result<Bool, Error>) -> ())
 }

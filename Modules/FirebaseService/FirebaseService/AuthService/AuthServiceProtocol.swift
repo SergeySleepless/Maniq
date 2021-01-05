@@ -12,6 +12,8 @@ import ManiqCore
 
 public protocol AuthServiceProtocol: AutoMockable {
     
+    var currentUser: User? { get }
+    
     /// Авторизация по email и паролю
     func login(email: String, password: String, completion: @escaping (Error?) -> ())
     

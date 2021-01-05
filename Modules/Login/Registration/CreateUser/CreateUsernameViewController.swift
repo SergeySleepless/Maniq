@@ -72,6 +72,7 @@ class CreateUsernameViewController: LoadingViewController {
         }
         usernameTextField.resignFirstResponder()
         showLoading(from: view)
+        
         let request = CreateUsername.SendUsername.Request(username: username)
         interactor?.sendUsername(request: request)
     }
@@ -81,14 +82,10 @@ class CreateUsernameViewController: LoadingViewController {
 extension CreateUsernameViewController: CreateUsernameDisplayLogic {
     func displaySendUsername(viewModel: CreateUsername.SendUsername.ViewModel) {
         hideLoading(from: view)
-        if let isExist = viewModel.isExist {
-            if isExist {
-                showErrorAlert(title: "Ошибка", body: "Указанное имя пользователя уже занято")
-            } else {
-                // TODO: Next
-            }
-        } else if let error = viewModel.error {
-            showErrorAlert(title: "Ошибка", body: error.localizedDescription)
+        if let error = viewModel.error {
+            showErrorAlert(title: "Ошибка", body: error)
+        } else {
+            // TODO: Next
         }
     }
 }

@@ -589,7 +589,6 @@
 				5EFF11F5257C60AD00A1692B /* Factory */,
 				5EFF10EB257C3F7B00A1692B /* Registration */,
 				5E3B1E6C257C205700984150 /* Login */,
-				5EFF110E257C417300A1692B /* Support */,
 				5E3B1E9C257C25C400984150 /* Extensions */,
 				5E3B1E5E257C202A00984150 /* Login.h */,
 				5E3B1E5F257C202A00984150 /* Info.plist */,
@@ -829,13 +828,6 @@
 				5EFF10FA257C400800A1692B /* PhoneEnterInteractor.swift */,
 			);
 			path = PhoneEnter;
-			sourceTree = "<group>";
-		};
-		5EFF110E257C417300A1692B /* Support */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Support;
 			sourceTree = "<group>";
 		};
 		5EFF111D257C4C6F00A1692B /* CheckCode */ = {
