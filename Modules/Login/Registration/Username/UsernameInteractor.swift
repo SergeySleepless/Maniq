@@ -1,5 +1,5 @@
 //
-//  CreateUsernameInteractor.swift
+//  UsernameInteractor.swift
 //  Maniq
 //
 //  Created by Сергей Гаврилов on 12/6/20.
@@ -8,28 +8,28 @@
 
 import UIKit
 
-protocol CreateUsernameBusinessLogic {
-    func sendUsername(request: CreateUsername.SendUsername.Request)
+protocol UsernameBusinessLogic {
+    func sendUsername(request: Username.SendUsername.Request)
 }
 
-protocol CreateUsernameDataStore {
+protocol UsernameDataStore {
     var userRegModel: UserRegModelProtocol? { get set }
 }
 
-class CreateUsernameInteractor: CreateUsernameDataStore {
+class UsernameInteractor: UsernameDataStore {
     
-    var presenter: CreateUsernamePresentationLogic?
-    var worker: CreateUsernameWorker?
+    var presenter: UsernamePresentationLogic?
+    var worker: UsernameWorker?
     
     var userRegModel: UserRegModelProtocol?
 
 }
 
-extension CreateUsernameInteractor: CreateUsernameBusinessLogic {
-    func sendUsername(request: CreateUsername.SendUsername.Request) {
+extension UsernameInteractor: UsernameBusinessLogic {
+    func sendUsername(request: Username.SendUsername.Request) {
         let username = request.username
         
-        worker = CreateUsernameWorker()
+        worker = UsernameWorker()
         worker?.checkUsernameExist(username: username) { [weak self] result in
             switch result {
                 case .success(let isExist):

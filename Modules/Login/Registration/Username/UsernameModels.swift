@@ -1,5 +1,5 @@
 //
-//  CreateUsernameModels.swift
+//  UsernameModels.swift
 //  Maniq
 //
 //  Created by Сергей Гаврилов on 12/6/20.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-enum CreateUsername {
+enum Username {
     
     enum SendUsername {
         struct Request {

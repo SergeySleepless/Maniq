@@ -26,6 +26,7 @@ target 'ServicesCommon' do
 end
 
 target 'Login' do 
+	pod 'PhoneNumberKit',
 	pod "CBPinEntryView"
 	pod 'Sourcery'
 end

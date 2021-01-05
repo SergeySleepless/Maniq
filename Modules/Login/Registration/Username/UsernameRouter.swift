@@ -1,5 +1,5 @@
 //
-//  CreateUsernameRouter.swift
+//  UsernameRouter.swift
 //  Maniq
 //
 //  Created by Сергей Гаврилов on 12/6/20.
@@ -8,28 +8,28 @@
 
 import UIKit
 
-@objc protocol CreateUsernameRoutingLogic {
+@objc protocol UsernameRoutingLogic {
     //func routeToSomewhere(segue: UIStoryboardSegue?)
 }
 
-protocol CreateUsernameDataPassing {
-    var dataStore: CreateUsernameDataStore? { get }
+protocol UsernameDataPassing {
+    var dataStore: UsernameDataStore? { get }
 }
 
-class CreateUsernameRouter: NSObject {
+class UsernameRouter: NSObject {
     
-    weak var viewController: CreateUsernameViewController?
-    var dataStore: CreateUsernameDataStore?
+    weak var viewController: UsernameViewController?
+    var dataStore: UsernameDataStore?
     
     // MARK: Navigation
     
-//    func navigateToSomewhere(source: CreateUsernameViewController, destination: SomewhereViewController) {
+//    func navigateToSomewhere(source: UsernameViewController, destination: SomewhereViewController) {
 //        source.show(destination, sender: nil)
 //    }
     
 }
 
-extension CreateUsernameRouter: CreateUsernameRoutingLogic {
+extension UsernameRouter: UsernameRoutingLogic {
 //    func routeToSomewhere(segue: UIStoryboardSegue?) {
 //        if let segue = segue {
 //            let destinationVC = segue.destination as! SomewhereViewController
@@ -45,8 +45,8 @@ extension CreateUsernameRouter: CreateUsernameRoutingLogic {
 //    }
 }
 
-extension CreateUsernameRouter: CreateUsernameDataPassing {
-//    func passDataToSomewhere(source: CreateUsernameDataStore, destination: inout SomewhereDataStore) {
+extension UsernameRouter: UsernameDataPassing {
+//    func passDataToSomewhere(source: UsernameDataStore, destination: inout SomewhereDataStore) {
 //        destination.name = source.name
 //    }
 }

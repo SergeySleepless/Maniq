@@ -9,7 +9,7 @@
 import UIKit
 
 public protocol UserProtocol: AutoMockable {
-    var avatar: UIImage? { get }
+    var avatarLink: URL? { get }
     var name: String { get }
     var birthDate: Date { get }
     var registrationDate: Date { get }

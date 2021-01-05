@@ -1,5 +1,5 @@
 //
-//  CreateUsernameWorker.swift
+//  UsernameWorker.swift
 //  Maniq
 //
 //  Created by Сергей Гаврилов on 12/6/20.
@@ -9,7 +9,7 @@
 import UIKit
 import FirebaseService
 
-class CreateUsernameWorker {
+class UsernameWorker {
     
     private let auth = FirebaseServiceFactory.shared.makeAuthService()
     private let firestore = FirebaseServiceFactory.shared.makeFirestoreService()

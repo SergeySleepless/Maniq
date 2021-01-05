@@ -55,19 +55,26 @@
 		5E5A968525A1410500753F0C /* UserFeatures.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E5A968425A1410500753F0C /* UserFeatures.swift */; };
 		5E5A96A025A143BD00753F0C /* UserRegModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E5A969F25A143BD00753F0C /* UserRegModelProtocol.swift */; };
 		5E5A96B025A1441E00753F0C /* UserRegModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E5A96AF25A1441E00753F0C /* UserRegModel.swift */; };
+		5E5B620D25A4EB9100FD5359 /* PasswordPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E5B620725A4EB9100FD5359 /* PasswordPresenter.swift */; };
+		5E5B620E25A4EB9100FD5359 /* PasswordWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E5B620825A4EB9100FD5359 /* PasswordWorker.swift */; };
+		5E5B620F25A4EB9100FD5359 /* PasswordRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E5B620925A4EB9100FD5359 /* PasswordRouter.swift */; };
+		5E5B621025A4EB9100FD5359 /* PasswordModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E5B620A25A4EB9100FD5359 /* PasswordModels.swift */; };
+		5E5B621125A4EB9100FD5359 /* PasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E5B620B25A4EB9100FD5359 /* PasswordViewController.swift */; };
+		5E5B621225A4EB9100FD5359 /* PasswordInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E5B620C25A4EB9100FD5359 /* PasswordInteractor.swift */; };
+		5E5B621B25A4FC8300FD5359 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E5B621A25A4FC8300FD5359 /* User.swift */; };
 		5E659C4423F751300026D8DF /* ClientData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E659C4323F751300026D8DF /* ClientData.swift */; };
 		5E659C4723F751500026D8DF /* UserProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E659C4623F751500026D8DF /* UserProtocol.swift */; };
 		5E659C4923F751F30026D8DF /* UserFeatures.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E659C4823F751F30026D8DF /* UserFeatures.swift */; };
 		5E778BB0257D65D900897073 /* MNavigationControllerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E778BAF257D65D900897073 /* MNavigationControllerProtocol.swift */; };
 		5E778BBE257D65E900897073 /* MNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E778BBD257D65E900897073 /* MNavigationController.swift */; };
 		5E778BC7257D682900897073 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E778BC6257D682900897073 /* BaseViewController.swift */; };
-		5E778BDB257D72A800897073 /* CreateUsernamePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E778BD5257D72A800897073 /* CreateUsernamePresenter.swift */; };
-		5E778BDC257D72A800897073 /* CreateUsernameWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E778BD6257D72A800897073 /* CreateUsernameWorker.swift */; };
-		5E778BDD257D72A800897073 /* CreateUsernameRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E778BD7257D72A800897073 /* CreateUsernameRouter.swift */; };
-		5E778BDE257D72A800897073 /* CreateUsernameModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E778BD8257D72A800897073 /* CreateUsernameModels.swift */; };
-		5E778BDF257D72A800897073 /* CreateUsernameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E778BD9257D72A800897073 /* CreateUsernameViewController.swift */; };
-		5E778BE0257D72A800897073 /* CreateUsernameInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E778BDA257D72A800897073 /* CreateUsernameInteractor.swift */; };
-		5E778BEE257D72D200897073 /* CreateUsername.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5E778BED257D72D200897073 /* CreateUsername.storyboard */; };
+		5E778BDB257D72A800897073 /* UsernamePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E778BD5257D72A800897073 /* UsernamePresenter.swift */; };
+		5E778BDC257D72A800897073 /* UsernameWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E778BD6257D72A800897073 /* UsernameWorker.swift */; };
+		5E778BDD257D72A800897073 /* UsernameRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E778BD7257D72A800897073 /* UsernameRouter.swift */; };
+		5E778BDE257D72A800897073 /* UsernameModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E778BD8257D72A800897073 /* UsernameModels.swift */; };
+		5E778BDF257D72A800897073 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E778BD9257D72A800897073 /* ViewController.swift */; };
+		5E778BE0257D72A800897073 /* UsernameInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E778BDA257D72A800897073 /* UsernameInteractor.swift */; };
+		5E778BEE257D72D200897073 /* Username.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5E778BED257D72D200897073 /* Username.storyboard */; };
 		5EB7FEF223F57F66004989C9 /* RegistrationErrors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EB7FEF123F57F66004989C9 /* RegistrationErrors.swift */; };
 		5EB7FEF423F5975B004989C9 /* VKAuth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EB7FEF323F5975B004989C9 /* VKAuth.swift */; };
 		5EC1610323E787BB00CEC7E7 /* CurrentState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EC1610223E787BB00CEC7E7 /* CurrentState.swift */; };
@@ -270,19 +277,27 @@
 		5E5A968425A1410500753F0C /* UserFeatures.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserFeatures.swift; sourceTree = "<group>"; };
 		5E5A969F25A143BD00753F0C /* UserRegModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRegModelProtocol.swift; sourceTree = "<group>"; };
 		5E5A96AF25A1441E00753F0C /* UserRegModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRegModel.swift; sourceTree = "<group>"; };
+		5E5B61CE25A4DE4700FD5359 /* Password.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Password.storyboard; sourceTree = "<group>"; };
+		5E5B620725A4EB9100FD5359 /* PasswordPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordPresenter.swift; sourceTree = "<group>"; };
+		5E5B620825A4EB9100FD5359 /* PasswordWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordWorker.swift; sourceTree = "<group>"; };
+		5E5B620925A4EB9100FD5359 /* PasswordRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordRouter.swift; sourceTree = "<group>"; };
+		5E5B620A25A4EB9100FD5359 /* PasswordModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordModels.swift; sourceTree = "<group>"; };
+		5E5B620B25A4EB9100FD5359 /* PasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordViewController.swift; sourceTree = "<group>"; };
+		5E5B620C25A4EB9100FD5359 /* PasswordInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordInteractor.swift; sourceTree = "<group>"; };
+		5E5B621A25A4FC8300FD5359 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		5E659C4323F751300026D8DF /* ClientData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClientData.swift; sourceTree = "<group>"; };
 		5E659C4623F751500026D8DF /* UserProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProtocol.swift; sourceTree = "<group>"; };
 		5E659C4823F751F30026D8DF /* UserFeatures.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserFeatures.swift; sourceTree = "<group>"; };
 		5E778BAF257D65D900897073 /* MNavigationControllerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MNavigationControllerProtocol.swift; sourceTree = "<group>"; };
 		5E778BBD257D65E900897073 /* MNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MNavigationController.swift; sourceTree = "<group>"; };
 		5E778BC6257D682900897073 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
-		5E778BD5257D72A800897073 /* CreateUsernamePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateUsernamePresenter.swift; sourceTree = "<group>"; };
-		5E778BD6257D72A800897073 /* CreateUsernameWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateUsernameWorker.swift; sourceTree = "<group>"; };
-		5E778BD7257D72A800897073 /* CreateUsernameRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateUsernameRouter.swift; sourceTree = "<group>"; };
-		5E778BD8257D72A800897073 /* CreateUsernameModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateUsernameModels.swift; sourceTree = "<group>"; };
-		5E778BD9257D72A800897073 /* CreateUsernameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateUsernameViewController.swift; sourceTree = "<group>"; };
-		5E778BDA257D72A800897073 /* CreateUsernameInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateUsernameInteractor.swift; sourceTree = "<group>"; };
-		5E778BED257D72D200897073 /* CreateUsername.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CreateUsername.storyboard; sourceTree = "<group>"; };
+		5E778BD5257D72A800897073 /* UsernamePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsernamePresenter.swift; sourceTree = "<group>"; };
+		5E778BD6257D72A800897073 /* UsernameWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsernameWorker.swift; sourceTree = "<group>"; };
+		5E778BD7257D72A800897073 /* UsernameRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsernameRouter.swift; sourceTree = "<group>"; };
+		5E778BD8257D72A800897073 /* UsernameModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsernameModels.swift; sourceTree = "<group>"; };
+		5E778BD9257D72A800897073 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		5E778BDA257D72A800897073 /* UsernameInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsernameInteractor.swift; sourceTree = "<group>"; };
+		5E778BED257D72D200897073 /* Username.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Username.storyboard; sourceTree = "<group>"; };
 		5EB7606923EC2449001DD4F8 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		5EB7FEF123F57F66004989C9 /* RegistrationErrors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationErrors.swift; sourceTree = "<group>"; };
 		5EB7FEF323F5975B004989C9 /* VKAuth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VKAuth.swift; sourceTree = "<group>"; };
@@ -623,6 +638,7 @@
 			children = (
 				5E5A967B25A13F6400753F0C /* UserProtocol.swift */,
 				5E5A968425A1410500753F0C /* UserFeatures.swift */,
+				5E5B621A25A4FC8300FD5359 /* User.swift */,
 			);
 			path = User;
 			sourceTree = "<group>";
@@ -655,6 +671,20 @@
 			path = Protocols;
 			sourceTree = "<group>";
 		};
+		5E5B61CD25A4DD9F00FD5359 /* Password */ = {
+			isa = PBXGroup;
+			children = (
+				5E5B61CE25A4DE4700FD5359 /* Password.storyboard */,
+				5E5B620725A4EB9100FD5359 /* PasswordPresenter.swift */,
+				5E5B620825A4EB9100FD5359 /* PasswordWorker.swift */,
+				5E5B620925A4EB9100FD5359 /* PasswordRouter.swift */,
+				5E5B620A25A4EB9100FD5359 /* PasswordModels.swift */,
+				5E5B620B25A4EB9100FD5359 /* PasswordViewController.swift */,
+				5E5B620C25A4EB9100FD5359 /* PasswordInteractor.swift */,
+			);
+			path = Password;
+			sourceTree = "<group>";
+		};
 		5E659C4523F7513F0026D8DF /* Users */ = {
 			isa = PBXGroup;
 			children = (
@@ -684,18 +714,18 @@
 			path = ViewControllers;
 			sourceTree = "<group>";
 		};
-		5E778BD4257D720600897073 /* CreateUser */ = {
+		5E778BD4257D720600897073 /* Username */ = {
 			isa = PBXGroup;
 			children = (
-				5E778BD5257D72A800897073 /* CreateUsernamePresenter.swift */,
-				5E778BD6257D72A800897073 /* CreateUsernameWorker.swift */,
-				5E778BD7257D72A800897073 /* CreateUsernameRouter.swift */,
-				5E778BD8257D72A800897073 /* CreateUsernameModels.swift */,
-				5E778BD9257D72A800897073 /* CreateUsernameViewController.swift */,
-				5E778BDA257D72A800897073 /* CreateUsernameInteractor.swift */,
-				5E778BED257D72D200897073 /* CreateUsername.storyboard */,
+				5E778BD5257D72A800897073 /* UsernamePresenter.swift */,
+				5E778BD6257D72A800897073 /* UsernameWorker.swift */,
+				5E778BD7257D72A800897073 /* UsernameRouter.swift */,
+				5E778BD8257D72A800897073 /* UsernameModels.swift */,
+				5E778BD9257D72A800897073 /* ViewController.swift */,
+				5E778BDA257D72A800897073 /* UsernameInteractor.swift */,
+				5E778BED257D72D200897073 /* Username.storyboard */,
 			);
-			path = CreateUser;
+			path = Username;
 			sourceTree = "<group>";
 		};
 		5E79583D23ED512300A2A6AD /* Services */ = {
@@ -809,7 +839,8 @@
 		5EFF10EB257C3F7B00A1692B /* Registration */ = {
 			isa = PBXGroup;
 			children = (
-				5E778BD4257D720600897073 /* CreateUser */,
+				5E5B61CD25A4DD9F00FD5359 /* Password */,
+				5E778BD4257D720600897073 /* Username */,
 				5EFF111D257C4C6F00A1692B /* CheckCode */,
 				5EFF10F0257C3FE300A1692B /* PhoneEnter */,
 			);
@@ -1178,7 +1209,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5E778BEE257D72D200897073 /* CreateUsername.storyboard in Resources */,
+				5E778BEE257D72D200897073 /* Username.storyboard in Resources */,
 				5EFF1109257C404E00A1692B /* PhoneEnter.storyboard in Resources */,
 				5EFF1136257C4CE300A1692B /* CheckCode.storyboard in Resources */,
 				5E3B1E8E257C219500984150 /* Login.storyboard in Resources */,
@@ -1404,6 +1435,7 @@
 				5E303A9325853CBA00B2A357 /* ManiqCoreFactoryProtocol.swift in Sources */,
 				5E5A968525A1410500753F0C /* UserFeatures.swift in Sources */,
 				5E303A8925853C4F00B2A357 /* ManiqCoreFactory.swift in Sources */,
+				5E5B621B25A4FC8300FD5359 /* User.swift in Sources */,
 				5E5A964625A1389800753F0C /* AutoMockable.swift in Sources */,
 				5E3039FC2585316700B2A357 /* KeyValueStorage.swift in Sources */,
 				5E5A967C25A13F6400753F0C /* UserProtocol.swift in Sources */,
@@ -1438,6 +1470,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5EFF1125257C4C8400A1692B /* CheckCodeWorker.swift in Sources */,
+				5E5B621125A4EB9100FD5359 /* PasswordViewController.swift in Sources */,
 				5EE0E44E2585633A00F6CF27 /* ResetPasswordInteractor.swift in Sources */,
 				5EFF10FD257C400800A1692B /* PhoneEnterRouter.swift in Sources */,
 				5EFF1129257C4C8400A1692B /* CheckCodeInteractor.swift in Sources */,
@@ -1448,30 +1481,35 @@
 				5EE0E44B2585633A00F6CF27 /* ResetPasswordRouter.swift in Sources */,
 				5E3B1E78257C206C00984150 /* LoginInteractor.swift in Sources */,
 				5EFF10FF257C400800A1692B /* PhoneEnterViewController.swift in Sources */,
+				5E5B620E25A4EB9100FD5359 /* PasswordWorker.swift in Sources */,
 				5EFF1128257C4C8400A1692B /* CheckCodeViewController.swift in Sources */,
 				5EFF1203257C60DC00A1692B /* LoginFactory.swift in Sources */,
-				5E778BDC257D72A800897073 /* CreateUsernameWorker.swift in Sources */,
-				5E778BDD257D72A800897073 /* CreateUsernameRouter.swift in Sources */,
+				5E5B621225A4EB9100FD5359 /* PasswordInteractor.swift in Sources */,
+				5E778BDC257D72A800897073 /* UsernameWorker.swift in Sources */,
+				5E778BDD257D72A800897073 /* UsernameRouter.swift in Sources */,
 				5EFF10FC257C400800A1692B /* PhoneEnterWorker.swift in Sources */,
 				5EE0E44A2585633A00F6CF27 /* ResetPasswordWorker.swift in Sources */,
-				5E778BDF257D72A800897073 /* CreateUsernameViewController.swift in Sources */,
+				5E778BDF257D72A800897073 /* ViewController.swift in Sources */,
 				5E3B1E9E257C25D500984150 /* StringExtensions.swift in Sources */,
 				5EFF10FB257C400800A1692B /* PhoneEnterPresenter.swift in Sources */,
-				5E778BDB257D72A800897073 /* CreateUsernamePresenter.swift in Sources */,
+				5E5B621025A4EB9100FD5359 /* PasswordModels.swift in Sources */,
+				5E778BDB257D72A800897073 /* UsernamePresenter.swift in Sources */,
 				5EE0E44D2585633A00F6CF27 /* ResetPasswordViewController.swift in Sources */,
 				5E3B1E74257C206C00984150 /* LoginWorker.swift in Sources */,
 				5EE0E4492585633A00F6CF27 /* ResetPasswordPresenter.swift in Sources */,
 				5E5A96A025A143BD00753F0C /* UserRegModelProtocol.swift in Sources */,
+				5E5B620D25A4EB9100FD5359 /* PasswordPresenter.swift in Sources */,
 				5EFF11F7257C60C200A1692B /* LoginFactoryProtocol.swift in Sources */,
 				5EFF1126257C4C8400A1692B /* CheckCodeRouter.swift in Sources */,
 				5EFF1100257C400800A1692B /* PhoneEnterInteractor.swift in Sources */,
 				5EFF1127257C4C8400A1692B /* CheckCodeModels.swift in Sources */,
+				5E5B620F25A4EB9100FD5359 /* PasswordRouter.swift in Sources */,
 				5E3B1E77257C206C00984150 /* LoginViewController.swift in Sources */,
 				5E3B1E75257C206C00984150 /* LoginRouter.swift in Sources */,
-				5E778BE0257D72A800897073 /* CreateUsernameInteractor.swift in Sources */,
+				5E778BE0257D72A800897073 /* UsernameInteractor.swift in Sources */,
 				5EFF1124257C4C8400A1692B /* CheckCodePresenter.swift in Sources */,
 				5EFF10FE257C400800A1692B /* PhoneEnterModels.swift in Sources */,
-				5E778BDE257D72A800897073 /* CreateUsernameModels.swift in Sources */,
+				5E778BDE257D72A800897073 /* UsernameModels.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

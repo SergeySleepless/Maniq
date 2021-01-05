@@ -1,5 +1,5 @@
 //
-//  CreateUsernameViewController.swift
+//  UsernameViewController.swift
 //  Maniq
 //
 //  Created by Сергей Гаврилов on 12/6/20.
@@ -9,14 +9,14 @@
 import UIKit
 import ManiqUI
 
-protocol CreateUsernameDisplayLogic: class {
-    func displaySendUsername(viewModel: CreateUsername.SendUsername.ViewModel)
+protocol UsernameDisplayLogic: class {
+    func displaySendUsername(viewModel: Username.SendUsername.ViewModel)
 }
 
-class CreateUsernameViewController: LoadingViewController {
+class UsernameViewController: LoadingViewController {
     
-    var interactor: CreateUsernameBusinessLogic?
-    var router: (NSObjectProtocol & CreateUsernameRoutingLogic & CreateUsernameDataPassing)?
+    var interactor: UsernameBusinessLogic?
+    var router: (NSObjectProtocol & UsernameRoutingLogic & UsernameDataPassing)?
     
     // MARK: Object lifecycle
     
@@ -34,9 +34,9 @@ class CreateUsernameViewController: LoadingViewController {
     
     private func setup() {
         let viewController = self
-        let interactor = CreateUsernameInteractor()
-        let presenter = CreateUsernamePresenter()
-        let router = CreateUsernameRouter()
+        let interactor = UsernameInteractor()
+        let presenter = UsernamePresenter()
+        let router = UsernameRouter()
         viewController.interactor = interactor
         viewController.router = router
         interactor.presenter = presenter
@@ -73,14 +73,14 @@ class CreateUsernameViewController: LoadingViewController {
         usernameTextField.resignFirstResponder()
         showLoading(from: view)
         
-        let request = CreateUsername.SendUsername.Request(username: username)
+        let request = Username.SendUsername.Request(username: username)
         interactor?.sendUsername(request: request)
     }
     
 }
 
-extension CreateUsernameViewController: CreateUsernameDisplayLogic {
-    func displaySendUsername(viewModel: CreateUsername.SendUsername.ViewModel) {
+extension UsernameViewController: UsernameDisplayLogic {
+    func displaySendUsername(viewModel: Username.SendUsername.ViewModel) {
         hideLoading(from: view)
         if let error = viewModel.error {
             showErrorAlert(title: "Ошибка", body: error)
@@ -90,7 +90,7 @@ extension CreateUsernameViewController: CreateUsernameDisplayLogic {
     }
 }
 
-extension CreateUsernameViewController: UITextFieldDelegate {
+extension UsernameViewController: UITextFieldDelegate {
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         if let text = textField.text,
            let textRange = Range(range, in: text) {

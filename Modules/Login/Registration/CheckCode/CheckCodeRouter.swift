@@ -34,7 +34,7 @@ extension CheckCodeRouter: CheckCodeRoutingLogic {
     
     func routeToUsername() {
         let storyboard = UIStoryboard(name: "CreateUsername", bundle: bundle)
-        guard let viewController = storyboard.instantiateInitialViewController() as? CreateUsernameViewController
+        guard let viewController = storyboard.instantiateInitialViewController() as? UsernameViewController
         else {
             return
         }
